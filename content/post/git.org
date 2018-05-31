@@ -126,3 +126,11 @@ git pull origin netx
 #+END_SRC
 - push 推送
 
+
+冲突解决
+
+#+BEGIN_SRC 
+强制推送
+git push origin master -f
+#+END_SRC
+
