@@ -3,7 +3,7 @@ categories = ["EMACS"]
 TAGS = ["ORG-MODE"]
 TITLE = "ORG MODE"
 DATE = "2018-05-29T13:47:56+08:00"
-DRAFT = FALSE
+DRAFT = true
 +++
 
 * 列提纲
