@@ -14,13 +14,11 @@ HEAD:指向你最近一次提交后的结果
 ** 相关配置
 
 #+BEGIN_SRC 
- git config --global user.name "bhblinux"
- git config --global user.email "405890835@qq.com"
- git config --global color.ui true
- git config --list 查看配置
-ssh-keygen -t rsa -C "405890835@qq.com"
+  git config --global user.name "bhblinux"
+  git config --global user.email "405890835@qq.com"
+  git config --global color.ui true
+  git config --list 查看配置
 #+END_SRC
-
 ** 相关命令
 #+BEGIN_SRC 
 
@@ -34,95 +32,56 @@ AM 1.py
 第二列 workin dir 发生了变化
 
 git diff 查看文件具体变化
-git reset . 撤销
+git reset 撤销add的操作
+git checkout filename
+将从历史目录中将文件恢复
+git checkout HEAD filename
+
+从working dir 中直接commit
+git commit -am ".." 
+
+移除working文件
+git rm filename
+移除Index中的文件
+git rm --cached Filename
+
+重命名
+git mv oldname newname
+
+暂存工作区
+打开抽屉将master放入抽屉中
+git stash  
+将master抽屉拿出来
+git stash pop 
+查看历史记录
+git log 
+git log --oneline
+
+git rev-parse HEAD
 #+END_SRC
-
-
-** 相关场景
-
-1. 开发过程中有bug修改,将现有项目放入临时区,待bug修复好后,再将临时区恢复
-#+BEGIN_SRC
-1. git stash
-2. 修改bug....
-3. git add . 提交
-4. git commit -m "xx"
-5. git stash pop #将临时去的内容还原
-#+END_SRC
-
-2. 冲突解决
-
-#+BEGIN_SRC 
-git stash             将当前工作区所有修改过的内容存储到“某个地方”，将工作区还原到当前版本未修改过的状态
-git stash list        查看“某个地方”存储的所有记录
-git stash clear     清空“某个地方”
-git stash pop       将第一个记录从“某个地方”重新拿到工作区（可能有冲突）
-git stash apply     编号, 将指定编号记录从“某个地方”重新拿到工作区（可能有冲突） 
-git stash drop      编号，删除指定编号的记录
-#+END_SRC
-
-3. 分支 branch
-
-#+BEGIN_SRC 
-git branch 分支名称             创建分支
-git checkout 分支名称          切换分支
-git branch -m 分支名称        创建并切换到指定分支
-git branch                          查看所有分支
-git branch -d 分支名称         删除分支
-git merge 分支名称              将指定分支合并到当前分支
-#+END_SRC
-
-
 ** 远程仓库
-
-
-
-- 多平台操作
-
-1. 在家里,将完毕代码推送到github
-
 #+BEGIN_SRC 
-git remote add origin https://github.com/xxxx
-git push origin master 推送
-git push origin dev              # 将本地dev分支内容以及版本信息推送到GitHub
+ssh-keygen -t rsa -C "405890835@qq.com"
+#+END_SRC
+** 创建和删除分支
+#+BEGIN_SRC 
+创建分支
+git branch branch_name
+
+git branch 查看分支
+切换指定分支
+git checkout branch_name 
+git checkout -b branch_name
+切换主分支
+git checkout master
+删除分支
+git branch -d branch_name
+
+合并分支
+简单合并
+git merge branch_name
+
+多分支合并
 
 
 #+END_SRC
-2. 在公司,将代码从github中获取并继续开发
-
-#+BEGIN_SRC 
-1. 将项目从github中获取
-git clone https://github.com/WuPeiqi/pondo.git
-默认获取到的是mster分支
-# 创建dev分支且和远程dev分支同步
-git branch dev origin/dev
-... 继续开发
-# 提交dev分支内容到远程GitHub托管仓库的dev分支
-git push origin dev
-
-
-#+END_SRC
-
-3. 在家,需要从github拉取最新代码
-#+BEGIN_SRC 
- git checkout dev  # 切换到dev分支
-git pull origin dev # 从远程GitHub仓库获取dev分支最新内容，并合并到本地
-
-#+END_SRC
-4. 在公司,把新功能从github中拉取继续开发
-#+BEGIN_SRC 
-git checkout dev  # 切换到dev分支
-git fetch origin dev    # 从GitHub仓库获取dev分支最新内容到版本库的分支
-git merge origin/dev  # 将版本库的分支内容合并到工作区
-
-#+END_SRC
-
-
-- 远程推送和拉取
-- pull 拉取
-#+BEGIN_SRC 
-git pull <远程主机> <远程分支>:<本地分支>
-git pull origin netx 
-实质上先做 git fetch 再执行 git merge
-#+END_SRC
-- push 推送
-
