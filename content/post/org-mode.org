@@ -1,10 +1,17 @@
-
 +++
+<<<<<<< HEAD
 categories = ["EMACS"]
 TAGS = ["ORG-MODE"]
 TITLE = "ORG MODE"
 DATE = "2018-05-29T13:47:56+08:00"
 
+=======
+categories = ["emacs"]
+tags = ["org-mode"]
+title = "Org Mode"
+date = "2018-05-29T13:47:56+08:00"
+draft = false
+>>>>>>> b694155bfc9e5b27a77340ba47d1d58928239f44
 +++
 
 * 列提纲
@@ -14,24 +21,23 @@ DATE = "2018-05-29T13:47:56+08:00"
 ;*** 为三级标题
 #+END_SRC
 
-TAB键对标题进行展开和关闭
+tab键对标题进行展开和关闭
 
-C-C C-T可以将一个条目转一个TODO事件
+C-c C-t可以将一个条目转一个TODO事件
 
-C-X H 全选
 ** 重置有序列表序号
 #+BEGIN_SRC 
 M-回车
 再末尾执行快捷键
 #+END_SRC
 
-** AGENDA的使用
+** Agenda的使用
 配置
 #+BEGIN_SRC 
-;;设置默认ORG AGENDA文件目录
-(SETQ ORG-AGENDA-FILES '("~/ORG"))
+;;设置默认org agenda文件目录
+(setq org-agenda-files '("~/org"))
 ;;设置快捷键
-(GLOBAL-SET KEY (KBD "C-C A") 'ORG-AGENDA)
+(global-set key (kbd "C-c a") 'org-agenda)
 #+END_SRC
 
 
@@ -41,11 +47,11 @@ M-RET 插入一个统计标题
 M-S-RET 插入一个统计TODO标题
 M-LEFT/RIGHT 将当前标题升/降级
 M-S-UP/DOWN 将子数上/下移
-C-C * 将本行设置为标题/正文
-C-C C-W 将子数或区域移动到另一标题处(跨缓冲区)
-C-X N S/W 只显示当前子数/返回
-C-C / 只列是包含搜索结果的大纲,并高亮,支持多种搜索方式
-C-C C-C 取消高亮
+C-c * 将本行设置为标题/正文
+C-c C-w 将子数或区域移动到另一标题处(跨缓冲区)
+C-x n s/w 只显示当前子数/返回
+C-c / 只列是包含搜索结果的大纲,并高亮,支持多种搜索方式
+C-c C-c 取消高亮
 #+END_SRC
 
 
@@ -62,15 +68,15 @@ C-C C-C 取消高亮
 #+END_SRC
 *** 表格
 #+BEGIN_SRC 
-| NAME|PONE|AGE|
+| name|pone|age|
 |-----+----+---|
-|AAA  |123 | 18|
+|aaa  |123 | 18|
 
 #+END_SRC
 
 **** 创建表格
 #+BEGIN_VERSE
-C-C 竖线   创建或转换成表格
+C-c 竖线   创建或转换成表格
 #+END_VERSE
 
 **** 调整和区域移动
@@ -78,15 +84,15 @@ C-C 竖线   创建或转换成表格
 ** 启动加速
 1. 不加载任何配置文件进行启动
 #+BEGIN_SRC 
-EMASC -Q
+emasc -q
 #+END_SRC
-2. 用EMACSCLIENT 来连接EMACS SERVER 
+2. 用emacsclient 来连接emacs server 
 #+BEGIN_SRC 
-1. 启用SERVER模式
-M-X SERVER-START
+1. 启用server模式
+M-x server-start
 2. 在配置文件中配置
-(SERVER-START)
-3. 然后通过EMACSCLIENT FILENAME来启用EMACS打开文件
+(server-start)
+3. 然后通过emacsclient filename来启用emacs打开文件
 #+END_SRC
 
 ** 查找替换
@@ -95,110 +101,27 @@ M-X SERVER-START
 1. 增量查找
 
 #+BEGIN_SRC
-快捷键 C-S 向前查找
-当查找到了多个内容时,可以继续用C-S或C-R 向前或前后定位到下一个匹配的关键字
-C-U C-@ 回到开始查找的位置
-C-R 向后查找
+快捷键 C-s 向前查找
+当查找到了多个内容时,可以继续用C-s或C-r 向前或前后定位到下一个匹配的关键字
+C-u C-@ 回到开始查找的位置
+C-r 向后查找
 #+END_SRC
 2. 词组查找
 #+BEGIN_SRC 
-M-S W 
+M-s w 
 #+END_SRC
 3. 正则查找
 #+BEGIN_SRC 
-C-M-S
+C-M-s
 #+END_SRC
 *** 替换
 #+BEGIN_SRC 
-M-X REPLACE-STRING RET OLDSTRING RET NEWSTRING RET
+M-x replace-string RET oldstring RET newstring RET
 #+END_SRC
 
 查找替换
 #+BEGIN_SRC 
-M-%(QUERY-REPLACE)
-先输入OLDSTRING,再输入NEWSTRING 然后会Y,N,Q
+M-%(query-replace)
+先输入oldstring,再输入newstring 然后会y,n,q
 #+END_SRC
-
-** 在线帮助
-
-#+BEGIN_SRC 
-C-H C 显示快捷键绑定的命令 
-C-H K 显示快捷键绑定的命令和它的作用 
-C-H L   显示最后100个键入的内容 
-C-H W 显示命令被绑定到哪些快捷键上 
-C-H F   显示函数的功能 
-C-H V 显示变量的含义和值 或者 M-X DESCRIBE-VARIABLE
-C-H B 显示当前缓冲区所有可用的快捷键 
-C-H T 打开EMACS教程 
-C-H I 打开INFO阅读器 
-C-H P 显示本机ELISP包的信息 
-C-H C-F 显示EMACS FAQ 
-C-H A 查找与之匹配的命令
-
-#+END_SRC
-
-** 打开与关闭
-
-#+BEGIN_SRC 
-打开文件: C-X C-F
-退出EMACS C-X C-C
-用另一文件替换与当前打开的文件:C-X C-V
-显示可打开的BUFFER: C-鼠标左键,C-X C-B
-打开另一个BUFFER:C-X B
-关闭一个BUFFER:C-X K
-删除选中区域的所有空行 M-x flush-lines ^$
-插入当前日期和时间
-#+END_SRC
-
-** 重要快捷键
-
-#+BEGIN_SRC 
-C-G 停止当前运行/输入的命令
-C-X U 撤销
-C-X C-Q 当前BUFFER设置为只读 再按则取消
-M-X REVERT-BUFFER RET 撤销上次存盘所有改动
-M-X RECOVER-FILE RET 从自动存盘文件恢复
-M-X RECOVER-SESSION RET 如果你编辑了几个文件,用这个恢复
-#+END_SRC
-
-** 光标移动
-
-#+BEGIN_SRC 
-跳到指定的行:M-G G(M-X GOTO-LINE)
-调到第N个字节:M-X C(M-X GOTO-CHAR)
-前一屏 M-V 后一屏 C-V
-行首C -A  行尾C-E
-上一行:C-P 下一行:C-N
-上一词:M-B 下一词:M-F
-上一字:C-B 下一字:C-F
-上一句:M-A 下一句:M-E
-上一段落:M-{ 下一段:M-}
-#+END_SRC
-
-** 大小写转换
-
-#+BEGIN_SRC 
-大写:M-U(词)  C-X C-U(区域)
-小写:M-l (词) C-x C-l(区域)
-首字母大小 M-c
-#+END_SRC
-
-** 窗口操作
-
-#+BEGIN_SRC 
-C-x o 切换至其他窗口
-C-x 0 关闭窗格
-C-x 2 水平分隔窗格
-C-x 3 垂直分隔窗格
-C-x 1 关闭除了光标所在窗口外多有窗格
-C-x ^
-M-x shrink-windows 缩小窗格
-C-M-v 滚动其他窗格内容
-C-x 4 f 在其他窗格中打开文件
-C-x 4 0 关闭当前缓冲区和窗格
-C-x 5 2 新建窗格
-C-x 5 f 在新窗格中打开文件
-#+END_SRC
-
-
 
