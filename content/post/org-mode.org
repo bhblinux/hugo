@@ -1,4 +1,3 @@
-
 +++
 categories = ["EMACS"]
 TAGS = ["ORG-MODE"]
