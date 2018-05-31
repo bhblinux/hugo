@@ -18,6 +18,7 @@ HEAD:指向你最近一次提交后的结果
  git config --global user.email "405890835@qq.com"
  git config --global color.ui true
  git config --list 查看配置
+ssh-keygen -t rsa -C "405890835@qq.com"
 #+END_SRC
 
 ** 相关命令
@@ -36,10 +37,6 @@ git diff 查看文件具体变化
 git reset . 撤销
 #+END_SRC
 
-** 远程仓库
-#+BEGIN_SRC 
-ssh-keygen -t rsa -C "405890835@qq.com"
-#+END_SRC
 
 ** 相关场景
 
@@ -65,5 +62,57 @@ git stash drop      编号，删除指定编号的记录
 
 3. 分支 branch
 
+#+BEGIN_SRC 
+git branch 分支名称             创建分支
+git checkout 分支名称          切换分支
+git branch -m 分支名称        创建并切换到指定分支
+git branch                          查看所有分支
+git branch -d 分支名称         删除分支
+git merge 分支名称              将指定分支合并到当前分支
+#+END_SRC
 
+
+** 远程仓库
+
+
+
+- 多平台操作
+
+1. 在家里,将完毕代码推送到github
+
+#+BEGIN_SRC 
+git remote add origin https://github.com/xxxx
+git push origin master 推送
+git push origin dev              # 将本地dev分支内容以及版本信息推送到GitHub
+
+
+#+END_SRC
+2. 在公司,将代码从github中获取并继续开发
+
+#+BEGIN_SRC 
+1. 将项目从github中获取
+git clone https://github.com/WuPeiqi/pondo.git
+默认获取到的是mster分支
+# 创建dev分支且和远程dev分支同步
+git branch dev origin/dev
+... 继续开发
+# 提交dev分支内容到远程GitHub托管仓库的dev分支
+git push origin dev
+
+
+#+END_SRC
+
+3. 在家,需要从github拉取最新代码
+#+BEGIN_SRC 
+ git checkout dev  # 切换到dev分支
+git pull origin dev # 从远程GitHub仓库获取dev分支最新内容，并合并到本地
+
+#+END_SRC
+4. 在公司,把新功能从github中拉取继续开发
+#+BEGIN_SRC 
+git checkout dev  # 切换到dev分支
+git fetch origin dev    # 从GitHub仓库获取dev分支最新内容到版本库的分支
+git merge origin/dev  # 将版本库的分支内容合并到工作区
+
+#+END_SRC
 
