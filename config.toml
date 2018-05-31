@@ -1,0 +1,8 @@
+hasCJKLanguage= "true"
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "我的博客"
+theme = "beg"
+
+
+

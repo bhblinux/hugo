@@ -1,0 +1,58 @@
+---
+title: "Mysql"
+date: 2018-05-29T20:19:43+08:00
+categories:
+ - 数据库 
+tags:
+ - mysql
+---
+
+* 数据库
+
+** sql语句
+*** 数据库操作   
+    
+创建数据库
+#+BEGIN_SRC sql 
+CREATE DATABASE day0529;
+#+END_SRC
+创建一个使用utf-8字符集的数据库
+#+BEGIN_SRC 
+CREATE DATABASE day0529 charseter set utf-8;
+#+END_SRC
+查看数据库
+#+BEGIN_SRC 
+show databases
+#+END_SRC
+修改数据库
+#+BEGIN_SRC 
+ALTER  DATABASE  [IF NOT EXISTS] db_name??[alter_specification [, alter_specification] ...] 
+alter_specification:??? 
+[DEFAULT] CHARACTER SET charset_name? |   [DEFAULT] COLLATE collation_name
+查看服务器中的数据库,并包其中的字符集修改为utf-8 
+alter database xx character set utf8
+#+END_SRC
+删除数据库
+#+BEGIN_SRC 
+drop database [IF EXIsts]  db_name
+DROP DATAbase mydb1;
+#+END_SRC 
+选择数据库
+#+BEGIN_SRC 
+use db_name 
+查看当前所选的数据库:
+select database();
+#+END_SRC
+*** 表操作
+1. 创建表
+#+BEGIN_EXAMPLE
+CREATE TABLE table_name(
+field1 datatype,
+field2 datatype
+)[character set 字符集] [collate 校对规则]
+field1 指定列明 datatype 指定列类型
+#+END_EXAMPLE
+2. 查看表
+3. 修改表
+4. 删除表
+ 

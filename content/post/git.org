@@ -1,0 +1,69 @@
+---
+title: "Git"
+date: 2018-05-29T21:23:09+08:00
+categories:
+ - git 
+tags:
+ - git
+---
+* git 
+工作目录:持有实际文件
+Index:缓存区域,保存改动的文件
+HEAD:指向你最近一次提交后的结果
+- 安装
+** 相关配置
+
+#+BEGIN_SRC 
+ git config --global user.name "bhblinux"
+ git config --global user.email "405890835@qq.com"
+ git config --global color.ui true
+ git config --list 查看配置
+#+END_SRC
+
+** 相关命令
+#+BEGIN_SRC 
+
+git 状态
+git status
+在git中新建一个.gitignore文件,里面写入*.txt 则git会忽略.txt的所有文件不会管理
+git status -s
+A  .gitignore
+AM 1.py
+第一列为状态 A 添加  M 提交
+第二列 workin dir 发生了变化
+
+git diff 查看文件具体变化
+git reset . 撤销
+#+END_SRC
+
+** 远程仓库
+#+BEGIN_SRC 
+ssh-keygen -t rsa -C "405890835@qq.com"
+#+END_SRC
+
+** 相关场景
+
+1. 开发过程中有bug修改,将现有项目放入临时区,待bug修复好后,再将临时区恢复
+#+BEGIN_SRC
+1. git stash
+2. 修改bug....
+3. git add . 提交
+4. git commit -m "xx"
+5. git stash pop #将临时去的内容还原
+#+END_SRC
+
+2. 冲突解决
+
+#+BEGIN_SRC 
+git stash             将当前工作区所有修改过的内容存储到“某个地方”，将工作区还原到当前版本未修改过的状态
+git stash list        查看“某个地方”存储的所有记录
+git stash clear     清空“某个地方”
+git stash pop       将第一个记录从“某个地方”重新拿到工作区（可能有冲突）
+git stash apply     编号, 将指定编号记录从“某个地方”重新拿到工作区（可能有冲突） 
+git stash drop      编号，删除指定编号的记录
+#+END_SRC
+
+3. 分支 branch
+
+
+
