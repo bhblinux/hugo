@@ -7,23 +7,23 @@ tags = ["emacs"]
 +++
 
 * eamcs server 
-
 相关配置
 1. emacs配置
 
 #+BEGIN_SRC lisp
-(setq server-auth-dir "")
-(setq server-name "eamcs-server-file")
+(setq sever-auth-dir "~/.emacs.d/server/")
+(setq server-name "eamacs-server-file")
 (server-start)
+
 #+END_SRC
 2. windows配置
+
 设置环境变量
 
 #+BEGIN_SRC 
-EMACS_SERVER_FILE 与 ALTERNATE_EDITOR环境变量
-EMACS_SERVER_FILE变量,值为"d:\emacs-server-file"
-ALTERNATE_EDITOR=d:\emacs-23.3\runemacs.exe
-
+ EMACS_SERVER_FILE 与 ALTERNATE_EDITOR环境变量
+ EMACS_SERVER_FILE变量,值为"d:\emacs-server-file"
+ ALTERNATE_EDITOR=d:\emacs-23.3\runemacs.exe
 #+END_SRC
 3. 右键菜单中加入 "Open With Emacs"
 #+BEGIN_SRC 

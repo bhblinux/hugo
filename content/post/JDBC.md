@@ -2,9 +2,9 @@
 title: JDBC
 author: Bhblinux
 tags:
-  - java
+  - jdbc
 categories:
-  - 编程
+  - 数据库
 date: 2018-05-12 19:57:00
 ---
 ## 连接
@@ -429,6 +429,7 @@ clearBatch 清除批处理命令
 - 方式二
 
 ```java
+ps=conn.preparedstatement(sql)
 prepareStatement.addBatch()
 prepareStatement.executeBatch()
 clearBatch
