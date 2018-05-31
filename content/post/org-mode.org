@@ -1,17 +1,9 @@
 +++
-<<<<<<< HEAD
-categories = ["EMACS"]
-TAGS = ["ORG-MODE"]
-TITLE = "ORG MODE"
-DATE = "2018-05-29T13:47:56+08:00"
-
-=======
 categories = ["emacs"]
 tags = ["org-mode"]
 title = "Org Mode"
 date = "2018-05-29T13:47:56+08:00"
-draft = false
->>>>>>> b694155bfc9e5b27a77340ba47d1d58928239f44
+
 +++
 
 * 列提纲
