@@ -202,3 +202,19 @@ C-x 5 f 在新窗格中打开文件
 
 
 
+*** magit-mode
+#+BEGIN_SRC 
+magit-status   
+s stage   将光标下的文件添加到stage暂存区
+S 将光标下的文件添加stage
+u unstge 取消 
+U 取消所有
+按c c 提交commit 然后C-c C-c 提交 magit-commit-pop
+
+
+P push (magit-push-popup)
+F pull (magit-pull-popup)
+
+
+magit-log #查看日志
+#+END_SRC
