@@ -155,10 +155,33 @@ C-H A 查找与之匹配的命令
 #+BEGIN_SRC 
 C-G 停止当前运行/输入的命令
 C-X U 撤销
+C-/ C-_ C-x u 三个都是撤销命令
 C-X C-Q 当前BUFFER设置为只读 再按则取消
 M-X REVERT-BUFFER RET 撤销上次存盘所有改动
 M-X RECOVER-FILE RET 从自动存盘文件恢复
 M-X RECOVER-SESSION RET 如果你编辑了几个文件,用这个恢复
+C-h t 调出Emacs Tutorial
+C-h r 调出Emacs Manual
+C-h k  调用对应的command的帮助
+插入空行 C-o
+删除空行 C-x C-o
+重复命令
+C-x z
+#+END_SRC
+
+** minibuffer 
+
+#+BEGIN_SRC 
+关闭一个buffer默认路径
+M-x set-variable RET insert-default-directory RET nil
+#+END_SRC
+
+** buffer
+
+#+BEGIN_SRC 
+C-x b buffer-name 新建一个缓冲区
+C-x C-b 查看所有buffer
+
 #+END_SRC
 
 ** 光标移动
