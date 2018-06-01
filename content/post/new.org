@@ -1,8 +1,4 @@
-aaaaaaaaaaa
-<<<<<<< HEAD
-ccccccc
-2333
-=======
+
 
 bbbbbb 23.18
->>>>>>> origin
+
