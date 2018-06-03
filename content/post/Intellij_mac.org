@@ -1,0 +1,20 @@
+---
+title: "IDEA"
+date: 2018-05-29T21:23:09+08:00
+categories:
+ - IDE
+tags:
+ - java
+---
+
+* IDEA 
+** 快捷键
+#+BEGIN_SRC 
+1. 自动补全
+ctrl+空格
+2. 自动生成jaavbean
+ctrl+enter
+3. 自动生成变量
+commond+alt+v
+commond+alt+f
+#+END_SRC
