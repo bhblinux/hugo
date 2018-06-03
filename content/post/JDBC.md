@@ -9,6 +9,7 @@ date: 2018-05-12 19:57:00
 ---
 ## 连接
 1. 导包 mysql-connector-java-5.1.7-bin.jar
+2.  连接高版本mysql数据库，而驱动版本比较低则需要凑单jdbcurl中加入 字符集 jdbc:mysql:///day06?characterEncoding=utf-8
 - 方法一
 
 ``` java

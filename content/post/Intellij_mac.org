@@ -17,4 +17,21 @@ ctrl+enter
 3. 自动生成变量
 commond+alt+v
 commond+alt+f
+
+1. main快速输入
+psvm
+2. for循环
+fori
+3. syso 快速输入
+sout
+4. 删除当前行
+ctrl+x
+注释/取消注释 ctrl+/ 
+补全当面行 ctrl+shift +enter
+快速修复错误
+alt+enter
+自动代码生成
+alt+insert
+自动代码补全
+ctrl+j
 #+END_SRC
