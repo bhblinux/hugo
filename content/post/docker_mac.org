@@ -1,0 +1,28 @@
+* 安装
+
+#+BEGIN_SRC 
+下载 https://download.docker.com/mac/stable/Docker.dmg
+#+END_SRC
+
+- 启动 mysql 镜像 
+
+#+BEGIN_SRC 
+
+
+下载MySQL镜像
+docker pull mysql
+配置
+docker run -d -p 127.0.0.1:3306:3306 --name mysql -v /Users/wangzla/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:latest
+启动mysql
+docker start mysql
+docker exec -it mysql bash
+mysql -u root -p
+然后输入密码123456
+show databases;
+ 
+远程登录
+会报错，要修改密码
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+#+END_SRC
