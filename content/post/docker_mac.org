@@ -38,3 +38,7 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 
 
 #+END_SRC
+*  mac 快捷键
+#+BEGIN_SRC 
+shift+commond +G 进入指定文件夹
+#+END_SRC
