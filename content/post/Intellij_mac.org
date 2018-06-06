@@ -35,3 +35,25 @@ alt+insert
 自动代码补全
 ctrl+j
 #+END_SRC
+
+** 自动导包
+
+#+BEGIN_SRC 
+alt + enter
+ctrl+alt+O 优化导入的类和包
+#+END_SRC
+
+** 自动修正
+
+#+BEGIN_SRC 
+CTRL+ALT + L
+CTRL+ALT+I 自动缩进编排 jsp
+
+#+END_SRC
+
+** 重写方法
+
+#+BEGIN_SRC 
+ctrl+o 重写方法
+#+END_SRC
+
