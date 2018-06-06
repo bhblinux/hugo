@@ -41,6 +41,8 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 *  mac 快捷键
 #+BEGIN_SRC 
 shift+commond +G 进入指定文件夹
+Finder 创建多个 commond +t
+
 #+END_SRC
 * docker命令
 ** 镜像操作
