@@ -565,6 +565,27 @@ public class demo02 {
     - ~tomcat/conf/[engin]/[Host]/自己创建一个.xml文件,在这个文件中使用<Context>标签配置一个web应用,这是web应用第二种配置方式,在这个<Context>标签中配置的信息将只会对当前web应用起作用
  	 - ~web应用还有第三种配置方式:将web应用直接放置到虚拟主机管理的目录.此时可以在web应用的META-INF文件夹下创建一个context.xml文件,在其中可以写<Context>标签进行配置,这种配置信息将只会对当前web应用起作用
 
+
+```java
+在~tomcat/conf/server.xml
+
+<Context path="/INFO_DMS_WEB" docBase="INFO_DMS_WEB" debug="0" reloadable="false">
+           <Resource name="jdbc/infodms" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="60000"
+               username="infodms" password="dms" driverClassName="com.ibm.db2.jcc.DB2Driver"
+               url="jdbc:db2://localhost:50000/INFODMS"/>
+        </Context> 
+	<Context docBase="Carenet_ASC" path="/Carenet_ASC" reloadable="true" source="Carenet_ASC">
+          <Resource name="jdbc/infoMonitor" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.ibm.db2.jcc.DB2Driver"             
+              url="jdbc:db2://localhost:50000/infodms"                    
+              username="infodms" password="dms" maxActive="20" maxIdle="10" SetBigStringTryClob="true"
+              maxWait="-1"/>
+	 </Context>
+```
+
+
+
 ```java
 <Resource name="mySource"
 					    auth="Container"
