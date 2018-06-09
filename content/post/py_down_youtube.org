@@ -1,0 +1,52 @@
+---
+title: "youtube-dl"
+date: 2018-05-29T21:23:09+08:00
+categories:
+ - 应用
+tags:
+ - youtube
+
+
+
+---
+
+* youtube-dl 
+#+BEGIN_SRC 
+1. 官方下载
+2. pip install youtube-dl
+3. pip install --upgrade youtube-dl
+4. 下载安装ffmepeg
+5. 设置ssr
+6. 设置代理
+--proxy 127.0.0.1:1086
+
+#+END_SRC
+
+开始下载youtube视频
+1. 查看视频所有类型，只看不下载
+#+BEGIN_SRC 
+youtube-dl -F [URL]
+或者
+youtube-dl --list-formats [url]
+2. 下载指定质量的视频和音频自动合并
+youtube -f [format code] [url]
+由于youtube的视频分离，所有分别下载视频和音频，可用组合137+140组合
+3. 下载字母
+youtube-dl --write-sub [url] 这样会下载一个vtt格式的英文字母和mkv格式的1080视频
+youtube-dl --write-sub --all-subs [url] //下载所有语言的字幕（如果有的话）
+youtube-dl --write-sub --skip-download [url] //下载单独的vtt字幕，而不会下载视频
+youtube-dl --write-auto-sub [url] //下载自动生成的字幕
+
+4. 下载视频列表
+youtube-dl -f [format code] [palylist_url] //这种方式可以下载制定清晰度的mp4视频
+youtube-dl [playlist_url] //下载视频列表,这种方式下载的视频可能是mkv格式或者webm格式
+
+youtube-dl -cit [playlist_url] //下载视频列表,这种方式下载的视频可能是mkv格式或者webm格式
+
+youtube-dl --yes-playlist [url] //当链接为视频列表,则下载该列表视频,跟上面的一样,可能是mkv或者webm格式
+
+5. 下载Vimeo视频
+Vimeo的视频下载起来比较方便,因为没有分离,可以直接下载1080p带音频的视频
+youtube-dl官网：https://yt-dl.org/
+GitHub项目：https://github.com/rg3/youtube-dl/
+#+END_SRC

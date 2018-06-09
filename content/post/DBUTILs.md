@@ -32,6 +32,30 @@ public class demo04 {
 	}
 }
 
+
+
+
+            for (User u:query
+                 ) {
+                System.out.println(u);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test5() throws SQLException {
+        QueryRunner queryRunner = new QueryRunner(new ComboPooledDataSource());
+        //返回结果及中的第一行指定列的值，单个查询
+        Object query = queryRunner.query("select count(*) from user", new ScalarHandler());
+        System.out.println(query);
+    }
+
+}
+
 ```
 
 3. ResultSetHandler 实现类

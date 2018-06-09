@@ -1,0 +1,27 @@
+
+---
+title: "spacemacs"
+date: 2018-05-29T21:23:09+08:00
+categories:
+ - emacs
+tags:
+ - emacs
+
+
+
+---
+
+
+
+
+* spaceamcs 
+** 安装
+
+** 使用
+#+BEGIN_SRC 
+.spacemacs 配置编辑模式
+打开边栏的目录树快捷方式 spc f t  
+#+END_SRC
+
+
+     
