@@ -24,4 +24,45 @@ tags:
 #+END_SRC
 
 
+
      
+
+
+
+
+
+
+** 操作方式
+#+BEGIN_SRC 
+1. 按下spc f j 打开dir目录
+2. 按下+，创建~/.spacemacs.d目录
+3. 将光标移动到.spacemacs文件上，按R，将该文件移动到.spacemsc.d目录中
+4. 进然.spacemacs目录，将光标移动.spacemacs文件上，按下R，将该文件重名名为init.el
+5. 按qq退出dired
+#+END_SRC
+
+** 文件相关操作
+1. spc f t  显示目录树
+2. spc f f 查找文件
+3. spc f L 使用helm-locate来在当前系统找文件
+4. spc f j 打开文件的目录dired buffer.
+5. spc f r 打开最近文件列表
+6. spc f R 重命名当前文件
+7. spc f y 拷贝当前文件的全路径
+8. spc f e d   打开配置文件
+9. spc f e i 打开。emacs .emacs.d/init.el文件
+10. spc f c 复制文件
+
+
+** buff操作
+
+1. spc b b 切换到已经打开的buff
+2. spc b d 关闭一个buffer
+3. spc b f 在finder中打开当前文件
+4. spc b N 新建一个buffer.
+5. spc b m 删除当前buffer外的所有buffer
+6. spc b R 使用eamcs自动备份的恢复文件
+7. spc b s 跳转scratch buffer
+
+
+
