@@ -1,0 +1,67 @@
+---
+title: "filter"
+date: 2018-06-13T21:23:09+08:00
+categories:
+ - java
+tags:
+ - 过滤器
+---
+
+
+* 过滤器
+  
+** 生命周期
+当服务器启动时，web应用加载后，立即创建这个web应用的所有的过滤器，过滤器创建会立即调用init方法
+当拦截到请求后执行doFilter方法执行
+当服务器或web应用被移除出容器会执行destory方法
+
+** 步骤
+1. 写一个类实现特定的接口Filter
+   1. init
+      FilterConfig:代表web.xml中对当前过滤器的配置信息
+      获取Servletcontext对象
+      获取初始化信息
+      getInitParameter
+      getInitParamerNames
+   3. foFilter
+   4. destroy
+  #+BEGIN_SRC 
+  package com.yonyou.Filter;
+
+
+import javax.servlet.*;
+import java.io.IOException;
+
+public class demo01 implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("init");
+    }
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        System.out.println("dofilter");
+        filterChain.doFilter(servletRequest,servletResponse);
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("destroy");
+    }
+}
+  #+END_SRC
+2. 在web.xml中注册
+   #+BEGIN_SRC 
+   <filter>
+        <filter-name>demo01</filter-name>
+        <filter-class>com.yonyou.Filter.demo01</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>demo01</filter-name>
+        <!-- <servlet-name></servlet-name> -->
+        <url-pattern>/servlet/*</url-pattern> 
+        <dispatcher>xx</dispatcher>
+        --配置拦截哪种方式的对资源的访问可以是REQUEST/FORWARD/INCLUDE/ERROR四个值之中的一个,
+        可以配置多个dispatcher,如果一个都不配则默认是REQUES
+    </filter-mapping>
+   #+END_SRC
