@@ -1,8 +1,16 @@
+---
+title: "Java基础"
+date: 2018-07-28T13:16:19+08:00
+categories:
+-   编程
+tags:
+-   java
+---
 
 # Table of Contents
 
 1.  [基础](#org0b75d95)
-    1.  [数据类型](#org97c4200):重点:
+    1.  [数据类型](#org97c4200)
 2.  [面向对象](#orge9e0f6d)
     1.  [封装](#org2c76a3f)
     2.  [继承](#org7bad58d)
@@ -13,18 +21,7 @@
     2.  [关系映射](#org8d73915)
     3.  [代码块](#org3885c00)
 
-&#x2014;
-title: "Java基础"
-date: 2018-07-28T13:16:19+08:00
-categories:
 
--   编程
-
-tags:
-
--   java
-
-&#x2014;
 
 [ org-mode](https://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html)
 
