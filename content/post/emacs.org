@@ -1,0 +1,76 @@
+* 基本快捷键
+
+SHell中运行命令
+#+BEGIN_SRC 
+emacs -nw -Q
+
+#+END_SRC
+
+系统帮助的快捷键
+#+BEGIN_SRC 
+M-X describe-variable 快捷键C-h v 查看变量的文档
+M-x describe-function 快捷键C-h f 查看命令的文档
+M-x describe-key 快捷键 C-h k 查看快捷键的文档
+#+END_SRC
+
+操作相关快捷键
+#+BEGIN_SRC 
+alt+d 删除一个词
+alt+u 将后面的字符转大写
+alt+l 将大写转小写
+alt+c 将首字母转大写
+alt+t 交换2个单词的位置 光标移动到2单词之间
+ctrl+t 修正单词
+M-r 移动到页面中间行首位置
+M-g M-g n 移动指定的行
+M-n 重复下个命令n次 M-3 C-f 向前移动3字符
+C-u n 默认4次,按2次,重复16次 C-u 5 C-k 删除5行
+C-/ 撤销 C-_ C-x u
+C-o 插入空行
+C-x C-o 删除空行
+C-x z 重复上次执行的命令
+C-x h 全选
+C-x C-p 选择整页
+shift C-n 快速选择区域
+M-\(delete-horizontal-space) 删除光标处的所有空格和tab字符
+M-SPC(just-one-space) 删除光标处的所有空格和tab字符,但留下一个
+M-^ (delete-indentation) 将两行合为一行,删除之间的空白和缩进
+
+#+END_SRC
+
+文件操作
+#+BEGIN_SRC 
+C-x C-f  find-file 打开文件
+C-x C-v  find-alternate-file 打开另一个文件
+C-x C-s  save-buffer 保存文件
+C-x C-w  write-file 另存文件
+#+END_SRC
+
+临时文件修复
+#+BEGIN_SRC 
+M-x recover-file
+#+END_SRC
+
+
+缓冲区(buffer)
+#+BEGIN_SRC
+C-x k 关闭某个buffer
+C-x b buffername 新建缓冲区
+C-x LELF|RIGHT 左右切换缓冲区
+C-x 4 b buffer  在另一个window中建立缓冲区
+C-x 5 b buffer  在另一个frame中建立缓冲区
+C-x C-b 显示左右缓冲区
+clean-buffer-list 默认关闭三天未使用过的buffer
+C-x C-q (toggle-read-only) 切换当前缓冲区的只读属性
+rename-buffer 重命名一个缓冲区
+view-buffer 只读方式打开一个缓冲区,按Q退出view模式
+#+END_SRC
+
+
+窗口
+#+BEGIN_SRC 
+C-x + 窗口字体放大
+C-x - 窗口字体缩小
+#+END_SRC
+
+
