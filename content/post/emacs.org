@@ -73,4 +73,9 @@ C-x + 窗口字体放大
 C-x - 窗口字体缩小
 #+END_SRC
 
-
+** 相关插件
+*** magit
+1. 查看状态
+#+BEGIN_SRC 
+M-x magit-status
+#+END_SRC
