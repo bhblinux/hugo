@@ -1,0 +1,240 @@
+---
+title: "Java3"
+date: 2018-08-04T12:25:54+08:00
+categories:
+ -  编程
+tags:
+ - java
+---
+
+
+** 链表
+** final
+
+final 修饰类 为最终类不能被继承
+
+修饰方法的时候则该方法不能被重写
+
+修饰变量为常量,不能被修改 =需要大写=
+
+public static final 全局常亮
+** 多态
+instanceof 判断 对象是什么类型
+
+
+** 抽象类
+
+=abstract=  定义一个类 则该类就是一个抽象类
+
+=abstract= 定义一个方法,则该方法是一个抽象方法,没有方法体
+
+** 接口
+定义接口关键字 =interface=
+
+实现接口关键字 =implements=
+
+在一个接口内部如果使用了static定义了一个内部接口表示是一个外部接口
+
+*** 接口的实际应用
+
+**** 工厂设计模式
+
+**** 代理设计模式
+
+*** 包
+#+BEGIN_SRC 
+打包命令
+
+javac -d .  xx.java
+
+执行
+java 包.类
+java com.yonyou.demo.hello
+#+END_SRC
+
+**** 导包
+#+BEGIN_SRC 
+import xx.xx
+
+#+END_SRC
+
+**** jar
+
+#+BEGIN_SRC 
+打包
+jar -cvf xx.jar dirname
+
+使用
+1. set CLASSPATH
+set CLASSPATH=. ;xx.jar;
+打包
+javac -d  . xx.jar
+执行
+java 报名.类
+#+END_SRC
+
+
+
+
+**** 单例设计模式
+1. 懒汉试
+
+#+BEGIN_SRC 
+class B{
+    public static  final B b;
+    private  B(){}
+    public static  B getInstace(){
+        if(b==null){
+            b=new B();
+        }
+        return b;
+    }
+
+
+    public String  toString(){
+        return  "i am is B";
+    }
+}
+#+END_SRC
+2. 饿汉试
+
+#+BEGIN_SRC 
+lass A{
+    private  static  final  A   a=new A();
+
+    public static A getA() {
+        return a;
+    }
+
+    public static void setA(A a) {
+        A.a = a;
+    }
+
+    private  A(){}
+
+}
+#+END_SRC
+
+**** 多例设计模式
+
+
+** 异常
+
+*** Error
+
+*** Exception
+
+***  断言
+=assert= 程序到某行代码时一定是预期的结果
+
+*** 自定义异常
+
+
+** 结构图和时序图
+=PowerDesigner=  =UML=
+
+1. 第一层 类
+2. 第二层:描述类的属性,对于属性肯定要封装如果是封装使用"-"
+#+BEGIN_SRC 
+- public(+) protected(#) private(-);
+
+#+END_SRC
+3. 类中的方法
+
+
+
+** Eclipse
+
+*** 调试功能
+- F5 单步进入
+- F6 单步跳过
+- F7 单步返回
+- F8 恢复执行
+
+
+
+
+**  新特性
+
+*** 可变参数
+
+#+BEGIN_SRC 
+public void test(类型 ... 变量);
+#+END_SRC
+
+*** foreach
+
+*** 静态导入
+
+#+BEGIN_SRC 
+将指定包中的static方法导入到该类中,直接使用
+import  static xx.*;
+#+END_SRC
+
+*** 泛型
+
+***  枚举
+=enum= 
+
+*** Annotation
+
+1. 第一个过程: 将配置文件直接写入代码中
+2. 第二个过程:将配置文件写入配置文件中
+3. 第三个过程:将配置文件写入配置文件中,但是利用明显的标记来区分配置信息与程序
+
+=Annotation= 利用注解的形式来实现程序的不同功能实现
+
+**** @Override
+
+**** Deprecate
+
+声明过期的方法
+
+
+**** @Supperss Warning
+
+压制警告
+
+*** Lamda
+
+*** 方法引用
+
+- 引用静态方法 ::static 方法名称
+- 引用某个对象的方法 实例化对象:: 普通方法
+- 特定的方法 特定类::普通方法
+- 构造方法 类:: new
+
+**  多线程
+
+*** 线程
+*** 进程
+**** 实现
+
+1. 继承Thread类
+2. 实现Runnable接口
+
+
+** 日期类 
+
+*** Date
+#+BEGIN_EXPORT ascii
+Date() 
+Date(long date) 
+转换为long类型,public long getTime()
+#+END_EXPORT
+
+
+- date与long之间转换
+
+日期格式化 =SimpleDateFormat= 
+
+#+BEGIN_SRC 
+java.text 
+类 SimpleDateFormat
+#+END_SRC
+
+方法
+
+- 构造方法 SimpleDateFormat(String pattern)  需要传递转换格式
+- 将Date转换为string format(Date date)  将一个 Date 格式化为日期/时间字符串
+- 将String 转换为Date : parse(String source) 从给定字符串的开始解析文本，以生成一个日期。
