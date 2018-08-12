@@ -82,6 +82,8 @@ HOST echo hellworld
 | COMM     | NUMber(7,2)  | 奖金                         |
 | DEPTNO   | NUMBer(2)    | 部门编号                     |
 
+
+
   3. salgrade(工资等级表)
 #+CAPTION: salgrade
 | 列名称 | 类型   | 描述           |
@@ -89,6 +91,9 @@ HOST echo hellworld
 | GRADE  | NUMBER | 工资等级标号   |
 | LOSAL  | NUMber | 此等级最高工资 |
 | HISAL  | NUMBER | 此等级最低工资 |
+
+
+
 
    4. honus(工资表)
 #+CAPTION: honus
