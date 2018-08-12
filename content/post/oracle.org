@@ -90,7 +90,7 @@ HOST echo hellworld
 | LOSAL  | NUMber | 此等级最高工资 |
 | HISAL  | NUMBER | 此等级最低工资 |
 
-3. honus(工资表)
+   4. honus(工资表)
 #+CAPTION: honus
 | 列名称 | 类型         | 描述     |
 |--------+--------------+----------|
