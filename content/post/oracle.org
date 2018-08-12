@@ -1,0 +1,110 @@
+* sqlplus
+#+BEGIN_SRC 
+登录
+sqlplus scott/tigger
+#+END_SRC
+ 
+设置环境
+#+BEGIN_SRC 
+设置每行显示的数据长度
+SET LINESIZE 300;
+设置每页显示多少行
+SET PAGESIZE 30;
+设置每列显示的长度
+COL ename FOR A10
+#+END_SRC
+
+在命令行的状态下打开文件编写sql
+#+BEGIN_SRC 
+ed 文件名 （不写后缀，默认为.sql）
+然后想要执行文件中的命令,使用@文件名称(默认找到*.sql)
+#+END_SRC
+
+
+切换用户
+#+BEGIN_SRC 
+CONN 用户名/密码 
+如果是使用sys用户登录
+CONN 用户名/密码 [AS SYSDBA]
+#+END_SRC
+
+模式名称
+
+访问不同用户下的表 表的名称是"模式名称.表名称", 一般"用户名称/表名称"
+
+
+使用HOST调用本机命令
+#+BEGIN_SRC 
+HOST echo hellworld
+
+#+END_SRC
+** sql
+*** DML(数据库操作语言)
+数据库的查询与更新操作
+
+*** DDL(数据定义语言)
+数据对象的创建(表,用户)
+*** DCL(数据库控制语言)
+进行权限的管理操作
+** SCOTT用户表的结构
+
+ 查看一个用户下的所有表
+ #+BEGIN_SRC 
+ SELECT * FROM TAB_NAME;
+
+ #+END_SRC
+ 查看一个表的结构
+ #+BEGIN_SRC 
+ DESC 表名;
+ #+END_SRC
+
+
+  1. dept(部门表)
+#+CAPTION: dept
+| 列名   | 类型         | 描述                  |
+|--------+--------------+-----------------------|
+| DEPTNO | NUM BER(2)   | 部门编号,最多2个数字  |
+| DNAME  | VARCHAR2(14) | 部门名称,最多14个字符 |
+| LOC    | VARCHAR2(13) | 部门位置              |
+
+
+
+  2. emp (雇员表)
+#+CAPTION: emp
+| 列名称   | 类型         | 描述                         |
+|----------+--------------+------------------------------|
+| EMPNO    | NUMBER(4)    | 雇员编号                     |
+| EMAME    | VARCHAR2(10) | 雇员姓名                     |
+| JOB      | VARchar2(2)  | 雇员职位                     |
+| MGR      | NUMber(4)    | 雇员领导的编号               |
+| HIREDATE | DATE         | 雇佣日期                     |
+| SAL      | NUMber(7,2)  | 基本工资,小数最多2位,整数5位 |
+| COMM     | NUMber(7,2)  | 奖金                         |
+| DEPTNO   | NUMBer(2)    | 部门编号                     |
+
+  3. salgrade(工资等级表)
+#+CAPTION: salgrade
+| 列名称 | 类型   | 描述           |
+|--------+--------+----------------|
+| GRADE  | NUMBER | 工资等级标号   |
+| LOSAL  | NUMber | 此等级最高工资 |
+| HISAL  | NUMBER | 此等级最低工资 |
+
+3. honus(工资表)
+#+CAPTION: honus
+| 列名称 | 类型         | 描述     |
+|--------+--------------+----------|
+| ENAME  | varchar2(10) | 雇员姓名 |
+| JOB    | VArchar2(9)  | 职位     |
+| SAL    | NUMber       | 基本工资 |
+| COMM   | NUMber       | 奖金     |
+** 查询
+*** 简单查询
+#+BEGIN_EXPORT ascii
+select * from emp;
+distinct 消除重复数据
+select 字句可以进行四则运算
+可以直接输出常量内容,对于字符串使用"'" 
+"|| " 负责进行输出的内容链接
+#+END_EXPORT
+*** 限定查询
