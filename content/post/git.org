@@ -85,6 +85,7 @@ git remote add origin https://github.com/xxxx
 git push origin master 推送
 git push origin dev              # 将本地dev分支内容以及版本信息推送到GitHub
 
+git config --global credential.helper store
 
 #+END_SRC
 2. 在公司,将代码从github中获取并继续开发
