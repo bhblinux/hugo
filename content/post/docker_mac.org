@@ -180,6 +180,7 @@ centos:告诉我们使用什么镜像来启动容器
 启动一个已经停止的docker run 镜像
 docker start xxx  
 #+END_SRC
+*** 
 *** 终止容器
 
 #+BEGIN_SRC 
@@ -200,3 +201,4 @@ docker rm $(docker ps -a -q)
 停止所有容器
 docker stop $(docker ps -a -q)
 #+END_SRC
+
