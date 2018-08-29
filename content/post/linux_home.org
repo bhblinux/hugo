@@ -1,0 +1,70 @@
+*** 权限管理
+**** umask
+     #+BEGIN_SRC 
+     umask -S 显示新建文件缺省权限
+     #+END_SRC
+*** 文件管理
+****  文件搜索
+     1. 根据文件名搜索
+	#+BEGIN_SRC 
+	find  /etc -name filename
+	-iname 不区分大小写
+	#+END_SRC
+     2. 根据文件大小搜索
+	#+BEGIN_SRC 
+	find / -size +204800
+	根目录查找大于100MB的文件
+	+n 大于 -n小于 n等于
+	#+END_SRC
+     3. 根据所有者查找
+	#+BEGIN_SRC 
+	find /home -user root
+	#+END_SRC
+     4. 根据所属组查找
+	#+BEGIN_SRC 
+	find /home -group root
+	#+END_SRC
+     5. 根据文件属性查找
+	#+BEGIN_SRC 
+	find /etc -cmin -5
+	在/etc下查找5分钟内被修改过属性的文件和目录
+	-amin 访问时间 access
+	-cmin 文件属性 change
+	-mmin 文件内容 modify
+	#+END_SRC
+     6. 根据文件类型查找
+	#+BEGIN_SRC 
+	find -type f 文件 d 目录 l 软件连接
+	find /etc -name init* -a -type -d 
+	查找以init开头的目录 -a 连接作用  -o 2选一
+	#+END_SRC
+     7. 查找文件并显示详细信息
+	#+BEGIN_SRC 
+	find /etc -name inittab -exec ls -l {} \;
+	-exec/-ok 命令{}\; 对搜索结果执行操作
+	#+END_SRC
+     8. 根据i节点查找
+	#+BEGIN_SRC 
+	-inum 
+	#+END_SRC
+     9. locate
+	#+BEGIN_SRC 
+	locate filename
+	updatedb 更新资料库
+	#+END_SRC
+     10. which
+	 #+BEGIN_SRC 
+	 搜索命令所在目录及别名信息
+	 #+END_SRC
+     11. whereis
+	 #+BEGIN_SRC 
+	 获取命令的决定路径
+	 #+END_SRC
+     12. grep
+	 #+BEGIN_SRC 
+	 在文件中搜寻字符串匹配的行并输出
+	 grep -iv
+	 -i 不区分大小写
+	 -v 排除指定字符串
+	 grep mysql /root/install.log
+	 #+END_SRC
