@@ -1,0 +1,78 @@
+* 安装
+** 基础知识
+*** linux目录
+    1. /bin 存放系统命令的目录,单用户模式下可以执行 
+    2. /sbin 保存和系统环境设置相关的命令,只有超级用户可以使用这些命令,
+    3. /usr/bin 存放系统命令,单用户模式下不可以执行
+    4. /usr/sbin 存放系统命令不必要的系统管理命令
+    5. /boot 系统启动目录
+    6. /dev 设备文件
+    7. /etc 配置文件,账号密码,启动脚本....
+*** 命令
+**** 文件处理命令
+     1. 命令格式与目录处理 ls
+	#+BEGIN_SRC 
+	dr-xr-x---.      2           root       root   4096     8月  17 20:31   .
+	目录|所有者权限|所属组权限|其他用户权限| 文件引用计数  文件所有者   所属组  大小     修改时间      当前目录
+	#+END_SRC
+     2. 目录处理
+	- 创建目录
+	  #+BEGIN_SRC 
+	  mkdir /xx
+	  #+END_SRC
+	- 递归创建目录
+	  #+BEGIN_SRC 
+	  mkdir -p /aa/bb/cc
+	  #+END_SRC
+	- 删除一个空目录
+	  #+BEGIN_SRC 
+	  rm dirname
+	  #+END_SRC
+	- 递归删除目录
+	  #+BEGIN_SRC 
+	  rm -R dirname
+	  #+END_SRC
+	- 拷贝文件
+	  #+BEGIN_SRC 
+	  cp src des
+	  #+END_SRC
+	- 拷贝目录
+	  #+BEGIN_SRC 
+	  cp -r src des
+	  会保留文件属性
+	  #+END_SRC
+     3. 文件处理命令
+	- 创建空文件
+	  #+BEGIN_SRC 
+	  touch 1.txt
+	  #+END_SRC
+     4. 连接
+	- 软连接
+	  #+BEGIN_SRC 
+	  ln -s 源 目的
+	  #+END_SRC
+	- 硬连接
+	  #+BEGIN_SRC 
+	  ln 源 目的
+	  ls -i 查看i节点可以判断硬链接
+	  #+END_SRC
+	  
+
+
+**** 权限管理
+     1. 更改文件权限chmod
+     2. 更换文件所有者chown
+	#+BEGIN_SRC 
+	chown [用户] [文件/文件夹]
+	#+END_SRC
+     3. 更换文件所属组chgrp
+	#+BEGIN_SRC 
+	chgrp [组] [文件/文件夹]
+	#+END_SRC
+
+**** 文件搜索
+**** 帮助
+**** 用户管理
+**** 解压缩
+**** 网络
+**** 关机重启
