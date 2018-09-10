@@ -3,3 +3,44 @@
  final 修饰类 为最终类不能被继承
 修饰方法的时候则该方法不能被重写
 修饰变量为常量,不能被修改 =需要大写=
+** 集合框架(Collection接口)
+*** List
+    - 有序
+**** ArrayList
+**** LinkedList
+*** Set
+    - 无序,不能重复
+    - 底层是Map
+    
+**** HashSet
+     - 单项链表
+     - 无序
+
+**** LinkedHashSet
+     - 有序,按存放顺序
+     - 双向链表
+     
+**** ArrayHashSet
+
+** Map
+    
+*** HashMap
+    - 线程不安全,  速度快
+    - 可以存储null key val is null
+
+*** Hashtable
+    - 线程安全
+
+*** LinkedHashMap
+
+** 静态导入
+   - import static java.lang.System.out;
+     #+BEGIN_SRC 
+     使用
+     out.print("hello");
+     #+END_SRC
+
+** 可变参数
+   #+BEGIN_SRC 
+   public void fun(int...a ){}
+   #+END_SRC

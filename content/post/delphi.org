@@ -6,6 +6,8 @@
     var 变量名:变量类型;
     var msg:string;
     不分大小写
+    在单元的implementation部分申明的变量是单元级变量,该单元的所有函数与过程都能使用
+    在interface不熟定义的变量是全局变量,其他引用该单元的单元也可以使用该变量
     #+END_SRC
 *** 表达式
     #+BEGIN_SRC 
@@ -19,3 +21,15 @@
 *** 输入和输出
 *** 异常事件的处理
 *** 程序单元
+*** 其 他
+    #+BEGIN_SRC 
+ShellApi
+    ShellExecute(
+    handle,'open',
+    'http://www.baidu.com',
+    nil,
+    nil,
+    SW_SHOWNORMAL
+    );
+    #+END_SRC
+* Delphi7 Delphi程序设计教程.pdf

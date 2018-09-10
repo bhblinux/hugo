@@ -1,0 +1,18 @@
+* c#
+  - 工具 csc
+
+** 编译运行 
+   1. 编译
+      #+BEGIN_SRC 
+      csc 1.cs
+      #+END_SRC
+   2. 运行
+      #+BEGIN_SRC 
+      class HelloWorld
+      {
+	static void Main(){
+	System.Console.WriteLine("hello c#");
+	}
+	}
+      #+END_SRC
+** 基础
