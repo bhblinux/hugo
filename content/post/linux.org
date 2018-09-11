@@ -56,7 +56,16 @@
 	  ln 源 目的
 	  ls -i 查看i节点可以判断硬链接
 	  #+END_SRC
-	  
+     5. head
+	#+BEGIN_SRC 
+	head 1.txt 文件前10行
+	head -5 1.txt 文件前5行
+	#+END_SRC
+     6. tail 
+	#+BEGIN_SRC 
+	tail 1.txt 文件后10行
+	tail - f 1.txt 实时监控文件
+	#+END_SRC  
 
 
 **** 权限管理
@@ -69,10 +78,131 @@
 	#+BEGIN_SRC 
 	chgrp [组] [文件/文件夹]
 	#+END_SRC
-
+     4. umask
+	#+BEGIN_SRC
+	umask -S 显示新建文件缺省权限
+	#+END_SRC
 **** 文件搜索
+ 1. 根据文件名搜索
+	#+BEGIN_SRC 
+	find  /etc -name filename
+	-iname 不区分大小写
+	#+END_SRC
+     2. 根据文件大小搜索
+	#+BEGIN_SRC 
+	find / -size +204800
+	根目录查找大于100MB的文件
+	+n 大于 -n小于 n等于
+	#+END_SRC
+     3. 根据所有者查找
+	#+BEGIN_SRC 
+	find /home -user root
+	#+END_SRC
+     4. 根据所属组查找
+	#+BEGIN_SRC 
+	find /home -group root
+	#+END_SRC
+     5. 根据文件属性查找
+	#+BEGIN_SRC 
+	find /etc -cmin -5
+	在/etc下查找5分钟内被修改过属性的文件和目录
+	-amin 访问时间 access
+	-cmin 文件属性 change
+	-mmin 文件内容 modify
+	#+END_SRC
+     6. 根据文件类型查找
+	#+BEGIN_SRC 
+	find -type f 文件 d 目录 l 软件连接
+	find /etc -name init* -a -type -d 
+	查找以init开头的目录 -a 连接作用  -o 2选一
+	#+END_SRC
+     7. 查找文件并显示详细信息
+	#+BEGIN_SRC 
+	find /etc -name inittab -exec ls -l {} \;
+	-exec/-ok 命令{}\; 对搜索结果执行操作
+	#+END_SRC
+     8. 根据i节点查找
+	#+BEGIN_SRC 
+	-inum 
+	#+END_SRC
+     9. locate
+	#+BEGIN_SRC 
+	locate filename
+	updatedb 更新资料库
+	#+END_SRC
+     10. which
+	 #+BEGIN_SRC 
+	 搜索命令所在目录及别名信息
+	 #+END_SRC
+     11. whereis
+	 #+BEGIN_SRC 
+	 获取命令的决定路径
+	 #+END_SRC
+     12. grep
+	 #+BEGIN_SRC 
+	 在文件中搜寻字符串匹配的行并输出
+	 grep -iv
+	 -i 不区分大小写
+	 -v 排除指定字符串
+	 grep mysql /root/install.log
+	 #+END_SRC
 **** 帮助
+     1. man
+     2. help
 **** 用户管理
+     1. who
+	#+BEGIN_SRC 
+	root     pts/0        2018-08-30 04:01 (192.168.223.1)
+	登录用户名 tty本地登录  登录时间
+	#+END_SRC
+     2. w
+	#+BEGIN_SRC 
+	05:46:20 up 10:16,  1 user,  load average: 0.00, 0.00, 0.00
+        USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+        root     pts/0    192.168.223.1    04:01    0.00s  0.25s  0.06s w
+	#+END_SRC
+
 **** 解压缩
+     1. gzip 压缩只能压缩文件不能压缩目录
+	#+BEGIN_SRC 
+	gzip 文件 
+	后缀 .gz
+	#+END_SRC
+     2. gunzip 解压缩
+	#+BEGIN_SRC 
+	gunzip *.zip
+	#+END_SRC
+     3. tar 可以压缩目录
+	#+BEGIN_SRC 
+	tar cvf 目标名字 目录
+	打包压缩
+	tar zcvf 目标 文件  z 是.gz
+	tar cjf 可以生成.tar.bz2格式压缩包
+	解压缩
+	tar xjf 文件
+	#+END_SRC
+     4. zip
+	#+BEGIN_SRC 
+	-r 压缩目录
+	zip  选项 压缩后的文件名 文件或目录
+	后缀 .zip
+	#+END_SRC
+     5. unzip 1.zip 解压缩
+     6. bzip2
+	#+BEGIN_SRC 
+	bzip2 选项-k 文件 
+	-k 产生压缩文件后保留原文件
+	后缀.bz2
+	#+END_SRC
+	- 压缩
+	  #+BEGIN_SRC 
+	  bzip2 -k bak.tar
+	  #+END_SRC
+
+	- 解压缩
+	  #+BEGIN_SRC 
+	  bunzip2 filname -k 
+	  -k 保留压缩包
+	  #+END_SRC
 **** 网络
 **** 关机重启

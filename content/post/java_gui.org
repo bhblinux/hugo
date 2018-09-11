@@ -1,0 +1,57 @@
+* gui
+** awt
+** swing
+** swt(IBM)基础是awt跨平台不好
+** 布局管理器
+*** 边界布局(BorderLayout)
+    1. 不是5个部分都要添加,中间的会自动改变
+    2. JFrame,JDialog 默认布局是borderlayout
+*** 流式布局(FlowLayout)
+    #+BEGIN_SRC 
+    this.setLayout(new FlowLayout(FlowLayout.LEFT));
+    #+END_SRC
+*** 网格布局(GridLayou)
+    #+BEGIN_SRC 
+    this.setLayout(new java.awt.GridLayout(3,3,3,3));
+    #+END_SRC
+** 面板(JPanel)
+   - 默认布局是FlowLayout
+** 常用组件
+*** 文本框(JTextField)
+*** 密码框(JPasswordField)
+*** 标签(JLable)
+*** 复选框(JCheckBox)
+*** 单选框(JRadioButton)
+    - 同一组单选按钮必须先创建ButtonGroup,然后把单选框组件放入到ButtonGroup中
+    - ButtonGroup使用方法
+      #+BEGIN_SRC 
+      1. ButtonGroup bg1;
+      2. bg1.add(jrb1);
+      3. bg1.add(jrb2);
+      4. panel中不需要添加bg1,直接添加jrb1,jrb2即可
+      #+END_SRC
+*** 下拉框组件(JComboBox)
+*** 列表框(JList)
+    #+BEGIN_SRC 
+    //设置显示行数
+    jlist.setVisibleRowCount(3);
+    #+END_SRC
+*** 滚动窗格组件(JScrollPane)
+    - 列表框组件+滚动窗格组件是结合使用,目的是让列表框中的选项可以有滚动条支持
+    - 将列表框加入到JScrollPane
+    - 将JScrollPane放入到jsp中
+*** 拆分窗格(JSplitPane)
+    - 将各个组件加入到该窗格中,
+    - 然后将该窗格加入到Frame中
+    - setOneTouchExpandable 设置点击隐藏或显示
+*** 多文本框组件(JTextArea)
+*** 选项卡窗格(JTabbedPane)
+*** JTable
+*** 菜单组件
+**** JMenuBar 菜单条组件 树干
+**** JMenu 菜单组件 树枝
+**** JMenuItem 菜单项组件 树叶
+**** 二级菜单
+     - JMENU 里面可以嵌套JMenu
+**** 工具条组件
+     - JToolBar 容器类组件
