@@ -16,3 +16,12 @@
 	}
       #+END_SRC
 ** 基础
+*** 变量
+**** string
+     - @
+       #+BEGIN_SRC 
+       取消转义
+       #+END_SRC
+** 关键字
+   - ref
+     共用,引用
