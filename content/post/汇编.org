@@ -1,0 +1,59 @@
+** 地址寄存器
+   段地址:偏移地址
+   ds    si
+   es    di
+   ss    bp
+   cs    ip
+         sp
+	 bx
+   #+BEGIN_SRC 
+   物理地址=基础地址+偏移地址
+   基础地址=段地址*16(10H)
+   CPU将cs:ip 所组合出来的地址里面的内容全部当做指令
+   指令执行的过程(指令有长度)
+   
+   1. cpu从cs:ip所组成的地址中读取指令,将指令放入指令缓存器中
+   2. IP=IP+所读指令的字节数
+   3. 执行指令缓存器中的内容,
+   #+END_SRC
+
+*** 转移指令
+    - jmp
+      
+      能够修改ip或者cs或者同时修改的指令(jmp)
+    - call
+      #+BEGIN_SRC
+        =====
+    call cpy_Boot 
+    mov ax,1000H
+    =====
+    cpy_Boot:
+    mov bx,1000H
+    ...
+    ret
+    #+END_SRC
+      将ip指向的指令保存起来,再做跳转
+      ret,将call保存的指令取出执行
+
+    
+    
+**  debug
+   - debug参数
+     #+BEGIN_SRC 
+     r ds 回车0 回车 给ds寄存器赋值
+     #+END_SRC
+   - r
+     显示所有寄存器
+     r ax 修改寄存器中的内容
+   - d
+     显示内存地址
+     d 1000:0 F 
+   - u
+     将后续字节翻译汇编指令,查看汇编指令
+   - a
+     编写汇编指令,从ip后面开始
+   - e
+   - t
+
+
+
