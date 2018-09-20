@@ -42,11 +42,24 @@
      - d
 
      - a
+       输入指令
        #+BEGIN_SRC 
        a 回车
        mov ax,4E20
        #+END_SRC
      - t 执行
+     - r
+       给寄存器赋值
+       #+BEGIN_SRC 
+       r ss 回车
+       10 回车 (输入地址)
+
+       #+END_SRC
+     - e
+       修改内存内容
+       #+BEGIN_SRC 
+       e 2000:0
+       #+END_SRC
    - 约定
      1个字节=字节byte
      2个字节=字word
@@ -90,6 +103,16 @@
 
     
     
+*** add 
+    加法器
+*** sub
+    加法器
+** 栈
+   一段连续的内存空间,连续的内存地址
+   段地址:偏移地址
+   ss:sp
+   - 入栈(push)
+   - 出栈(pop)
 **  debug
    - debug参数
      #+BEGIN_SRC 
