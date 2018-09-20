@@ -1,0 +1,18 @@
+* jdbc
+** 数据库连接
+   1. 注册驱动
+     #+BEGIN_SRC 
+     Class.forName("com.mysql.jdbc.Driver");
+     #+END_SRC
+   2. 获取数据库连接
+      #+BEGIN_SRC 
+      Connection conn = DriverManager.getConnection("jdbc:mysql:///day0916");
+      #+END_SRC
+** 工具类
+*** DBUtils
+    - QueryRunner
+    - ResultSetHandler
+    - DbUtils
+** 连接池
+*** DBCP
+

@@ -44,3 +44,57 @@
    #+BEGIN_SRC 
    public void fun(int...a ){}
    #+END_SRC
+
+** 异常
+   - 方法内部跑出对象throw关键字
+     #+BEGIN_SRC 
+     throw new Exception("msg");
+     #+END_SRC
+   - 方法声明throws
+     #+BEGIN_SRC 
+     public void fun_name  () throws Exception {}
+     #+END_SRC
+
+*** 异常处理
+    - try..catch
+      #+BEGIN_SRC 
+      try...catch...finally
+      #+END_SRC
+    - 运行时期异常
+      #+BEGIN_SRC 
+      throw new RuntimeException();
+      方法的声明上,不需要throws语句
+      #+END_SRC
+
+*** 自定义异常
+    - 继承Exception,或者继承RuntimeException
+    - 构造方法中,super将异常信息,转递给父类
+
+** IO
+
+*** File
+    - list
+    - listFiles
+    - FilenameFilter(过滤器)
+
+*** 转换流
+
+**** OutputStreamWriter
+     字符流向字节
+
+****  InputStreamReader
+     字节流向字符
+
+****  PringStream
+     打印流
+
+**** commons-io
+     1. FilenameUtils
+	- getExtension(String filename)
+
+** 多线程
+
+*** 线程池
+    使用工厂类Executors中的静态方法创建线程对象,置顶线程的个数,ExecutorService 
+    newFixedThreadPool(int num)返回线程池对象返回的是ExecutorService接口的实现类
+    接口实现类对象,调用方法submit(ruunable r)提交线程执行任务

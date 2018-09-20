@@ -1,0 +1,113 @@
+<<<<<<< HEAD
+* 汇编
+** 进制
+   - 十进制:D,二进制:B,八进制:O,十六进制:H
+*** 进制转换
+** 8086/8088寻址和指令系统
+*** 寄存器
+    - 通用寄存器
+      传送和暂存数据,可以保存运算结果
+      - 数据寄存器
+	1. AX AH AL
+	2. BX BH BL
+	3. CX CH CL
+	4. DX DH DL
+      - 指针寄存器
+	1. SP 堆栈指针
+	2. BP 基址指针
+      - 变址寄存器
+	1. SI 源地址
+	2. DI 目的地址
+    - 控制寄存器
+      1. IP 指令指针
+      2. FLAG 标志寄存器
+    - 段寄存器
+      1. CS 代码段
+      2. DS 数据段
+      3. SS 堆栈段
+      4. ES 附加段
+** 工具
+   - DOSBOX
+     默认安装
+     #+BEGIN_SRC 
+     C:\Users\PC\AppData\Local\DOSBox\dosbox-0.74.conf
+     末尾添加
+     mount c: D:\workspace\MASM32 
+     c:
+     
+     #+END_SRC
+   - 使用
+     - u
+
+     - d
+
+     - a
+       #+BEGIN_SRC 
+       a 回车
+       mov ax,4E20
+       #+END_SRC
+     - t 执行
+   - 约定
+     1个字节=字节byte
+     2个字节=字word
+=======
+** 地址寄存器
+   段地址:偏移地址
+   ds    si
+   es    di
+   ss    bp
+   cs    ip
+         sp
+	 bx
+   #+BEGIN_SRC 
+   物理地址=基础地址+偏移地址
+   基础地址=段地址*16(10H)
+   CPU将cs:ip 所组合出来的地址里面的内容全部当做指令
+   指令执行的过程(指令有长度)
+   
+   1. cpu从cs:ip所组成的地址中读取指令,将指令放入指令缓存器中
+   2. IP=IP+所读指令的字节数
+   3. 执行指令缓存器中的内容,
+   #+END_SRC
+
+*** 转移指令
+    - jmp
+      
+      能够修改ip或者cs或者同时修改的指令(jmp)
+    - call
+      #+BEGIN_SRC
+        =====
+    call cpy_Boot 
+    mov ax,1000H
+    =====
+    cpy_Boot:
+    mov bx,1000H
+    ...
+    ret
+    #+END_SRC
+      将ip指向的指令保存起来,再做跳转
+      ret,将call保存的指令取出执行
+
+    
+    
+**  debug
+   - debug参数
+     #+BEGIN_SRC 
+     r ds 回车0 回车 给ds寄存器赋值
+     #+END_SRC
+   - r
+     显示所有寄存器
+     r ax 修改寄存器中的内容
+   - d
+     显示内存地址
+     d 1000:0 F 
+   - u
+     将后续字节翻译汇编指令,查看汇编指令
+   - a
+     编写汇编指令,从ip后面开始
+   - e
+   - t
+
+
+
+>>>>>>> f1e0a7e8aebba8999ae53730968837fd1e6df2ee
