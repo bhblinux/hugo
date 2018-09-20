@@ -107,6 +107,18 @@
     加法器
 *** sub
     加法器
+*** loop(循环)
+    cx寄存器中存放 循环次数 cx=cx-1 检测cx是否为0
+    #+BEGIN_SRC 
+    计算123*236的和
+    mov ax,0
+    mov cx,236
+addNumber    add  ax,123
+    loop addNumber ;标号-地址
+    #+END_SRC
+*** 内存安全
+    0:200H ~ 0:2FFH
+    0:7E00H ~ ..
 ** 栈
    一段连续的内存空间,连续的内存地址
    段地址:偏移地址
@@ -130,7 +142,22 @@
      编写汇编指令,从ip后面开始
    - e
    - t
-
-
-
-
+   - p
+     通过
+** 编程
+   1. 编写源代码
+   2. 编译
+   3. 连接
+   4. 执行
+   #+BEGIN_SRC
+   assume cs:code
+   
+   code segment
+       mov ax,1000H
+       add ax,ax
+       mov bx,2000H
+       mov ax,4c00H
+       int 21H
+   code ends
+   end
+   #+END_SRC
