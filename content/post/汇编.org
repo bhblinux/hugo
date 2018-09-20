@@ -25,4 +25,27 @@
       2. DS 数据段
       3. SS 堆栈段
       4. ES 附加段
+** 工具
+   - DOSBOX
+     默认安装
+     #+BEGIN_SRC 
+     C:\Users\PC\AppData\Local\DOSBox\dosbox-0.74.conf
+     末尾添加
+     mount c: D:\workspace\MASM32 
+     c:
+     
+     #+END_SRC
+   - 使用
+     - u
 
+     - d
+
+     - a
+       #+BEGIN_SRC 
+       a 回车
+       mov ax,4E20
+       #+END_SRC
+     - t 执行
+   - 约定
+     1个字节=字节byte
+     2个字节=字word
