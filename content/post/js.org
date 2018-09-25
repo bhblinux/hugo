@@ -1,0 +1,10 @@
+* js
+** »ñÈ¡ÔªËØ
+   #+BEGIN_SRC 
+   window.onload=function(){
+   var el=document.getelementbyid("id")
+   var value=el.value;
+   alert(value);
+   }
+
+   #+END_SRC

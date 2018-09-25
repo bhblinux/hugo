@@ -82,7 +82,7 @@
    2. IP=IP+所读指令的字节数
    3. 执行指令缓存器中的内容,
    #+END_SRC
-
+   
 *** 转移指令
     - jmp
       
@@ -118,7 +118,33 @@ addNumber    add  ax,123
     #+END_SRC
 *** 内存安全
     0:200H ~ 0:2FFH
-    0:7E00H ~ ..
+    0:7E00H ~
+*** ds和es
+    ds:数据哪里来
+    es:数据放哪里去
+*** ax
+    mov ax,ds:[bx]
+    mov ax,bx
+    mov ax,cs ;cs存放指令
+*** and or
+    and 指令 按位与运算
+    or 指令 按位或运算
+*** si|di
+    ds[si]
+    es[di]
+*** dup(0)
+    重复n 个0
+    dup('1')
+*** jcxz
+    判断指令
+*** loop
+    #+BEGIN_SRC 
+    cx=cx-1
+    cx不等于0,就跳转到标号
+    #+END_SRC
+*** ret
+    pop ip 
+*** retf
 ** 栈
    一段连续的内存空间,连续的内存地址
    段地址:偏移地址
@@ -161,3 +187,191 @@ addNumber    add  ax,123
    code ends
    end
    #+END_SRC
+** 数据类型
+   - 字型数据
+     #+BEGIN_SRC
+     dw 
+     #+END_SRC
+**  32位汇编
+*** 32位通用寄存器
+    - EAX 
+      存放函数返回值
+    - ECX
+    - EDX
+    - EBX
+    - ESP 
+      栈指针寄存器
+    - EBP
+      栈底指针
+    - ESI
+    - EDI
+*** 内存
+    - 写数据到内存
+      #+BEGIN_SRC 
+      mov byte[word|dword] ptr ds:[18FFF0],1
+      #+END_SRC
+*** 存储模式
+    - 大端模式
+      数据高位在低位,数据低位在高位
+    - 小端模式
+      数据低位在低位,数据高位在高位
+*** 指令
+**** mov
+     1. mov r/m8,r8 r通用寄存器
+     2. mov r/m16,r16 m代表内存
+     3. mov r/m32,r32 imm代表立即数
+     4. mov r8,r/m8 r8代表8位通用寄存器
+     5. mov r32,r/m32 m8代表8位内存
+     6. mov r8,imm8 imm8代表8位立即数
+**** add
+     加法
+**** sub
+     减法
+**** and
+     与
+     通过该指令可以将操作对象的相应位置位置为0,其他为不变
+     0位设置为0
+     and al,1111110
+**** or
+     或
+     通过该指令可以将操作对象的相应位置位置为1,其他为不变
+**** not
+**** movs
+     移动数据,内存-内存
+     - movs byte ptr es:[edi],byte ptr ds:[esi] -> movs
+    - ESP
+    - EBP
+    - ESI
+    - EDI
+*** 内存
+    - 写数据到内存
+      #+BEGIN_SRC 
+      mov byte[word|dword] ptr ds:[18FFF0],1
+      #+END_SRC
+*** 存储模式
+    - 大端模式
+      数据高位在低位,数据低位在高位
+    - 小端模式
+      数据低位在低位,数据高位在高位
+*** 指令
+**** mov
+     1. mov r/m8,r8 r通用寄存器
+     2. mov r/m16,r16 m代表内存
+     3. mov r/m32,r32 imm代表立即数
+     4. mov r8,r/m8 r8代表8位通用寄存器
+     5. mov r32,r/m32 m8代表8位内存
+     6. mov r8,imm8 imm8代表8位立即数
+**** add
+     加法
+**** sub
+     减法
+**** and
+     与
+**** or
+     或
+**** not
+**** movs
+     移动数据,内存-内存
+     - movs byte ptr es:[edi],byte ptr ds:[esi] -> movsb
+     - movs word ptr es:[edi],word ptr ds:[esi] -> movsw
+     - movs dword ptr es:[edi],dword ptr ds:[esi] -> movsd
+**** EFL
+     标志寄存器
+     - df 
+       df==0 si|di 会加
+       df==1 si|di 会减
+**** STOS
+     AI/AX/EAX 的值存储到EDI指定的内存单元
+**** REP
+     重复执行 ecx的值会减一
+**** PUSH
+     1. 向堆栈中压入数据
+     2. 修改栈顶指针ESP寄存器
+**** POP
+**** JMP
+     修改eip内容
+**** call
+     要按F7
+     f8 单步步过
+     F2 下断点
+     1. 修改了eip的值位call的地址
+     2. 将call下一行的地址push到栈中
+     3. esp中的值减4
+	
+**** ret
+     1. add esp,4
+     2. mov eip,esp
+     3. 简写mov eip,[esp-4]
+
+**** JCC
+     - CF
+       若算数操作产生的结果在最高有效位发生进位或者错位则将器置为1,反之位0
+       这个标志通常用来指示无符号整型运算的益处状态
+     - PF
+       运算结果有效字节包含偶数个1位则置为1,否则置为0
+     - AF
+       如果算数操作在结果的第三位发生仅为或者错位则将该标志位置1,否额清0
+     - ZF
+       若结果为0则将其置为1,反之位0,经常与cmp或者test等指令一起使用
+     - SF
+       该标志被设置为有符号整型的最高有效位0正,反之位负
+     - OF 
+       益处标志,用于反应有符号位加减运算所得结果是否益处
+        无符号运算益处看cf
+	有符号益处看of
+     - DF
+       方向标志控制器指令,设置df标志使得串指令自动递减,(从高地址向底地址方向处理字符串),清楚该标志自动递增
+       STD 设置为1
+       cld 设置为0
+
+**** 断点
+     f2
+     #+BEGIN_SRC 
+     int 3
+     #+END_SRC
+
+** 16位汇编
+   
+*** 指令
+   
+*** 寄存器 
+    - AX
+      - AH
+      - AL
+    - BX
+      - BH
+      - BL
+    - CX
+      - CH
+      - CL
+    - DX
+      - DH
+      - DL
+
+
+**** 指令
+     cs:ip所组合出来的地址内容全部是指令
+
+**** 段寄存器
+     可以读写内存数据
+     ds
+     ds:si
+     es:di
+*** 地址信息
+    段地址+偏移地址
+    #+BEGIN_SRC 
+    DS SI
+    ES DI
+    SS BP
+    CS IP
+       SP
+       BX
+    #+END_SRC
+    物理地址=基础地址+偏移地址
+    物理地址=段地址*10+偏移地址
+*** 内存
+    字节byte --> 2个16进制数 --> 8个2进制数 bit比特
+    1Byte=8bit
+*** 栈
+    ss:sp
+
