@@ -186,11 +186,20 @@ addNumber    add  ax,123
        int 21H
    code ends
    end
-   #+END_SRC
+   #+END_SRC 
 ** 数据类型
    - 字型数据
      #+BEGIN_SRC
-     dw 
+     dw  word 
+     #+END_SRC
+   - 字节
+   
+     #+BEGIN_SRC 
+     byte
+     #+END_SRC
+   - dd
+     #+BEGIN_SRC 
+     dwork
      #+END_SRC
 **  32位汇编
 *** 32位通用寄存器
@@ -330,9 +339,38 @@ addNumber    add  ax,123
      int 3
      #+END_SRC
 
+**** adc
+     同add 会加入进位
+
+**** sbb
+     
+**** cmp
+     修改了标志位
+     ax=bx    zf=1 相等
+     ax != bx zf=0 不相等
+     ax < bx  cf=1 小于
+     ax >= bx cf=0 大于等于
+     ax > bx cf=0 并且zf=0
+     ax <=bx cf=1 或者zf=1
+     - je
+       等于
+     - jne
+       不等于
+     - jb
+       小于
+     - jnb
+       大于等于
+     - ja
+       大于
+     - jna
+       小于等于
+     
+
+**** 
 ** 16位汇编
    
 *** 指令
+<<<<<<< HEAD
    - jmp
      jmp ax ==> mov ip,ax
    - jcxz
@@ -376,6 +414,74 @@ addNumber    add  ax,123
 	- DL
     12. 总结
 	1. 从cs:ip 指向的内存单元读取指令,读取的指令进入指令缓存器
+=======
+   
+**** add
+     加
+**** sub
+     减
+**** div
+     除
+     1. 除数
+	8bit 16bit 存在内存单元中,或者寄存器中
+     2. 被除数
+	AX或者AX或者dx中
+	如果除数位8bit,被除数则为16bit,存放在ax中
+	如果除数16bit,被除数则为32bit,ax存放在低16位,dx存放高16位
+      3. 结果
+	 如果除数位8bit,则al存商,ah存放余数
+	 如果除数位16bit,则ax存放商,ds存放余数
+**** dup
+     db 3 dup (0);;定义了3个字节,他们的值都是0,相当于 db 0,0,0
+     db 3 dup (0,1,2);;定义了9个字节,db 0,1,2,0,1,2,0,1,2
+**** ret
+     #+BEGIN_SRC  
+     会比jmp多做一步
+     poo ip所组合出来的地址内容全部是指令
+     将ss:sp 字型数据 方式ip中 sp+2
+     #+END_SRC
+**** retf
+     #+BEGIN_SRC 
+     pop ip
+     pop cs
+     #+END_SRC
+**** call
+     #+BEGIN_SRC 
+     push ip 当前ip
+     call 标号 --> 1. 将指令放入指令缓存器中 2. ip+所读字节 3. 跳转到标号
+     1. cs:ip 读取指令存放指令缓存器中
+     2. ip=ip+所读指令的字节数
+     3. 执行,放回第一步
+     #+END_SRC
+     1. call 标号 位移
+     2. call far  ptr s 记录地址
+	#+BEGIN_SRC 
+	push cs
+	push ip
+	jmp s
+
+	retf
+	pop ip
+	pop cs
+	#+END_SRC
+**** mul
+     乘法
+*** 寄存器 
+    - AX
+      - AH
+      - AL
+    - BX
+      - BH
+      - BL
+    - CX
+      - CH
+      - CL
+    - DX
+      - DH
+      - DL
+    - ss
+      ss:[bp]
+>>>>>>> a3b2e776a3aa5fe93cd928c9e8a3910ef7a47053
 
 	2. ip=ip+所读取指令的长度,从而指向下一条指令
 
@@ -418,6 +524,7 @@ addNumber    add  ax,123
     1Byte=8bit
 *** 栈
     ss:sp
+<<<<<<< HEAD
 *** Debug
     - R 
       查看cpu寄存器内容
@@ -450,3 +557,44 @@ addNumber    add  ax,123
 	or al,20H
      2. 小写转大写
 	and al,DF
+=======
+*** 显卡内存
+    #+BEGIN_SRC 
+    e B800:100
+    偶数位存放 ascii
+    基数为存放颜色
+    80*80
+    一共160行,85列
+    44h
+    0100 0100B
+    7号位闪烁
+    6号位R red 背景
+    5号位g green 背景
+    4号位 bule 背景
+    3号位高亮
+    2号位r 前景
+    1号位g green前景
+    0号位b blue 前景
+    #+END_SRC
+*** 内中断   
+*** 内存访问
+**** DS和[address]
+**** 栈
+     任意时刻,ss:sp 指向栈顶元素
+     栈空的状态,ss:sp指向栈空间最高地址单元的下一个单元
+     1. push
+	1. sp=sp-2 ss:sp 执行当前栈顶前面的单元,以当前栈顶前面的单元为新的栈顶
+	2. 将ax中的内容送入ss:sp指向的内存单元中,ss:sp此时指向新栈顶
+     2. pop
+	1. 将ss:sp 指向的内存单元处的数据放入ax中
+	2. sp=sp+2 ss:sp指向当前栈顶下面的单元
+**** 已字符形式给出数据
+     #+BEGIN_SRC 
+     db 'abcdefg'
+     #+END_SRC
+     1. 大写转小写
+	or al,20H
+     2. 小写转大写
+	and al,DF
+
+    
