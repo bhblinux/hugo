@@ -1,0 +1,23 @@
+** 继承
+   #+BEGIN_SRC 
+   class A:b{}
+   #+END_SRC
+** 纯虚函数
+   1. 虚函数目的是提供一个统一的接口,被继承的子类重载,以多台的形势被调用
+   2. 如果基类中的函数没有任何实现的意义,那么可以定义成纯虚函数
+      #+BEGIN_SRC 
+      virtual 返回类型 函数名(参数列表)=0
+      virtula void f1()=0;
+      #+END_SRC
+   3. 含有纯虚函数的类被称为抽象类,不能创建对象
+   4. 虚函数可以被直接使用,也可以被子类重载以后以多台的形势调用,而存续函数必须在子类中实现该函数才可以使用
+** 运算符重载
+   - operator
+     #+BEGIN_SRC 
+     void operator > (obj & o){ }
+     void operator = (obj & o){ }
+     void operator < (obj & o){ }
+     ++,-- ,==,+,-,*,/,参数随意
+     
+     #+END_SRC
+** 模板
