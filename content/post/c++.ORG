@@ -21,3 +21,16 @@
      
      #+END_SRC
 ** 模板
+*** 函数模板
+    #+BEGIN_SRC 
+    templete<class 形参名,class 形参名...> 返回类型 函数名(参数列表)
+    {
+    函数体
+    }
+    #+END_SRC
+*** 类模板
+** 拷贝构造函数
+   如果遇到指针需要重写 拷贝构造函数
+   #+BEGIN_SRC 
+   Class (const Class & o){}
+   #+END_SRC
