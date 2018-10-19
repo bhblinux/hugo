@@ -577,6 +577,15 @@ addNumber    add  ax,123
     0号位b blue 前景
     #+END_SRC
 *** 内中断   
+    0000:0000 - 0000:03ff
+    
+    cs:中断类型码*4+2
+    ip:中断类型码*4
+    1. 取得中断类型码
+    2. 标志寄存器入栈,TF,IF设置为0
+    3. cs,ip入栈
+    
+
 *** 内存访问
 **** DS和[address]
 **** 栈
@@ -596,5 +605,7 @@ addNumber    add  ax,123
 	or al,20H
      2. 小写转大写
 	and al,DF
+*** 端口
+**** in
+**** out
 
-    
