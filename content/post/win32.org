@@ -1,0 +1,36 @@
+** win32
+*** 字符编码
+**** utf-16(unicode)
+     utf-16编码以16位无符号整数为单位,注意是16位为一个单位,不表示一个字符就是只有16位,
+     编码范围:0-0x10FFFF 可以容纳100多万个符号
+**** utf-8
+     UTF-16                 UTF-8 
+     000000 - 000007F      0xxxxxxx
+     000008 - 00007FF      110XXXXX 10XXXXXX
+     000800 - 00fffff      1110xxxx 10xxxxxx 10xxxxxx 
+     010000 - 10FFFFF      11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+**** 如果判断文件文件的存储方式
+     utf-8 | EF BB BF
+     UTF-16LE | FF FE  小端
+     UTF-16BE | FE FF  大端
+     大端模式
+     低的放低的,大的放大的
+     小端模式
+     低的放高的,高的放低的
+*** 语言中宽字符
+    char szStr[] ="中国"; assic
+    wchar_t swzStr[]=L"中国"; unicode
+**** 常用函数   
+     char wchar_t
+     printf wprintf
+     strlen wcslen
+     strcpy wcscpy //拷贝
+     strcat wcscat
+     stccmp wcscmp
+     strstr wcstr
+**** 打印unicode
+     #+BEGIN_SRC 
+     #inclde<locale.h>
+     setlocale(LC_ALL,""); //使用控制台默认的编码
+     
+     #+END_SRC
