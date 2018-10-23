@@ -50,6 +50,46 @@
 	1. CloseHandle 关闭句柄
 	2. SuspendThread(句柄)
 	3. ResumeThread(句柄）
- 
+*** 线程
+    WaitForSingleObject //等待执行线程执行后返回
+    WaitForMutipleObject
+    GetExitCodeThread //获取线程执行的返回值
+    ExitProcess(0); 退出线程
+**** 线程安全问题
+     1. 创建全局变量
+	CRITICAL_SECTION cs;
+     2. 初始化全局变量
+	InitializeCriticalSection(&cs);
+     3. 实现临界区
+	EnterCriticalSection(&cs); //使用临界资源
+	LeaveCriticalSection(&cs);//离开
+     4. 互斥体(令牌)
+	HANDLE g_hMutx= CreateMutex(NULL,FALSE,"xyz"); //第二个参数false信号true无信号
+     5. 获取令牌
+	WaitForSingleObject(g_hMutx,INFINITE);
+	1. 有信号 2. 线程的拥有者
+     6. 释放令牌
+	ReleaseMutex(g_hMutx);
+**** 互斥体与线程锁的区别
+     1. 线程锁只能用于单个进程间的线程控制
+     2. 互斥体可以设定等待超时，但线程锁不能
+     3. 线程意外终结时，Mutex可以避免无限等待
+     4. Mutex效率没有线程锁高
+*** 事件
+    1. 通知类型
+       #+BEGIN_SRC 
+       1. 默认安全属性 2. true通知/false互斥 初始没信号(true)  没有名字
+       g_hEvent=HANDLE CreateEvent(...);
 
+       SetEvent(g_hEvent); //修改事件为有信号
+       #+END_SRC
 
+    2. 线程同步
+       1. 线程互斥
+	   线程互斥是指对于共享的进程系统资源，在各单个线程访问时的排它性，
+	   当有若干个线程都要使用某一个共享资源时，任何时刻最多只允许一个线程去使用，
+	   其它要使用该资源的线程必须等待，知道占用资源者释放该资源
+       2. 线程同步
+	  线程之间所具有的一种制约关系，一个线程的执行依赖另一个线程的消息，当它没有得到另一个线程
+	  的消息时应等待，知道消息到达时才被唤醒
+	  同步=互斥+有序
