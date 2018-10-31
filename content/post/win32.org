@@ -55,6 +55,7 @@
     WaitForMutipleObject
     GetExitCodeThread //获取线程执行的返回值
     ExitProcess(0); 退出线程
+    
 **** 线程安全问题
      1. 创建全局变量
 	CRITICAL_SECTION cs;
