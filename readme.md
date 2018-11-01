@@ -5,4 +5,3 @@ git push hugo master:work
 git push -u origin/remote_branch
 3. ‘∂≥Ã√√ª”–∑÷÷ß,±±æµÿ“—æ≠«–ªª∑÷÷ß
 git push hugo work:work
-4. 
