@@ -1,7 +1,15 @@
-git remote add hugo https://github.com/bhblinux/hugo.git
-git push hugo master:work
-Î1. git push
-2. ÔÔ¶³ÌÓĞ·ÖÖ§,Ã»ÓĞ¹ØÁª±¾µØ·ÖÖ§,±¾µØÒÑ¾­ÇĞ»»·ÖÖ§
-git push -u origin/remote_branch
-3. Ô¶³ÌÃÃ»ÓĞ·ÖÖ§,±±¾µØÒÑ¾­ÇĞ»»·ÖÖ§
-git push hugo work:work
+1. è¿œç¨‹åˆ†æ”¯é—®é¢˜
+- æŸ¥çœ‹è¿œç¨‹åˆ†æ”¯
+	git branch -a 
+- æŸ¥çœ‹æœ¬åœ°åˆ†æ”¯
+	git branch
+- åˆ›å»ºåˆ†æ”¯
+	git branch test
+- æŠŠåˆ†æ”¯æ¨é€è¿œç¨‹åˆ†æ”¯
+	git push origin test
+- åˆ‡æ¢åˆ†æ”¯
+	git branch test
+- åˆ é™¤æœ¬åœ°åˆ†æ”¯
+	git brnch -d test
+- åˆ é™¤è¿œç¨‹åˆ†æ”¯
+	git push origin --delete test
