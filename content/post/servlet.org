@@ -1,0 +1,14 @@
+** ServletContext
+   1. 获得web应用全局的初始化参数
+      #+BEGIN_SRC 
+      <context-param>
+  	<param-name></param-name>
+  	<param-value></param-value>
+      </context-param>
+      #+END_SRC
+   2. 获得web应用中任何资源的绝对路径
+      #+BEGIN_SRC 
+      String path = context.getRealPath(相对于该web应用的相对地址);
+      "/",".","" 获取到的路径都是一样的，是webapp目录项目的目录
+      如果src目录下面有放资源文件，eclipse会将文件拷贝至WEB-INF\classes\下
+      #+END_SRC

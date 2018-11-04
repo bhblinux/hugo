@@ -98,3 +98,36 @@
     #+BEGIN_SRC 
     #pragma comment(lib,"a.lib")
     #+END_SRC
+*** 动态链接库
+    1. 创建动态链接库
+       #+BEGIN_SRC 
+       1. extern "C" __declspec(dellexport)
+       _stdcall int add(int x,int y);
+       #+END_SRC
+    2. 使用动态链接库
+       1. 定义函数指针
+	  #+BEGIN_SRC 
+	  typedef int (__stdcall *lpPlus)(int,int);
+	  #+END_SRC
+       2. 定义函数指针变量
+	  #+BEGIN_SRC 
+	  lpPlus myplus;
+	  #+END_SRC
+       3. 动态库加载
+	  #+BEGIN_SRC 
+	  HINSTANCE hModule=LoadLibrary("demo.dll");
+	  #+END_SRC
+       4. 获取函数地址
+	  #+BEGIN_SRC 
+	  myplus=(lpPlus)GetProcAddress(hModule,"Plus");
+
+	  #+END_SRC
+       5. 调用，并释放
+	  #+BEGIN_SRC 
+	  FreeLibrary(hModule);
+	  #+END_SRC
+*** 隐式链接
+    #+BEGIN_SRC 
+    #pragma comment(lib,"a,lib")
+    __declspec(dllimport) __stdcall int Plus(int,int);
+    #+END_SRC
