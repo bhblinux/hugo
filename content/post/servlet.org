@@ -11,4 +11,39 @@
       String path = context.getRealPath(相对于该web应用的相对地址);
       "/",".","" 获取到的路径都是一样的，是webapp目录项目的目录
       如果src目录下面有放资源文件，eclipse会将文件拷贝至WEB-INF\classes\下
+      src
+      文件放在src下 写WEB-INF\classes
+      webapp
+      /
+         | WEB-INF
+	 WEB-INF\
+	 |   |classes
       #+END_SRC
+   3. 域对像
+** Response
+   1. 设置响应状态码
+      #+BEGIN_SRC 
+      setStatus(int sc);
+      #+END_SRC
+   2. 设置中文乱码
+      #+BEGIN_SRC 
+      setCharacterEncoding("utf-8");
+      #+END_SRC
+   3. 指定浏览器解析页面的编码方式
+      #+BEGIN_SRC 
+      setContentType("text/html;charset=UTF-8");
+      #+END_SRC
+   4. MIME(下载文件)
+      #+BEGIN_SRC 
+      1. response.setContentType(this.getServletContext().getMimeType(String filename))
+      2. response.setHeader("Content-Disposition","attachment;filename="+filename);
+      #+END_SRC
+   5. 获取User-Agent
+      #+BEGIN_SRC 
+      request.getHeader("User-Agent");
+      #+END_SRC
+   6. 细节
+      1. response获得的留不需要手动关闭，tomcat会自己关
+      2. getWriter和getOutputStream 不能同时调用
+     
+
