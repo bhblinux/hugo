@@ -1,0 +1,4 @@
+** 开发步骤
+   1. 建立web应用
+   2. 在web下建立WEB-INF/web.xml
+   3. 在web下建立classes目录,和lib目录
