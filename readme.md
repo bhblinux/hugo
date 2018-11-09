@@ -1,4 +1,4 @@
-** git
+
    1. 查看当前git状态
       	
 git remote add hugo https://github.com/bhblinux/hugo.git
