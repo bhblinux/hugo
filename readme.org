@@ -86,7 +86,71 @@ git push hugo work:work
     3. git push origin master
     4. 
 
-*** 方法三
+*** 方法三(推荐)
     1. git fetch origin master
     2. git rebase origin/master
     3. git push origin master
+
+** 配置文件
+   1. 系统配置文件:系统配置： /private/etc/gitconfig
+   2. 用户配置： ~/.gitconfig
+   3. 项目配置：.git/config
+   4. 用户凭证
+      1. 秘钥
+	 #+BEGIN_SRC 
+	 首先创建一对秘钥  ssh-keygen -t rsa，然后将 id_rsa.pub (公钥)内容拷贝到github中，日后操作无需再输入用户名和密码。
+	 注意：这种方式需要使用GIt中 git@github.com:WuPeiqi/xxxxx.git 格式地址。
+	 #+END_SRC
+      2. 密码
+	 #+BEGIN_SRC 
+	 Https访问git时，避免每次操作需要输入用户名和密码，可以在配置文件中添加如下配置项：
+    [credential]
+    helper = store/cache/第三方
+store:
+        表示将用户名和密码保存在硬盘上
+        第一次输入过用户名和密码之后，用户名和密码就会保存在当前用户根目录的 .git-credentials 文件中，内容格式为：https://用户名:密码@github.com
+
+        自动添加配置命令：git config credential.helper store
+cache: 
+        表示将用户名和密码保存在缓存中
+        第一次输入过用户名和密码之后，用户名和密码就会保存在缓存中，默认超时时间是 900 秒，缓存相关文件保存在当前用户根目录的 git-credential-cache 中 
+        自动添加配置命令：
+               git config credential.helper cache
+               git config credential.helper 'cache --timeout=300'
+
+相关操作：
+        清除缓存：git credential-cache exit 
+        指定超时：
+            [credential]
+            helper = cache --timeout=300
+注意：
+         这种方式需要使用GIt中 https://github.com/WuPeiqi/xxxx.git 格式地址。
+         指定用户名和密码： https://用户名:密码@github.com/wupeiqi/xxx.git 
+	 以斜杠“/”开头表示目录；
+
+　　以星号“*”通配多个字符；
+
+　　以问号“?”通配单个字符
+
+　　以方括号“[]”包含单个字符的匹配列表；
+
+　　以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
+ #+END_SRC
+      3. 版本
+	 #+BEGIN_SRC 
+	 git tag -a v1.0 -m '版本介绍'        本地创建Tag
+    git show v1.0                       查看
+    git tags -n                         查看本地Tag
+    git tag -l 'v1.4.2.*'               查看本地Tag，模糊匹配
+    git tag -d v1.0                     删除Tag
+    git push origin :refs/tags/v0.2     更新远程tag
+    git checkout v.10                   切换tag
+    git fetch origin tag V1.2
+
+    git push origin  --tags
+    git pull origin  --tags
+    
+    git clone -b v0.1
+	 #+END_SRC
+
+https://www.cnblogs.com/wupeiqi/p/7295372.html
