@@ -1,0 +1,76 @@
+** git
+   1. 查看当前git状态
+      	#+BEGIN_SRC 
+      	git status
+      	#+END_SRC
+   2. commit配置
+      #+BEGIN_SRC 
+      git config --local user.name 'bhblinux'
+      git config --local user.email 'you@example.com'
+      #+END_SRC
+   3. 查看提交记录
+      #+BEGIN_SRC 
+      git log 
+      #+END_SRC
+   4. 回滚
+      #+BEGIN_SRC 
+      git log 查看历史记录
+      git reset --hard xxx
+      回滚到回滚之前
+      git reflog
+      git reset --hard xxx
+      #+END_SRC
+   5. stash(暂存)
+      #+BEGIN_SRC 
+      git stash //创建暂存点
+      git stash pop //回到暂存点之前(可能会遇到冲突,需要手动解决)
+      stash相关常用命令：
+
+      git stash             将当前工作区所有修改过的内容存储到“某个地方”，将工作区还原到当前版本未修改过的状态
+      git stash list        查看“某个地方”存储的所有记录
+      git stash clear     清空“某个地方”
+      git stash pop       将第一个记录从“某个地方”重新拿到工作区（可能有冲突）
+      git stash apply     编号, 将指定编号记录从“某个地方”重新拿到工作区（可能有冲突） 
+      git stash drop      编号，删除指定编号的记录
+      #+END_SRC
+   6. branch(分支)
+      #+BEGIN_SRC 
+      1. 创建分支
+      git branch dev
+      2. 切换分支
+      git checkout dev
+      3. 回到主分支
+      git checkout master
+      4. 合并分支
+      git merge dev
+      5. 删除分支
+      git branch -D|-d 分支名称
+      6. 创建并切换
+      git branch -m xx
+      #+END_SRC
+   7. 删除文件
+      #+BEGIN_SRC 
+      rm xx
+      git rm xx
+      #+END_SRC
+	
+git remote add hugo https://github.com/bhblinux/hugo.git
+git push hugo master:work
+1. git push
+git push -u origin/remote_branch
+git push hugo work:work
+1. 远程分支问题
+- 查看远程分支
+	git branch -a 
+- 查看本地分支
+	git branch
+- 创建分支
+	git branch test
+- 把分支推送远程分支
+	git push origin test
+- 切换分支
+	git branch test
+- 删除本地分支
+	git brnch -d test
+- 删除远程分支
+	git push origin --delete test
