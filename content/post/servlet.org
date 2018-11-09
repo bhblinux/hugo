@@ -45,5 +45,48 @@
    6. 细节
       1. response获得的留不需要手动关闭，tomcat会自己关
       2. getWriter和getOutputStream 不能同时调用
-     
+** cookie
+1. 创建cookie对象
+ Cookie cookie=new Cookie("name","abc");
+2. 发送cookie给客户端
+   response.addCookie(cookie);
+
+3. 设置持久化
+   将cooke信息保存在硬盘上
+   cookie.setMaxAge(10*60) 10分钟
+4. 设置cookie携带路径
+   cookie.setPath("/xx/xx"); 访问sendCookie资源时才携带cookie
+   cookie.setPath("/xx"); 访问xx下的任何资源时都携带cookie
+   cooke.setPath("/"); 访问服务器下的所有资源都携带cookie
+   默认放在http;//xx/web1 下
+5. 删除cookie
+   cookie.setMaxAge(0);
+6. 获取cookie
+   #+BEGIN_SRC 
+   request.getCookies();
+   #+END_SRC
+** session
+   =JESSIONID=
+   1. 获取session
+      #+BEGIN_SRC 
+      reqeust.getsession();
+      1. 如果客户端在此服务器不存在session,那么会创建session
+      2. 如果客户端在此服务器存在session,则获取返回
+      #+END_SRC
+   2. 声明周期
+      创建: 第一次执行request.getSession
+      销毁:
+      1. 服务器(非正常)关闭 
+      2. session过期/失效(默认30分钟)
+	 #+BEGIN_SRC 
+	 在web.xml中进行配置
+	 <session-config>
+	 <sesssion-timout>30</session-timout>
+	 </session-config>
+	 #+END_SRC
+      3. 手动销毁session
+	 #+BEGIN_SRC 
+	 session.invalidate()
+	 #+END_SRC
+      
 
