@@ -88,5 +88,61 @@
 	 #+BEGIN_SRC 
 	 session.invalidate()
 	 #+END_SRC
-      
+** jsp
+*** jsp脚本
+    #+BEGIN_SRC 
+    1. <% java代码%>
+    2. <%=java变量或表达式%>
 
+    #+END_SRC
+*** jsp指令
+**** page指令
+     格式：<%@ page 属性名1= "属性值1" 属性名2= "属性值2" ...%>
+     属性:
+     1. language：jsp脚本中可以嵌入的语言种类
+     2. pageEncoding：当前jsp文件的本身编码---内部可以包含contentType
+     3. contentType：response.setContentType(text/html;charset=UTF-8)
+     4. session：是否jsp在翻译时自动创建session
+     5. import：导入java的包
+     6. errorPage：当当前页面出错后跳转到哪个页面
+     7. isErrorPage：当前页面是一个处理错误的页面
+**** include指令
+     页面包含（静态包含）指令，可以将一个jsp页面包含到另一个jsp页面中
+     格式：<%@ include file="被包含的文件地址"%>
+**** taglib指令
+     在jsp页面中引入标签库（jstl标签库、struts2标签库）
+     格式：<%@ taglib uri="标签库地址" prefix="前缀"%>
+*** jsp内置对象/隐式对象
+    1. out
+       jspWriter
+       out作用就是想客户端输出内容----out.write()
+       out缓冲区默认8kb 可以设置成0 代表关闭out缓冲区 内容直接写到respons缓冲器
+    2. request
+    3. response
+    4. config
+       ServeltConfig 服务器配置，可以取得初始化参数
+    5. session
+       HttpSession 用来保存用户的信息
+    6. application
+       ServletContext 所有用户的共享信息
+    7. page
+       Object 指当前页面转换后的Servlet类的实例
+    8. pageContext
+       jsp页面的上下文对象，作用如下：
+       page对象与pageContext对象不是一回事
+       依次从pageContext域，request域，session域，application域中获取属性，在某个域中获取后将不在向后寻找
+    9. exception
+- 四大作用域的总结：
+  page域：当前jsp页面范围
+  request域：一次请求
+  session域：一次会话
+  application域：整个web应用
+
+** 错误页面
+   web.xml设置web应用的全局的错误页面
+   #+BEGIN_SRC 
+   <error-page>
+   <error-code>404</error-code>
+   <location>/xx.jsp</location>
+   </error-page>
+   #+END_SRC
