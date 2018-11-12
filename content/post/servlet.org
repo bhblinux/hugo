@@ -137,7 +137,52 @@
   request域：一次请求
   session域：一次会话
   application域：整个web应用
-
+** EL 
+*** 取值
+    1. 获取四大域的数据
+       #+BEGIN_SRC 
+       ${pageScope.key}
+       #+END_SRC
+    2. 获取pageContext域中的值
+       #+BEGIN_SRC 
+       ${pageScope.key};
+       #+END_SRC
+    3. 获取request域中的值
+       #+BEGIN_SRC 
+       ${requestScope.key}
+       #+END_SRC
+    4. 获取session域中的值
+       #+BEGIN_SRC 
+       ${sessionScope.key}
+       #+END_SRC
+    5. 获取application域中的值
+       #+BEGIN_SRC 
+       ${application.key}
+       #+END_SRC
+*** el内置对象
+    1. pageScope
+    2. requestScope
+    3. sessionScope
+    4. applicationScope
+    5. param 
+       request.getParameter()
+    6. paramValues
+       request.getParameterVlues()
+    7. iniParam 
+       获取全局初始化参数
+       this.getServletcontext().getInitParameter(name)
+    8. cookie
+       request.getCookies()---cookie.getName--cookie.getValue()
+    9. pageContext
+       pageContext获取其他8大对象
+       ${pageContext.request.contextPath}
+    10. header
+	获取请求头信息
+    11. headerValues
+*** el执行表达式
+    ${1+1}
+    ${empty user}
+    ${user == null?true:false}
 ** 错误页面
    web.xml设置web应用的全局的错误页面
    #+BEGIN_SRC 
