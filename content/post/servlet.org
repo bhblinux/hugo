@@ -183,6 +183,8 @@
     ${1+1}
     ${empty user}
     ${user == null?true:false}
+
+
 ** 错误页面
    web.xml设置web应用的全局的错误页面
    #+BEGIN_SRC 
@@ -191,3 +193,17 @@
    <location>/xx.jsp</location>
    </error-page>
    #+END_SRC
+
+
+** 事务
+   事务的隔离级别
+   1. read uncommitted:读取尚未提交的数据:哪个问题都解决不了
+   2. read committed:读取已提交的数据:可以解决脏读
+   3. repeatable read:重复读取,可以解决脏读和不可重复读
+   4. serializable:串行化:可以解决脏读 不可重复读和虚读
+
+*** 查看mysql数据库默认隔离级别
+    select @@tx_isolation
+
+*** 设置隔离级别
+    set session transaction isolation level [隔离级别]
