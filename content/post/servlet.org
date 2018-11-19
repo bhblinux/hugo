@@ -218,3 +218,23 @@
 *** 设置隔离级别
     set session transaction isolation level [隔离级别]
 >>>>>>> 6dd6ff71df68318e22516988cec27083df50b5f8
+
+** 监听器(Listener)
+   
+*** 监听对象
+    1. ServletContextListener
+       监听servletcontext对象的创建和销毁，在web应用加载或者服务器启动是创建，在web应用卸载或服务器停止时销毁
+    2. ServletContextAttributeListener
+       对ServletContext对象里面的属性进行增删改功能
+    3. ServletRequest
+       监听request对象的创建和销毁，在用户发出请求时创建，在请求完毕后销毁
+    4. ServletRequestAttributeListener
+       对request对象里面的属性进行增删改功能
+    5. HttpSessionListener
+       经停session对象和销毁，在每个用户第一次调用request.getSession()方法创建，销毁的方法有很多总，默认30分钟，设置等待时间setMaxInactiveInteval(),在全局
+       配置上配置等待时间<session-config><session-timeout></session-config>，手动销毁invalidate()
+    6. HttpSessionAttributeListener
+       对session对象里面的属性增删改操作
+
+
+
