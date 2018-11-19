@@ -238,3 +238,21 @@
 
 
 
+*** 配置监听器
+    web.xml
+    <listener>
+     <listener-class>com.yonyou.xxx</listener-class>
+    </listener>
+
+** 过滤器(Filter)
+  
+*** 生命周期
+    1. init():初始化，在创建过滤器对象的时候会被调用，在过滤器在web应用启动时候创建，只创建一次，
+    2. doFilter():执行过滤的主要方法，用于过滤请求和响应，请求一次就调用一次，可以多次调用
+    3. destory():销毁方法，过滤器对象销毁的时候会被调用，也只调用一次
+
+*** web配置
+    #+BEGIN_SRC 
+    <filter></filter>
+    <filter-mappping></filter-mapping>
+    #+END_SRC
