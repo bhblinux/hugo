@@ -45,7 +45,6 @@
    6. 细节
       1. response获得的留不需要手动关闭，tomcat会自己关
       2. getWriter和getOutputStream 不能同时调用
-
 ** cookie
 1. 创建cookie对象
  Cookie cookie=new Cookie("name","abc");
@@ -194,7 +193,6 @@
     ${empty user}
     ${user == null?true:false}
 
-
 ** 错误页面
    web.xml设置web应用的全局的错误页面
    #+BEGIN_SRC 
@@ -203,7 +201,6 @@
    <location>/xx.jsp</location>
    </error-page>
    #+END_SRC
-
 
 ** 事务
    事务的隔离级别
@@ -217,4 +214,5 @@
 
 *** 设置隔离级别
     set session transaction isolation level [隔离级别]
->>>>>>> 6dd6ff71df68318e22516988cec27083df50b5f8
+
+** 监听器(Listener)
