@@ -2,3 +2,27 @@
 ** 命令
    1. C-R 
       快速搜索历史命令
+   2. date
+      1. 显示
+	 #+BEGIN_SRC 
+	 +%D
+	 +%F
+	 +%T
+	 #+END_SRC
+      2. 设置
+	 #+BEGIN_SRC 
+	 date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+	 MM:月
+	 DD:日
+	 hh:时
+	 mm:分
+	 YY:2位年
+	 CCYY:4位年
+	 .ss:秒
+	 #+END_SRC
+   3. linux时钟
+      1. 系统时钟
+	 date
+      2. 硬件时钟
+	  clock
+
