@@ -1,0 +1,282 @@
+* redis
+** 安装
+   #+BEGIN_SRC 
+   Please select the redis config file name [/etc/redis/6379.conf] 
+   Selected default - /etc/redis/6379.conf
+   Please select the redis log file name [/var/log/redis_6379.log] 
+   Selected default - /var/log/redis_6379.log
+   Please select the data directory for this instance [/var/lib/redis/6379] 
+   Selected default - /var/lib/redis/6379
+   Please select the redis executable path [/usr/lksoft/redis/bin/redis-server] 
+   Selected config:
+   #+END_SRC
+** 操作
+   
+   https://blog.csdn.net/qq_40852784/article/details/79697914
+   1. 启动客户端
+      #+BEGIN_SRC 
+      redis-cli
+      #+END_SRC
+   2. 查看keys
+      #+BEGIN_SRC 
+      keys *
+      #+END_SRC
+*** string
+    1. 设置key
+       多次会覆盖前面的值
+       #+BEGIN_SRC 
+       set key values       
+       #+END_SRC
+    2. 获取值
+       #+BEGIN_SRC 
+       get key        
+       #+END_SRC
+    3. 删除key
+       #+BEGIN_SRC 
+       del key
+       #+END_SRC
+    4. setnx
+       #+BEGIN_SRC 
+       setnx name 123
+       如果name存在有值,则返回0
+       
+       #+END_SRC
+    5. setex
+       设置数据过期时间
+       #+BEGIN_SRC 
+       setex color 10 red
+       设置color 10秒后消失,返回nil
+       #+END_SRC
+    6. setrange
+       替换字符串
+       #+BEGIN_SRC 
+       127.0.0.1:6379> setrange name 123
+       127.0.0.1:6379> setrange name 1 23456
+       #其中1 是从第几位开始替换
+       (integer) 6
+       127.0.0.1:6379> get name
+       "123456"
+       #+END_SRC
+    7. mset
+       批量设置
+       #+BEGIN_SRC 
+       mset n1 v1 n2 v2
+       #+END_SRC
+    8. mget
+       批量获取
+       #+BEGIN_SRC 
+       mget n1 n2
+       #+END_SRC
+    9. getset
+       返回旧值,存储新值
+       #+BEGIN_SRC 
+       getset key 111
+       #+END_SRC
+    10. incr和decr
+	对某一个值进行递增和递减
+	#+BEGIN_SRC 
+	decr age
+	decr age
+	#+END_SRC
+    11. incrby和decrby
+	对某个值进行指定长度的递增和递减
+	#+BEGIN_SRC 
+	incyby age 10 
+	decrby age 10
+	#+END_SRC
+    12. append[name]
+	字符串追加
+	#+BEGIN_SRC 
+	append name bbb
+	#+END_SRC
+    13. strlen
+	获取字符串长度
+*** Hash
+    是string类型的filed和value映射表,或者说一个string集合,
+    1. hset
+       #+BEGIN_SRC 
+       hset myhas name hello
+       #+END_SRC
+    2. hget
+       #+BEGIN_SRC 
+       hget myhas name
+       #+END_SRC
+    3. hmset
+    4. hmget
+    5. hincrby
+    6. hexists
+       判断hash中是否存在filed域
+    7. hdel
+       删除hash中键的field域
+    8. hlen
+       返回key的hash中元素个数
+    9. hkeys
+       返回hash中的所有键
+    10. hvals
+	返回key的hash中所有键对应的value
+    11. hgetall
+	返回所有键值
+*** Set
+    无序集合,通过hashtable实现,
+    1. sadd(key,member)
+       向名称为key的set中添加元素
+    2. srem(key,member)
+       删除名称为key的set中的元素member
+    3. spop(key)
+       随机返回并删除名称为key的set中一个元素
+    4. smove(srckey,dstkey,member)
+       移到集合元素
+    5. scard(key)
+       返回名称为key的set的个数
+    6. sismember(key,member)
+       memeber是否是名称为key的set的元素
+    7. sinter(key1,key2,..key n)
+       求交集
+    8. sinterstore(dstkey,(keys))
+       求交集并将交集保存到dstkeyde的集合
+    9. sunion(key1,key2)
+       求并集
+    10. sunionstore(dstkey,(keys))
+	求并集并将并集保存到dstkeyd的集合中
+    11. sdiff(key1,(keys))
+	求差集
+    12. sdiffstore(dstkey,(keys))
+	求差集并将差集保存到dstkey集合中
+    13. smembers(keys)
+	返回名称为key的set的所有元素
+    14. srandmember(key)
+	随机返回名称为key的set的一个元素
+*** Zset
+    有序
+    1. zadd
+       添加
+       #+BEGIN_SRC 
+       zadd zset1 序号 faild
+       #+END_SRC
+    2. zrange
+       显示
+       #+BEGIN_SRC 
+       zrange zset1  0 -1 withscores
+       #+END_SRC
+*** List
+    1. rpush(key,value) 队列 先进先出
+       在名称为key的list尾部添加一个值为value的元素
+    2. lpush(key,value) 栈 先进后出
+       list头部添加
+    3. linsert
+       插入元素
+       #+BEGIN_SRC 
+       linsert list1 before [集合元素] [插入元素]
+       #+END_SRC
+    4. llen(key)
+       然后key的list的长度
+    5. lrange(key,start,end)
+       返回名称key的list中start至end之间的元素
+       #+BEGIN_SRC 
+       lrange list1 0 -1
+       从头去到尾部
+       #+END_SRC
+    6. ltrim(key,start,end)
+       截取名称为key的list
+    7. lindex(key,index)
+       返回名称为key的list中index位置的元素
+    8. lset(key,index,value)
+       给名称为key的list中index位置的元素
+    9. lrem(key,cout,value)
+       删除count个key的list中值为value的元素
+    10. lpop(key)
+	返回并删除名称为key的list中的首元素
+    11. rpop
+	返回并删除名称为key的list中的尾元素
+    12. blpop(key1,key2...key n,timeout)
+	
+    13. brpop
+    14. rpoplpush(srckey,dstkey)
+	返回并删除名称srckey的list的尾元素,并将元素添加到dstkey的list的头元素
+*** 值操作
+    1. exists(key)
+       确认一个key是否存在
+    2. del
+       删除key
+    3. type
+       返回值的类型
+    4. keys
+       返回满足给定pattern多所有key
+    5. randomkey
+       随机返回key空间的一个
+    6. keyrename
+       重命名key
+    7. dbsize
+       返回当前数据库中key的数目
+    8. expire
+       设定一个key的活动时间
+    9. ttl
+       获取一个key的活动时间
+    10. persist
+	取消过期时间
+    11. select 
+	选择数据库 0到15 默认是0
+	按索引查询
+    12. move
+	移动当前数据库中的key到dbindex数据库中
+    13. flushdb 
+	删除当前选择数据库中的所有key
+    14. flushall
+	删除所有数据库中的所有key
+    15. info
+	查看redis相关信息
+    16. echo
+	打印命令
+    17. dbsize
+	查看数据库的key数量
+    18. config get
+	反回相关卑职信息
+    19. config get *
+	返回所有配置
+** 安全
+   1. 修改密码
+      #+BEGIN_SRC 
+      redis.conf
+      # requirepass foobared
+      requirepass ***
+      重启服务
+      auth [密码]
+      或者登陆的时候加 -a [密码]
+      #+END_SRC
+** 主从复制
+   1. clone服务器之后修改slave的ip地址
+   2. 修改配置文件redis.conf
+      #+BEGIN_SRC 
+      slaveof <masterip> <masterport>
+      masterauth <master-password>
+      #+END_SRC
+   3. info查看role角色可以知道主服务器或者从服务
+** 事物
+   1. 使用 =multi= 打开事物
+   2. 设置
+   3. 使用 =exec= 提交事物
+   4. =discard=  取消事物
+   5. 没有回滚
+** 持久化
+*** snapshotting(快照默认)
+    将内存中已快照的方式写入到二进制文件中,默认为dump.rdb 可以通过配置设置自动做快照的方式持久化,
+    #+BEGIN_SRC 
+    snapshotting:
+    save 900 1 # 900秒内如果超过1个key被修改则发起快照保存
+    save 300 10 # 300秒内超过10个key被修改,则发起快照保存
+    #+END_SRC
+*** append-only file(aof)
+    类似oracle日志,aof比快照方式有更好的持久化性,是由于在使用aof时,redis会将每一个收到的写命令都通过write函数追加到命令中,当redis重新启动时会重新执行文件中保存的写命令
+    来再内存中重建这个数据库的内存,这个文件在bin目录下:appendonly.aof aof不是立即写到硬盘上
+    #+BEGIN_SRC 
+    aof设置:
+    appendonly yes //启动aof持久化有三种修改方式
+    #appendfsync always //收到写命令就立即写入到磁盘,效率最慢,但是保证完全的持久化
+    #appendfsync everysec //每秒钟写入磁盘一次,在性能和持久化方面做了很好的折中
+    #appendfsync no //完全依赖os性能最好,持久化没有保证
+    #+END_SRC
+** 发布和订阅
+*** 发布
+    =publish= 频道 发布内容
+*** 订阅
+    使用 =subscribe= 订阅监听
