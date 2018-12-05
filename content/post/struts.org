@@ -1,0 +1,50 @@
+* struts 
+** 导包
+   #+BEGIN_SRC 
+   struts-2.3.24\apps\struts2-blank\WEB-INF\lib\*
+   
+   #+END_SRC
+** 使用
+   ctrl+shift+t 查找类
+   1. 创建不普通类
+   2. 配置struts.xml
+      #+BEGIN_SRC 
+      /src/struts.xml
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<package name="hello" namespace="/hello" extends="struts-default" >
+		<!-- action元素:配置action类
+				name属性: 决定了Action访问资源名.
+				class属性: action的完整类名
+				method属性: 指定调用Action中的哪个方法来处理请求
+		 -->
+		<action name="HelloAction" class="com.yonyou.demo01.hello_action" method="hello" >
+			<!-- result元素:结果配置 
+					name属性: 标识结果处理的名称.与action方法的返回值对应.
+					type属性: 指定调用哪一个result类来处理结果,默认使用转发.
+					标签体:填写页面的相对路径
+			-->
+			<result name="ok"  >/hello.jsp</result>
+		</action>
+	</package>
+	</struts>
+      #+END_SRC
+   3. 配置xml
+      #+BEGIN_SRC 
+      <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+      #+END_SRC
+   4. 访问路径
+      #+BEGIN_SRC 
+      http://127.0.0.1:8080/strust_demo/hello/HelloAction
+      #+END_SRC
+
