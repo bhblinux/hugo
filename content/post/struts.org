@@ -48,4 +48,5 @@
    4. 访问路径
       #+BEGIN_SRC 
       http://127.0.0.1:8080/strust_demo/hello/HelloAction
+      struts.xml中的namespace/name.action
       #+END_SRC
