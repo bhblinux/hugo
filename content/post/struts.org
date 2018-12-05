@@ -6,6 +6,8 @@
    #+END_SRC
 ** 使用
    ctrl+shift+t 查找类
+   导入本地dtd
+   windows-preferences-搜索-cata xml catalog  add uri
    1. 创建不普通类
    2. 配置struts.xml
       #+BEGIN_SRC 
@@ -47,4 +49,3 @@
       #+BEGIN_SRC 
       http://127.0.0.1:8080/strust_demo/hello/HelloAction
       #+END_SRC
-
