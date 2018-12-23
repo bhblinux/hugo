@@ -1,0 +1,122 @@
+* android
+** 下载软件
+*** 配置sdk-path环境变量
+    #+BEGIN_SRC 
+    1. sdk\tools
+    2. sdk\platform-tools
+    #+END_SRC
+*** 创建并启动模拟器
+    1. Android virtual Device Manager
+    2. create
+       1. and name
+       2. device hvga 320x480
+       3. target 4.3.1
+       4. arm|intel 需要安装加速器
+       5. keyboard 硬键盘 
+       6. skin 如果是软件盘 选skin with dynamic....
+       7. memory option ram: 512 vm heap: 16
+       8. internam storage:200
+       9. sd card size 128
+*** 尺寸
+    1. 试图宽高
+       #+BEGIN_SRC 
+       match_parent
+       wrap_content 
+       #+END_SRC
+    2. 图片用dp|dip
+    3. 文字用sp
+** Activity
+*** intent
+    1. 显示意图
+       #+BEGIN_SRC 
+       intent(Context context,Class clazz)
+       当操作自己应用的组件使用
+       #+END_SRC
+    2. 隐式意图
+       #+BEGIN_SRC 
+       Intent(String acation)
+       当操作其他应用使用
+       #+END_SRC
+*** intentFilter
+    相当于servlet的过滤器
+*** 相关api
+*** SmsManager
+    发短信的工具类
+    #+BEGIN_SRC 
+    static Smsmanager getDefault() 得到当前对象
+    sendTextMessage():发短信
+    #+END_SRC
+*** 相关api
+**** 设置点击监听的2中方式
+     1. activity 中添加监听
+	#+BEGIN_SRC 
+	view.setOnClickListener(OnClickListener listener);
+	#+END_SRC
+     2. 布局添加监听
+	#+BEGIN_SRC 
+	layout中:android:onclick="方法名"
+	Activity中:public void 方法(View v)
+	#+END_SRC
+     3. 设置长按监听
+	#+BEGIN_SRC 
+	view.setOnLongClickListenter(OnLongClickListener listener)
+	#+END_SRC
+*** activity启动流程
+    1. MainActivity
+       startActivity() 
+       操作系统ActivityManager 接受MainActivity发出的startActivity()请求,并执行
+**** ActivityManager 可以查看activity启动过程
+*** Activity界面的四种状态
+    1. 运行状态:可见课操作
+    2. 暂停状态:可见单不可操作
+    3. 停止状态:不可见,但对象存在
+       home键
+    4. 死亡状态:对象不存在
+       返回键会将界面finish()
+**** 测试用例
+     
+     1. 死亡--> 运行
+	app运行启动
+	创建对象--> OnStart --> onResume
+     2. 运行-->死亡
+	返回键
+	onPause--> onstop--> onDestroy
+     3. 运行-->停止
+	按home键
+	onPause-->onStop
+     4. 停止-->运行
+	长按home键
+	onRestart-->onStart-->onResume
+     5. 运行-->暂停
+	弹出对话框
+     6. 暂停-->运行
+	对话框,退出
+*** TaskStack
+    一个应用启动,系统就会为其创建一个对应的Task Stack来存储并管理该应用的activity对象
+*** LanchMode
+    在android 中启动一个activity有时需要总是创建一个新的对象,有事需要复用已有的对象,可以通过在配置activity时通过LanchMODE属性指定
+    1. standard 默认
+       标准模式,每次调用startActivity方法就会产生一个新的实例
+    2. singleTop
+       如果已经有一个实例位于Activity栈的顶部时,就不产生新的实例
+       如果不位于栈顶,会产生一个新的实例
+       #+BEGIN_SRC 
+       activity android:launchMode="singleTop" >
+       顶部单例,一个界面中,启动另外一个界面,如果该界面在task stack中,则不会创建,会继续使用
+       如果该界面不在顶部,则还会继续创建
+       #+END_SRC
+    3. singleTask
+       只有一个实例,默认在当前task中
+       整个应用中,只会创建一次activity
+    4. singleInstance
+       只有一个实例,创建时会创建一个栈,且此栈中不能有其他对象
+       #+BEGIN_SRC 
+       1中创建2 
+       2 会新建一个栈 ,该栈再创建的activity会在1中,
+       此时 1中的栈被激活,显示,退出时会3退出 1退出 2退出
+       
+       #+END_SRC
+   
+* Eclipse快捷键
+** ctrl+shift+t 快速查找类的位置
+** ctrl+shift +x|y 切换大小写
