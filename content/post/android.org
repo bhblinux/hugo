@@ -25,7 +25,7 @@
        #+END_SRC
     2. 图片用dp|dip
     3. 文字用sp
-** Activity
+** Activity组件
 *** intent
     1. 显示意图
        #+BEGIN_SRC 
@@ -116,7 +116,8 @@
        此时 1中的栈被激活,显示,退出时会3退出 1退出 2退出
        
        #+END_SRC
-   
+** UI组件
+*** 
 * Eclipse快捷键
 ** ctrl+shift+t 快速查找类的位置
 ** ctrl+shift +x|y 切换大小写
