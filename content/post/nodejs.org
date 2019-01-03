@@ -1,0 +1,13 @@
+* nodejs
+** 软件安装
+** 插件
+*** nodemon
+    实时监测文件改变
+    #+BEGIN_SRC 
+    使用
+    nodemon index.js
+    #+END_SRC
+*** 镜像站
+    #+BEGIN_SRC 
+    http://npm.taobao.org
+    #+END_SRC
