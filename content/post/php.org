@@ -1,0 +1,53 @@
+* php
+** 安装和启动
+   #+BEGIN_SRC 
+   启动
+   php -S local:8080 -t thinkphp的目录
+   #+END_SRC
+*** 模板
+    #+BEGIN_SRC 
+    1. 需要在view目录下创建模板(没有不写)
+    2. 在模板目录下创建于控制器相同名的目录
+    3. 在创建模板html
+     $this->theme("5000")->display();
+    #+END_SRC
+**** 模板赋值
+     #+BEGIN_SRC 
+     $this->name 
+     
+     #+END_SRC
+**** 使用 
+     #+BEGIN_SRC 
+     echo $name
+     #+END_SRC
+*** 连接数据库
+**** 数据库连接配置
+     #+BEGIN_SRC 
+     application/Conf/config.php
+     'DB_TYPE' => "mysql',
+     'DB_USER' => 'root',
+     'DB_PWD' => '',密码
+     'DB_PREFIX' =>'xx',//数据库表前缀
+     'DB_DSN' => 'mysql:host=localhost:dbname=tp;charset=utf-8'
+     #+END_SRC
+** 基础
+*** 变量
+    局部转全局变量
+    #+BEGIN_SRC 
+    $name='abc';
+    global或者$globals
+    global $name; 作用1,将局部转全局变量,声明全局变量,在函数内部使用全局变量
+    
+    
+    #+END_SRC
+**** 变量的函数
+     1. isset
+     2. unset
+     3. empty
+     4. echo
+     5. var_dump
+*** 预定义变量
+    1. $GLOBALS
+       可以自动获取当前页面中的所有变量的内容
+    2. $_SERVER
+       自动获取服务器和客户端的信息
