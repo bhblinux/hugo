@@ -1,0 +1,16 @@
+录制视频配置
+
+rtmp {
+    server {
+        listen 1935;
+        application videotest {
+            live on;
+            recorder rec1{
+                record all;
+                record_unique on;
+                record_path /home/lab1107/record;
+                record_suffix -%Y-%m-%d-%H_%M_%S.flv;
+            }
+        }
+    }
+}
