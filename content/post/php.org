@@ -51,3 +51,127 @@
        可以自动获取当前页面中的所有变量的内容
     2. $_SERVER
        自动获取服务器和客户端的信息
+** 类
+   #+BEGIN_SRC 
+   <?php 
+class person{
+	public $name;
+	public $age;
+	public function __construct($name,$age){
+		$this->name=$name;
+		$this->age=$age;
+	}
+}
+
+$p=new person("wangzla",18);
+echo $p->name." ".$p->age;
+
+
+
+
+ ?>
+   #+END_SRC
+*** 构造方法
+    只能有一个没有重载
+    #+BEGIN_SRC 
+    public function __construct();
+    #+END_SRC
+*** 析构方法
+    #+BEGIN_SRC
+    function __destruct(){}
+    #+END_SRC
+    1. 析构的调用顺序,先创建的后被销毁 入栈的原理
+    2. 什么时候被调用
+       1. 进程结束
+       2. 当一个对象成为垃圾对象的时候,就会被调用
+*** 静态变量
+    1. 定义
+       #+BEGIN_SRC 
+       public static $num;
+       #+END_SRC
+    2. 使用
+       1. 类中访问
+	  #+BEGIN_SRC 
+	  self::$num
+	  #+END_SRC
+       2. 类外面访问
+	  #+BEGIN_SRC 
+	  类名::变量名
+	  #+END_SRC
+
+*** 全局变量
+    #+BEGIN_SRC 
+    global $name
+    #+END_SRC
+
+*** set|get
+    #+BEGIN_SRC 
+    public function __set($pro_name,$pro_val){
+    $this->pro_name=$pro_val;
+    }
+    public function __get($pro_name){
+    if(iiset($pro_name)){
+    return $this->pro_name;
+    else{
+    return null;
+    }
+    }
+    
+    #+END_SRC
+
+*** 继承
+    子类继承父类不会自动调用父类的构造函数
+    #+BEGIN_SRC 
+    <?php 
+class Person{
+	public $name;
+	public function __construct($name){
+		$this->name=$name;
+	}
+	public function toString(){
+		echo $this->name;
+	}
+}
+
+class Student extends Person{
+
+}
+
+$p=new Person("wang");
+$p->toString();
+$s=new Student("liang");
+$s->toString();
+
+ ?>
+    #+END_SRC
+
+*** 抽象类
+    #+BEGIN_SRC 
+    abstract class test{
+        abstract public function aa();
+    {
+    #+END_SRC
+*** 接口
+    定义 interface
+    #+BEGIN_SRC 
+    interface imm{
+    public function start();
+    public function stop();
+    }
+    #+END_SRC
+    实现接口
+    #+BEGIN_SRC 
+    class aa implements imm{
+    public function start(){}
+    public function stop(){}
+    }
+    #+END_SRC
+*** 魔术方法
+**** __call
+     调用一个对象的某个方法,而该方法不存在,则系统会自动调用__call
+
+     #+BEGIN_SRC 
+     
+     #+END_SRC
+*** 异常处理
+    
