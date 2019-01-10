@@ -182,4 +182,52 @@ $s->toString();
      
      #+END_SRC
 *** 异常处理
-    
+**** 自定义异常
+     #+BEGIN_SRC 
+     <?php
+function my_error($error,$errmes){
+    echo $error.$errmes;
+}
+set_error_handler("my_error",E_WARNING);
+//第二个参数最好是E_USER_ERROR E_USER_WARNING E_USEER_NOTICE
+$fp=fopen("aaa.txt","r");
+     #+END_SRC
+**** 错误触发器
+     调用触发器
+     trigger_error("error message",E_USER_NOTICE);//参数二,设置错误级别,默认E_USER_NOTICE
+**** 日志保存
+     error_log
+**** 异常处理
+     #+BEGIN_SRC 
+     try{
+     
+     }catch(Exception e){
+     
+     }finally {}
+     //抛出异常
+     throw new Exception("抛出异常");
+     
+     #+END_SRC
+     继续抛出,将会启动php默认的异常处理器
+     顶级处理器
+     #+BEGIN_SRC 
+     function my_exception($e){}
+     set_exception_handler("my_exception");
+     #+END_SRC
+** mysql
+** 方法
+   1. mysql_fetch_row
+   2. mysql_fetch_assoc
+   3. mysql_fetch_array //不要用,会返回索引数组和关联数组
+   4. mysql_fetch_object
+** mysqli
+*** 批量执行sql
+    mysqli::multi_query
+*** 事物
+    1. mysqli::autocommit
+
+    2. mysqli::rollback
+
+    3. mysqli::commit
+
+
