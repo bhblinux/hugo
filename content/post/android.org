@@ -117,7 +117,8 @@
        
        #+END_SRC
 ** UI组件
-*** 
+*** LineLayout
+    gravity="center" 控制孩子空间水平居中
 * Eclipse快捷键
 ** ctrl+shift+t 快速查找类的位置
 ** ctrl+shift +x|y 切换大小写

@@ -229,5 +229,13 @@ $fp=fopen("aaa.txt","r");
     2. mysqli::rollback
 
     3. mysqli::commit
-
+** cookie
+   setCookie 添加
+   setCookie("key","val",time()-200); //设置过期时间删除cookie
+** session
+   session_start()
+** 文件
+   1. file_get_contents
+   2. fopen
+   3. 
 
