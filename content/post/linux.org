@@ -206,3 +206,13 @@
 	  #+END_SRC
 **** 网络
 **** 关机重启
+**** 相关测试命令
+     1. 统计rpm 的格式
+	#+BEGIN_SRC 
+	ls *.rpm | rev | cut -d . -f2 |rev |sorg|uniq -c
+	#+END_SRC
+**** sed
+     行编辑器
+**** awk
+** shell编程
+
