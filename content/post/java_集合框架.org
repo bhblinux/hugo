@@ -1,0 +1,17 @@
+** Collections接口
+** Iterator迭代器接口
+*** set接口
+**** HashSet
+**** LinkedHashSet
+**** TreeSet
+*** List接口
+**** ArrayList
+**** LinkedList
+**** Vector
+*** Map接口
+**** HashMap
+**** TreeMap
+**** Hashtable
+*** Collections工具类
+
+
