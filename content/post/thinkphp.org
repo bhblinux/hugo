@@ -1,0 +1,85 @@
+* thinkphp
+** 访问路径方式
+   #+BEGIN_SRC 
+   1. http://localhost/day090114/shop/index.php?m=Home&c=Index&a=Index
+   m=分组,c控制器,a操作方法
+   2. http://localhost/day090114/shop/index.php/Home/Index/Index
+   3. http://localhost/分组/控制器/操作方法
+   4. 兼容模式
+   http://locahost/index.php?s=/分组/控制器/操作方法
+   #+END_SRC
+** 自动加载
+   1. 再Common文件夹下添加function.php文件,写入函数
+      系统会自动加载改文件,变可以使用里面的访问
+   2. 手动加载
+      在config.php里添加
+      #+BEGIN_SRC 
+      'LOAD_EXT_FILE' => 'common'
+      #+END_SRC
+   3. 临时加载
+      #+BEGIN_SRC 
+      load('@.common');
+      #+END_SRC
+** 模板替换
+   #+BEGIN_SRC
+   config.php
+   'TMPL_PARSE_STRING' => array(
+'   __PUBLIC__ ' => __ROOT__.'/'....
+   );
+   'TMPL_PARSE_STRING' => array(
+        '__PUBLIC__' => __ROOT__.'/Admin/Public'
+    )
+   #+END_SRC
+   配置文件后缀名
+   #+BEGIN_SRC 
+   'TMPL_TEMPLATE_SUFFIX' => 'htm'
+   #+END_SRC
+*** U
+    生成url
+    #+BEGIN_SRC
+    U('Index/index');
+    /day090114/shop/index.php/Admin/Index/index.html
+    'URL_HTML_SUFFIX'=>'', 伪静态后缀名
+    第二种写法
+    U("Index/index",array("uid"=>'1'),'');
+    U("Index/index",array("uid"=>'1'),'',true);第五个参数为是否跳转
+    'URL_MODEL'=>0; url?m=....
+    'URL_MODEL'=>1 |2
+    模板中使用U {:U(...)}
+    #+END_SRC
+*** I
+    获取参数
+    I('参数');
+    'DEFAULT_FILTER'=> 'htmlspecialchars'
+    IS_POST 这个常量可以区分是表单提交还是地址栏直接输入提交
+** config
+   'TEMP_VAR_IDENTIFY' => 'array' 模板中.值解析数组
+   #+BEGIN_SRC 
+   $str="<?php return ".var_export($phiz,true).';?>';
+   file_put_contents('./xxx/',$str);
+   获取
+   $phiz=include './data/phiz.php';
+   F('phiz',$phiz,'./data/); //写文件
+   $phiz=F('phiz','','./data/');/读文件
+   #+END_SRC
+*** 验证码
+    #+BEGIN_SRC 
+    public function  verify(){
+        $config=array(
+            'imageW' => 80,
+            'imageH' => 25,
+            'fontSize' => 13
+        );
+        $Verify = new \Think\Verify($config);
+        $Verify->entry();
+	}
+    #+END_SRC
+*** session
+    #+BEGIN_SRC 
+    var_dump(C("SESSION_AUTO_START")); 默认开启
+    #+END_SRC
+*** css
+    #+BEGIN_SRC 
+    <css file=''/>
+    <js file=''/>
+    #+END_SRC
