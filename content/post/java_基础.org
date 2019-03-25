@@ -9,4 +9,15 @@
    2. 早于非静态
    3. 多个静态,按顺序执行
    4. 只能执行对静态的方法和属性操作
+** 内部类
+   1. 成员内部类
+      创建静态内部类的对象,可以直接通过外部类调用静态内部类的构造器
+      #+BEGIN_SRC 
+      Person.Dog d=new Person.Dog();
+      #+END_SRC
+      创建非静态的内部类对象,必须先创建外部类的对象,通过外部类的对象调用内部类的构造器
+      #+BEGIN_SRC 
+      Person p=new Person();
+      Person.Bird b=p.new Bird();
+      #+END_SRC
 
