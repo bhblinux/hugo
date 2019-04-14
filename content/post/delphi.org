@@ -33,3 +33,106 @@ ShellApi
     );
     #+END_SRC
 * Delphi7 Delphi程序设计教程.pdf
+** 语句
+*** 判断
+    1. 方式一
+       #+BEGIN_SRC 
+       if 条件 then 
+       begin
+           语句
+       end;
+       #+END_SRC
+    2. 方式二
+       #+BEGIN_SRC 
+       if 条件 then 
+           语句
+       #+END_SRC
+    3. 方式三
+       #+BEGIN_SRC 
+       if 条件 then
+       begin
+       语句
+       end
+       else
+       begin
+       语句
+       end;
+       #+END_SRC
+*** case
+    #+BEGIN_SRC 
+    uses
+  SysUtils;
+var
+i:Integer;
+begin
+ 
+  i:=3;
+  case i of
+  1:
+    Writeln('haha');
+  2:
+  Writeln('hehe');
+  else
+  begin
+   Writeln('hihi');
+  end;
+  end;
+  Readln;
+end.
+    #+END_SRC
+*** 循环
+    1. for
+       #+BEGIN_SRC 
+       for i:=1 to 10 do 
+       语句 
+       #+END_SRC
+
+       #+BEGIN_SRC 
+       for i :=10 downto 1 do 
+       语句
+       #+END_SRC
+    2. while
+       #+BEGIN_SRC 
+       while 判断 do
+       begin
+       语句
+       end;
+       #+END_SRC
+    3. repeat 
+       #+BEGIN_SRC 
+       repeat
+       语句
+       until(not 判断)
+       #+END_SRC
+*** 其他语句
+    1. break
+    2. continue
+    3. exit
+       
+    4. abort
+       终止程序的运行,产生不报错的异常信息
+
+    5. halt
+
+    6. runerror
+** 数据类型
+*** 常量
+    #+BEGIN_SRC 
+    const
+    PI:Double;
+    #+END_SRC
+
+*** 枚举
+    #+BEGIN_SRC 
+    枚举:常量集
+    type
+    枚举名={标识符1,标识符2.....}
+
+    type
+    Eclors={red,green,blue};
+    #+END_SRC
+
+*** 集合
+
+*** 数组
+
