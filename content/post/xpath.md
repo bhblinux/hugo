@@ -165,3 +165,12 @@ def download_many(cc_list):
                 results.append(res)
     return len(results)
 ```
+
+
+## selenium
+查找指定的标签并点击
+driver.find_element_by_xpath("//div[@id='btnplayvideopic']").click()
+查找到标签后,获取标签中属性值
+print(soure[0].get_attribute('src'))
+print(ss.get_attribute("innerHTML"))                # 用innerHTML 会返回元素的内部 HTML， 包含所有的HTML标签。
+print(ss.get_attribute('textContent'))              #用textContent 和 innerText 只会得到文本内容，而不会包含 HTML 标

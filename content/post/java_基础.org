@@ -20,4 +20,28 @@
       Person p=new Person();
       Person.Bird b=p.new Bird();
       #+END_SRC
+** 集合
+   java.util接口 Collection<E>
+*** Collection接口
+
+*** Set
+*** List
+
+*** Collections
+*** Iterator
+*** 排序
+**** compartor 接口定制排序
+**** Comparable 接口 自然排序
+** Map
+** 多线程
+** 反射
+*** 获取Class类的实例的4种方式
+    1. Class clazz1=String.class;
+    2. Class clazz2=new Person().getClass();
+    3. Class class3=Class.forName("com.yonyou.xx");
+    4. 类加载器
+       #+BEGIN_SRC 
+       ClassLoader cl=this.getClass().getClassLoader();
+       Class clazz4=cl.loadClass(className);
+       #+END_SRC
 
