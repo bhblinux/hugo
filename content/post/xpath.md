@@ -174,3 +174,11 @@ driver.find_element_by_xpath("//div[@id='btnplayvideopic']").click()
 print(soure[0].get_attribute('src'))
 print(ss.get_attribute("innerHTML"))                # 用innerHTML 会返回元素的内部 HTML， 包含所有的HTML标签。
 print(ss.get_attribute('textContent'))              #用textContent 和 innerText 只会得到文本内容，而不会包含 HTML 标
+from selenium import webdriver
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(chrome_options=chrome_options) 
+options.add_argument('--ignore-certificate-errors')
+d=driver.get("http://3838bbb.com/?m=vod-index-pg-2.html")
