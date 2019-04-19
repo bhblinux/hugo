@@ -136,3 +136,38 @@ end.
 
 *** 数组
 
+*** 记录类型
+    #+BEGIN_SRC 
+    type
+  TStudent=record
+    Id:Integer;
+    name:String;
+    age:Integer;
+  end;
+var
+   student:TStudent;
+    #+END_SRC
+
+*** 例程
+    1. 没有返回值
+    #+BEGIN_SRC
+    无参
+    procedure xx();
+    begin
+    xxx
+    end;
+    有参
+    procedure demo01(A:Integer);
+    procedure demo02(A:Integer;B:Integer);
+    procedure demo03(var A:Integer;var B:Ineger);
+
+    #+END_SRC
+    
+*** 函数
+    #+BEGIN_SRC 
+    function demo02():Integer;
+    begin
+    end;
+    //地址传值
+    function demo03(var A:Integer;var B:Integer):Integer;
+    #+END_SRC
