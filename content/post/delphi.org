@@ -135,4 +135,98 @@ end.
 *** 集合
 
 *** 数组
+*** 例程
+    1. 声明
+       #+BEGIN_SRC 
+       procedure 过程名
+       procedure add(a: Integer; b: integer);
+       begin
 
+       end;
+       #+END_SRC
+    2. 参数
+    3. 调用
+    4. 参数
+    5. 重载
+    #+BEGIN_SRC 
+    program Project1;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+procedure add(i: Integer; B: Integer);
+begin
+  Writeln(i + B);
+end;
+
+procedure Diamond(n: Integer; c: Char);
+var
+  i, j: Integer;
+begin
+  for i := 1 to n do
+  begin
+    write(' ': n - i + 1);
+    for j := 1 to i * 2 - 1 do
+      write(c: i);
+    writeln;
+  end;
+  for i := n - 1 downto 1 do
+  begin
+    write(' ': n - i + 1);
+    for j := i * 2 - 1 downto 1 do
+      write(c: 1);
+    Writeln;
+  end;
+
+end;
+
+procedure Diamond2(n: Integer; c: Char);
+var
+  i, j: Integer;
+begin
+  for i := 1 to n do
+  begin
+    write(' ': n - i + 1);
+    for j := 1 to i * 2 - 1 do
+    write(c:1);
+
+    Writeln;
+  end;
+
+end;
+
+begin
+  Diamond2(10, '0');
+  Readln;
+end.
+
+    #+END_SRC
+*** 函数 
+    1. 声明
+       #+BEGIN_SRC 
+       function 函数名(形式参数列表):返回类型;指示字;
+       function add2(i: Integer; j: Integer): Integer;
+       begin
+       add2 := i + j;
+       end;
+       #+END_SRC
+ 
+
+** 面向对象
+
+*** 定义
+    #+BEGIN_SRC 
+    type
+  TUser = class
+    FName: string;
+  {声明,定义}
+    procedure SetName(Name: string);#ctrl+shift+c 自动生成实现代码
+  end;
+  
+
+  1. 销毁对象
+  1. free
+  2. FreeAndil(obj)
+    #+END_SRC

@@ -182,3 +182,12 @@ chrome_options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(chrome_options=chrome_options) 
 options.add_argument('--ignore-certificate-errors')
 d=driver.get("http://3838bbb.com/?m=vod-index-pg-2.html")
+
+https://www.cnblogs.com/imyalost/p/7846653.html
+https://www.cnblogs.com/ospider/p/5911339.html
+from selenium.webdriver.support.select import Select
+Select(driver.find_element_by_name("select")).select_by_index("3")
+Select(driver.find_element_by_name("select")).select_by_index("4")
+driver.find_element_by_xpath("//button[@id='fastpostsubmit']").click()
+etree.tostring(tests[0])
+
