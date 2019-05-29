@@ -17,13 +17,82 @@
       #+END_SRC
 ** 基础
 *** 变量
+    # 变量未初始化不能使用.
 **** string
      - @
        #+BEGIN_SRC 
        取消转义
        #+END_SRC
+*** 三元表达式
+    表达式1?表达式2:表达式3
+    表达式1为true,表达式的结果为表达式2的值
+    表达式1一般为关系表达式
+*** 随机数
+    Random
+    #+BEGIN_SRC 
+    Random r=new Random();
+    a = r.Next(1,10);
+    #+END_SRC
+*** 枚举
+    1. 声明
+       #+BEGIN_SRC 
+       enum Day{
+       one,two,the,four,five
+       };
+       Day d=Day.one;
+       #+END_SRC
+*** 函数
+    - 引用传递
+      1. 定义
+	 public void add(ref int a);
+      2. 调用
+	 add(ref a);
+    - 值传递
+      1. 定义
+	 public void add(int a,int b);
+      2. 调用
+	 add(a,b);
+    - 可变参数
+      1. 定义
+	 public void printArr(params int[] arr);
+      2. 调用
+	 printArr(arr);
+
+    - 按输出传递参数
+      1. 定义
+	 public void getVal(out int a);
+
+      2. 调用
+	 getVal(out a);
+
+    - 重载
+      函数名一样,参数个数或者参数类型不同即为重载,返回值不同,不构成重载
+
+
+
 ** 关键字
    - ref
      共用,引用
+
+   - region
+     #region&#endregion 在编辑器的大纲功能时展开或折叠代码块
+     
 ** 面向对象
 
+*** 封装
+    1. 属性封装
+       #+BEGIN_SRC 
+       private string _name;
+       public string Name{
+       set {_name=value;}
+       get {return _name;}
+       }
+       #+END_SRC
+
+*** 继承
+
+*** 多态
+
+** vs调试
+   - F10 进入调试
+   - F11 运行下一行
