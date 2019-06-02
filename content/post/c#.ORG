@@ -144,7 +144,116 @@
     }
        #+END_SRC
 *** 多态
+**** 虚函数
+     1. new
+	#+BEGIN_SRC 
+	public new viod add(){}
+	#+END_SRC
+     2. 将父类的方法标记为virtual,将子类的方法标记为override
+**** 抽象类
+     1. 定义
+	#+BEGIN_SRC 
+	public abstract Animal{
+	public abstract void Eeat();
+	}
+	#+END_SRC
+**** 接口
 
+** 集合 
+*** ArrayList
+*** Hashtable
+** 其他类
+*** File
+    1. Exist
+    2. Copy
+    3. Move
+    4. Delete
+    5. ReadAllBytes读取文件
+       #+BEGIN_SRC 
+       var filename=@"C:\Users\liang\Desktop\1.txt";
+       byte[] bytes=File.ReadAllBytes(filename);
+       var str=System.Text.Encoding.Default.GetString(bytes);//将字节数组转成字符串
+       #+END_SRC
+    6. ReadAllLines
+       #+BEGIN_SRC 
+       #region readalllines
+       string[] str1=File.ReadAllLines(filename, Encoding.Default);
+       for (int i = 0; i<str1.Length; i++)
+       {
+           Console.WriteLine(str1[i]);
+       }
+            #endregion
+       #+END_SRC
+    7. ReadAllText
+       #+BEGIN_SRC 
+       var str2=File.ReadAllText(filename, Encoding.Default);
+       Console.WriteLine(str2);
+       #+END_SRC
+    8. WriteAllBytes 写文件
+       #+BEGIN_SRC 
+       String content = "你好,中国";
+       var filename = @"C:\Users\liang\Desktop\1.txt";
+       //将字符串转成字节数字
+       byte[] bytes = System.Text.Encoding.Default.GetBytes(content);
+       File.WriteAllBytes(filename,bytes);
+       #+END_SRC
+    9. WriteAllLines
+       #+BEGIN_SRC 
+       String content = "你好,中国haha";
+       var filename = @"C:\Users\liang\Desktop\1.txt";
+       string[] str = { "你好","哈哈","c#"};
+       File.WriteAllLines(filename, str);
+       #+END_SRC
+    10. WriteAllText
+	#+BEGIN_SRC 
+	String content = "你好,中国haha";
+        var filename = @"C:\Users\liang\Desktop\1.txt";
+        string[] str = { "你好","哈哈","c#"};
+        File.WriteAllText(filename, content);
+	#+END_SRC
+    11. AppendAllText 追加写入
+
+*** Path
+    1. getExtension 获取文件扩展名
+    2. ChangeExtentsion 改变扩展名
+*** Directory目录
+    1. CreateDirectory
+    2. Delete
+    3. Exists
+    4. GetDirectories
+    5. GetFiles
+*** FileStream
+**** StreamReader
+     #+BEGIN_SRC 
+     FileStream fs = new FileStream(@"C:\Users\liang\Desktop\1.txt",FileMode.Open,FileAccess.Read);
+     //文件的长度
+     Console.WriteLine(fs.Length);
+     byte[] buff = new byte[fs.Length];
+     int reg=fs.Read(buff,0,buff.Length);
+     var str=System.Text.Encoding.UTF8.GetString(buff);
+     Console.WriteLine(str);
+     fs.Close();//关闭文件
+     fs.Dispose();//释放资源
+     Console.Read();
+     #+END_SRC
+     1. EndOfStream 流的结束符
+**** StreamWriter
+**** using
+     using(创建流对象)
+     #+BEGIN_SRC
+     可以不用释放资源文件
+     using (FileStream fs = new FileStream(@"C:\Users\liang\Desktop\1.txt", FileMode.Open, FileAccess.Read))
+            {
+            //文件的长度
+            Console.WriteLine(fs.Length);
+            byte[] buff = new byte[fs.Length];
+            int reg=fs.Read(buff,0,buff.Length);
+            var str=System.Text.Encoding.UTF8.GetString(buff);
+            Console.WriteLine(str);
+            Console.Read();
+            }
+     #+END_SRC
 ** vs调试
    - F10 进入调试
    - F11 运行下一行
+   - alt+shfit+f10 自动导入命名空间
