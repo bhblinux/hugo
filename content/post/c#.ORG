@@ -97,8 +97,10 @@
      9. Indexof 获取字符的索引
 
      10. LastIndexof 获取字符串中最后一次出现的位置
-
-
+   - partial
+     #+BEGIN_SRC 
+     public partial class Person{}//申明该类是person的一部分
+     #+END_SRC
 ** 面向对象
 
 *** 封装
@@ -158,10 +160,97 @@
 	}
 	#+END_SRC
 **** 接口
+     #+BEGIN_SRC 
+     namespace 接口
+{
+    interface IMyIterface
+    {
+        void sayHello();
+    }
 
+    class Person : IMyIterface
+    {
+        public void sayHello()
+        {
+            Console.WriteLine("hello person");
+        }
+    }
+    class Student : IMyIterface
+    {
+        public void sayHello()
+        {
+            Console.WriteLine("我是学生");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IMyIterface im = new Student();
+            im.sayHello();
+            Console.Read();
+        }
+    }
+}
+     #+END_SRC
+     1. 显示实现接口
+	接口名.方法
 ** 集合 
 *** ArrayList
 *** Hashtable
+** 序列化
+   1. 类的上面写[Serializable]
+      #+BEGIN_SRC 
+      BinaryFormatter bf=new Binaryformatter();
+      bf.Serialize(流对象,要序列化的对象);
+      namespace 序列化
+{
+    [Serializable]
+    class Person
+    {
+        public string Name { set; get; }
+        public int Age { set; get; }
+        public void sayHello()
+        {
+            Console.WriteLine("name:{0};age{1}", this.Name, this.Age);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p = new Person();
+            p.Name = "zhangsan";
+            p.Age = 27;
+            using (FileStream fs = new FileStream(@"C:\Users\PC\Desktop\1.txt", FileMode.Open, FileAccess.Write))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(fs, p);
+            }
+            Console.Read();
+        }
+    }
+}
+
+      #+END_SRC
+
+   2. 反序列化
+      #+BEGIN_SRC 
+      class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p;
+            using (FileStream fs = new FileStream(@"C:\Users\PC\Desktop\1.txt", FileMode.Open, FileAccess.Read))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                p=(Person)bf.Deserialize(fs);
+                Console.WriteLine(p.Name);
+            }
+            Console.Read();
+        }
+    }
+      #+END_SRC
 ** 其他类
 *** File
     1. Exist
@@ -223,6 +312,7 @@
     4. GetDirectories
     5. GetFiles
 *** FileStream
+
 **** StreamReader
      #+BEGIN_SRC 
      FileStream fs = new FileStream(@"C:\Users\liang\Desktop\1.txt",FileMode.Open,FileAccess.Read);
@@ -253,6 +343,25 @@
             Console.Read();
             }
      #+END_SRC
+*** MD5
+    #+BEGIN_SRC 
+    
+        public static string getMd5(string str)
+        {
+            MD5 md5 = MD5.Create();
+            Byte[] bytes=System.Text.Encoding.Default.GetBytes(str);
+            byte[] md5byte=md5.ComputeHash(bytes,0,bytes.Length);
+            Console.WriteLine(md5byte.Length);
+
+            foreach (var item in md5byte)
+            {
+                Console.Write(item.ToString("x2"));
+		//x 是十六进制 2: 每个占用2位,不足补0
+            }
+            return "";
+        }
+    #+END_SRC
+** Winform
 ** vs调试
    - F10 进入调试
    - F11 运行下一行
