@@ -28,5 +28,24 @@ f := funcA()
     1。 当执行defer时，暂时不会执行，先将该语句压栈，
     1. 当函数执行完毕后，再执行
     2. 如果有变量，将会拷贝同时压栈
+** 常用的函数
+*** string
+    1. 统计字符串的长度len(str)
+    2. 字符串遍历,同时处理有中文的问题r:=[]rune(str)
+    3. 字符串转整数 n,_:=strconv.Atoi("12")
+    4. 整数转字符串 str=strconv.Itoa(1234)
+    5. 字符串转[]byte var bytes=[]byte("hello")
+    6. []byte 转字符串 str:=string([]byte{97,98,99})
+    7. 10进制转2,8,16进制:str:=strconv.FormatInt(123,2)
+    8. 查找子串是否在指定的字符串中:strings.Contains("seafood","foo")
+    9. 统计一个字符串有几个指定的字串:strings.Count("ceheee","e")
+    10. 不区分大小写的字符串比较(==是区分字母大小写):strings.EqualFold("abc","Abc")
+    11. 返回字串在字符串第一次出现的index值,如果没有返回-1,strings.Inde("NLT_ABC","ABC")
+    12. 返回字串在字符串最后一次出现的index值,LastIndex("go lang","go")
+    13. 替换 string.Replase("go","aaa",-1) -1表示全部替换
+    14. 分割 string.Split("heelo,go",",")
+    15. 转大小写 string.ToLower("Go"),strings.ToUpper("Go")
+
+
 
 
