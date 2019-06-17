@@ -1,0 +1,32 @@
+* go
+
+** 基础
+   
+*** 赋值
+    赋值语句不能再函数体外赋值，Name:="a" 自动推倒等价与 var Name string Name="a"
+** 函数
+*** 闭包
+    可以理解为class
+    其中变量为字段
+    函数为方法
+    #+BEGIN_SRC 
+    func funcA() func(int, int) int {
+	var n int = 10
+	return func(a, b int) int {
+		n = a + b + n
+		return a + b + n
+	}
+}
+//使用
+f := funcA()
+	fmt.Println(f(1, 2))
+	fmt.Println(f(1, 2))
+    #+END_SRC
+*** defer
+    延时机制
+    在函数执行完毕后，及时释放资源
+    1。 当执行defer时，暂时不会执行，先将该语句压栈，
+    1. 当函数执行完毕后，再执行
+    2. 如果有变量，将会拷贝同时压栈
+
+

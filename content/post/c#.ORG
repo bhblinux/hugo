@@ -362,6 +362,7 @@
         }
     #+END_SRC
 ** Winform
+<<<<<<< HEAD
 ** MDI窗口
    #+BEGIN_SRC 
    namespace MDI
@@ -401,6 +402,55 @@
 }
 
    #+END_SRC
+=======
+*** treeView
+    1.获取根节点
+    #+BEGIN_SRC 
+    TreeNode tn=treeView.SelectedNode; //获取选中的跟节点
+
+    #+END_SRC
+    1. 添加子节点
+       #+BEGIN_SRC 
+       tn.Nodes.Add(text);
+       #+END_SRC
+    2. 修改节点名称
+       #+BEGIN_SRC 
+       tn.Text="";
+       #+END_SRC
+    3. 展开节点
+       #+BEGIN_SRC 
+       treeView.ExpandAll();
+       #+END_SRC
+    4. 折叠节点
+       #+BEGIN_SRC 
+       treeView.CollapseAll();
+       #+END_SRC
+*** ListBox
+    1. 添加节点
+       #+BEGIN_SRC 
+       listbox.Items.Add("aaa");
+       #+END_SRC
+*** FileDialog
+    1. 打开对话框对象
+       #+BEGIN_SRC 
+       OpenFileDialog ofd= new OpenFileDialog();
+       ofd.ShowDialog();//显示对话框
+       #+END_SRC
+    2. 设置标题
+       #+BEGIN_SRC 
+       ofd.Title="";
+       #+END_SRC
+    3. 设置打开对话框可以多选
+       #+BEGIN_SRC 
+       ofd.Multiselect=true;
+       #+END_SRC
+    4. 设置打开对话框的文件类型
+       #+BEGIN_SRC 
+       ofd.Filter="文本文件|*.txt|音乐文件|*.wav";
+       #+END_SRC
+
+
+>>>>>>> d86dbe267044620b3780d90522bfe9c23574069b
 ** vs调试
    - F10 进入调试
    - F11 运行下一行
