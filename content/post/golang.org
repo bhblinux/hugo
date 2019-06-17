@@ -45,7 +45,11 @@ f := funcA()
     13. 替换 string.Replase("go","aaa",-1) -1表示全部替换
     14. 分割 string.Split("heelo,go",",")
     15. 转大小写 string.ToLower("Go"),strings.ToUpper("Go")
-
-
-
-
+    16. 将字符串左右两边的空格去掉，strings.TrimSpace(" aa ")
+    17. 将字符串左右两边制定的字符strings.Trim(“1aaa1","1")
+    18. 去掉字符串左边指定的字符strings.TrimLeft()
+    19. 去掉字符串右变指定的字符strings.TrimRight()
+    20. 判断字符串时是否以指定的字符串开头strings.HasPrefix("ftp:/aaa?","ftp")
+    21. 判断字符串是否以指定指定的字符串结尾strings.HasSuffix("xxx.jpg","jpg")
+*** time
+    时间和日期
