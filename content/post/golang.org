@@ -105,4 +105,12 @@ func main() {
      painc(errors.NEW("自定义错误"))
      #+END_SRC
 ** 数组
+*** 初始化数组
+    1. var arr [3]int=[3]int{1,2,3}
+    2. var arr =[]int{1,2,3}
+    3. var arr=[...]int{1,2,3}
+    4. var arr=[...]int{1:800,0:100，2:300}
+    5. arr:=[...]string{"a","B"}
+
+
 ** 切片
