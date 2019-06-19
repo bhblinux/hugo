@@ -105,12 +105,21 @@ func main() {
      painc(errors.NEW("自定义错误"))
      #+END_SRC
 ** 数组
+   值拷贝类型
 *** 初始化数组
     1. var arr [3]int=[3]int{1,2,3}
     2. var arr =[]int{1,2,3}
     3. var arr=[...]int{1,2,3}
     4. var arr=[...]int{1:800,0:100，2:300}
     5. arr:=[...]string{"a","B"}
-
-
+*** 遍历数组
+    #+BEGIN_SRC 
+    for index,value:=range array{}
+    说明:
+    1. index是返回数组的下标
+    2. value 该下标的值
+    3. 他们都是局部变量
+    4. 如果不想要这些用_过滤
+    5. 可以自行定义变量名,
+    #+END_SRC
 ** 切片
