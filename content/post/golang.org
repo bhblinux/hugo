@@ -123,3 +123,10 @@ func main() {
     5. 可以自行定义变量名,
     #+END_SRC
 ** 切片
+   引用类型
+   1. var a[] int
+   2. var slice [] int =make ([]int ,4,10)//4 接片的大小，10 接片的容量
+   3. 定义一个切片，直接就指定具体数组，
+      #+BEGIN_SRC 
+      var strclice [] string=[]string{"a","b","c"}
+      #+END_SRC
