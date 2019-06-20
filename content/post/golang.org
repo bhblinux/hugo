@@ -130,3 +130,26 @@ func main() {
       #+BEGIN_SRC 
       var strclice [] string=[]string{"a","b","c"}
       #+END_SRC
+** map
+   引用类型
+   1. 定义
+       #+BEGIN_SRC 
+   var map变量名 map[keytype] valuetype
+   var map1 map[string]string=make(map[string]string)
+   #+END_SRC
+   2. 方式二
+      #+BEGIN_SRC 
+      var map2=make(map[string]string)
+      #+END_SRC
+   3. 方式三
+      #+BEGIN_SRC 
+      var map3[string]string=map[string]string{
+      "name":"liang"
+      }
+      #+END_SRC
+   4. 查找
+      findres
+      v, f := a["name"] //如果找到 f为返回结果，找到为true，否则为false
+** OOP
+*** 结构体struct
+
