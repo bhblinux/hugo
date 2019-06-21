@@ -152,6 +152,7 @@ func main() {
       v, f := a["name"] //如果找到 f为返回结果，找到为true，否则为false
 ** OOP
 *** 结构体struct
+    结构体是值类型,备份的时候为值拷贝
     1. 定义
        #+BEGIN_SRC 
        type Cat struct {
@@ -163,8 +164,20 @@ func main() {
        #+BEGIN_SRC 
        func main(){
 	var Cat1 Cat
+        //或者
+        Cat2:=Cat{}
+        //
+        Cat2:=Cat{"liang",12}
 	Cat1.Name="liang"
 	Cat1.Age=1
 	fmt.Println(Cat1)
 	}
        #+END_SRC
+    3. 创建结构提的方式
+       1. var p *Person=new (Person)
+          （×p).Name="liang"
+          p.Name="liang""
+       2. var p *Person=&Person{}
+
+
+
