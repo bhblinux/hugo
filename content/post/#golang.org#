@@ -28,10 +28,10 @@ f := funcA()
     1。 当执行defer时，暂时不会执行，先将该语句压栈，
     1. 当函数执行完毕后，再执行
     2. 如果有变量，将会拷贝同时压栈
-** 常用的函数y
+** 常用的函数
 *** string
     1. 统计字符串的长度len(str)
-    2. 字符串遍历,同时处理有中文的问题r:=[]rune(str)
+    2. 字符串遍历,同时处理有中文的问题r:=[]rune(str) 同等[]byte(str)
     3. 字符串转整数 n,_:=strconv.Atoi("12")
     4. 整数转字符串 str=strconv.Itoa(1234)
     5. 字符串转[]byte var bytes=[]byte("hello")
@@ -123,48 +123,3 @@ func main() {
     5. 可以自行定义变量名,
     #+END_SRC
 ** 切片
-   引用类型
-   1. var a[] int
-   2. var slice [] int =make ([]int ,4,10)//4 接片的大小，10 接片的容量
-   3. 定义一个切片，直接就指定具体数组，
-      #+BEGIN_SRC 
-      var strclice [] string=[]string{"a","b","c"}
-      #+END_SRC
-** map
-   引用类型
-   1. 定义
-       #+BEGIN_SRC 
-   var map变量名 map[keytype] valuetype
-   var map1 map[string]string=make(map[string]string)
-   #+END_SRC
-   2. 方式二
-      #+BEGIN_SRC 
-      var map2=make(map[string]string)
-      #+END_SRC
-   3. 方式三
-      #+BEGIN_SRC 
-      var map3[string]string=map[string]string{
-      "name":"liang"
-      }
-      #+END_SRC
-   4. 查找
-      findres
-      v, f := a["name"] //如果找到 f为返回结果，找到为true，否则为false
-** OOP
-*** 结构体struct
-    1. 定义
-       #+BEGIN_SRC 
-       type Cat struct {
-           Name string
-           Age int	
-     }
-       #+END_SRC
-    2. 使用
-       #+BEGIN_SRC 
-       func main(){
-	var Cat1 Cat
-	Cat1.Name="liang"
-	Cat1.Age=1
-	fmt.Println(Cat1)
-	}
-       #+END_SRC
