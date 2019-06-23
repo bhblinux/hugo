@@ -179,5 +179,82 @@ func main() {
           p.Name="liang""
        2. var p *Person=&Person{}
 
+**** 方法
+     1. 定义
+        #+BEGIN_SRC 
+        func (a A)test() ) 表示A结构体有一方法，方法名为test
+        #+END_SRC
+
+**** 工厂模式
+     相当与java中的构造函数功能
 
 
+
+
+××× 封装
+
+**** 封装
+***** 继承
+     1. 匿名结构体来实现
+        #+BEGIN_SRC 
+      type Person struct{
+      Name string
+      Age int
+
+ }
+ type Student struct{
+      Person
+      Id int
+
+ }
+ func (p Person) Speak(){
+      fmt.Println(p.Name,"诞生了")
+ }
+
+ func main(){
+      stu:=Student{}
+      stu.Person.Name="liang"
+      stu.Id=1
+      fmt.Println(stu)
+
+
+ }
+     #+END_SRC
+    
+     2. 匿名字段
+	
+        #+BEGIN_SRC 
+     type Person struct{
+      int
+     }
+     #+END_SRC
+***** 接口(Interface)
+      #+BEGIN_SRC 
+      package main
+import "fmt"
+//定义接口
+type Usb interface{
+     Start()
+     Stop()
+}
+//接口实现
+type Phone struct{
+}
+func (p Phone) Start(){
+     fmt.Println("手机开始工作。。。。")
+}
+func (p Phone) Stop(){
+     fmt.Println("手机停止工作。。。。")
+}
+type Computer struct{
+}
+func (c Computer) Working(usb Usb){
+     usb.Start()
+     usb.Stop()
+}
+func main(){
+     c:=Computer{}
+     p:=Phone{}
+     c.Working(p)
+}
+      #+END_SRC
