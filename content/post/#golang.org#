@@ -178,4 +178,6 @@ func main() {
           （×p).Name="liang"
           p.Name="liang""
        2. var p *Person=&Person{}
-  
+
+
+
