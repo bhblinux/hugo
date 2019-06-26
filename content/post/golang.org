@@ -28,7 +28,7 @@ f := funcA()
     1。 当执行defer时，暂时不会执行，先将该语句压栈，
     1. 当函数执行完毕后，再执行
     2. 如果有变量，将会拷贝同时压栈
-** 常用的函数y
+** 常用的函数
 *** string
     1. 统计字符串的长度len(str)
     2. 字符串遍历,同时处理有中文的问题r:=[]rune(str)
@@ -52,7 +52,18 @@ f := funcA()
     20. 判断字符串时是否以指定的字符串开头strings.HasPrefix("ftp:/aaa?","ftp")
     21. 判断字符串是否以指定指定的字符串结尾strings.HasSuffix("xxx.jpg","jpg")
 *** time
+*** 
+*** 
+*** 
     时间和日期
+*** 字符串格式化
+    %T 默认自动会推导数据类型
+    %d 整形
+    %t 布尔
+    %ｐ指针
+    1. fmt.Println()
+    2. fmt.Printf()
+    3. fmt.Sprintf()
 ** 错误处理
 *** defer
 *** panic
@@ -159,6 +170,10 @@ func main() {
            Name string
            Age int	
      }
+     //定义tostring
+     func (p Cat) String() string{
+     return fmt.Sprintf("%s,%d",p.Name,p.Age)
+     }
        #+END_SRC
     2. 使用
        #+BEGIN_SRC 
@@ -178,60 +193,50 @@ func main() {
           （×p).Name="liang"
           p.Name="liang""
        2. var p *Person=&Person{}
-<<<<<<< HEAD
-  
-=======
+*** 方法
+    1. 定义
+       #+BEGIN_SRC 
+       func (a A)test() ) 表示A结构体有一方法，方法名为test
+       #+END_SRC
 
-**** 方法
-     1. 定义
-        #+BEGIN_SRC 
-        func (a A)test() ) 表示A结构体有一方法，方法名为test
-        #+END_SRC
-
-**** 工厂模式
+*** 工厂模式
      相当与java中的构造函数功能
-
-
-
-
-××× 封装
-
-**** 封装
-***** 继承
-     1. 匿名结构体来实现
-        #+BEGIN_SRC 
-      type Person struct{
-      Name string
-      Age int
-
- }
- type Student struct{
-      Person
-      Id int
-
- }
- func (p Person) Speak(){
-      fmt.Println(p.Name,"诞生了")
- }
-
- func main(){
-      stu:=Student{}
-      stu.Person.Name="liang"
-      stu.Id=1
-      fmt.Println(stu)
-
-
- }
-     #+END_SRC
-    
-     2. 匿名字段
-	
-        #+BEGIN_SRC 
+*** 封装
+*** 继承
+    1. 匿名结构体来实现
+       #+BEGIN_SRC 
      type Person struct{
-      int
-     }
-     #+END_SRC
-***** 接口(Interface)
+     Name string
+     Age int
+
+}
+type Student struct{
+     Person
+     Id int
+
+}
+func (p Person) Speak(){
+     fmt.Println(p.Name,"诞生了")
+}
+
+func main(){
+     stu:=Student{}
+     stu.Person.Name="liang"
+     stu.Id=1
+     fmt.Println(stu)
+
+
+}
+    #+END_SRC
+    
+    2. 匿名字段
+	
+       #+BEGIN_SRC 
+    type Person struct{
+     int
+    }
+    #+END_SRC
+*** 接口(Interface)
       #+BEGIN_SRC 
       package main
 import "fmt"
@@ -261,3 +266,87 @@ func main(){
      c.Working(p)
 }
       #+END_SRC
+**** 接口案例
+     #+BEGIN_SRC 
+     
+     #+END_SRC
+**** 接口实例 
+     #+BEGIN_SRC 
+     
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sort"
+)
+
+type Person struct {
+	Age  int
+	Name string
+}
+
+//声明结构体切片
+type PSlice []Person
+
+//实现Ｓort接口
+func (ps PSlice) Len() int {
+	return len(ps)
+}
+func (ps PSlice) Less(i, j int) bool {
+	return ps[i].Age < ps[j].Age
+}
+func (ps PSlice) Swap(i, j int) {
+	ps[i], ps[j] = ps[j], ps[i]
+}
+
+func main() {
+	var ps PSlice
+	for i := 0; i < 4; i++ {
+		p := Person{}
+		p.Name = fmt.Sprintf("name%d", rand.Intn(10))
+		p.Age = rand.Intn(10)
+		ps = append(ps, p)
+	}
+	sort.Sort(ps)
+	fmt.Println(ps)
+}
+
+import (
+	"fmt"
+	"math/rand"
+	"sort"
+)
+
+type Person struct {
+	Age  int
+	Name string
+}
+
+//声明结构体切片
+type PSlice []Person
+
+//实现Ｓort接口
+func (ps PSlice) Len() int {
+	return len(ps)
+}
+func (ps PSlice) Less(i, j int) bool {
+	return ps[i].Age < ps[j].Age
+}
+func (ps PSlice) Swap(i, j int) {
+	ps[i], ps[j] = ps[j], ps[i]
+}
+
+func main() {
+	var ps PSlice
+	for i := 0; i < 4; i++ {
+		p := Person{}
+		p.Name = fmt.Sprintf("name%d", rand.Intn(10))
+		p.Age = rand.Intn(10)
+		ps = append(ps, p)
+	}
+	sort.Sort(ps)
+	fmt.Println(ps)
+}
+     #+END_SRC
+*** 多态
