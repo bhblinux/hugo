@@ -350,3 +350,123 @@ func main() {
 }
      #+END_SRC
 *** 多态
+** 文件
+*** OS
+    1. FILE
+       #+begin_src 
+func main() {
+	file, err := os.Open("/home/bhblinux/1.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(file)
+
+	err = file.Close()
+	if err != nil {
+		fmt.Println(err)
+	}
+
+}
+       #+end_src
+    2. EOF
+       文件的结尾
+       #+begin_src package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"os"
+)
+
+func main() {
+	file, err := os.Open("/home/bhblinux/1.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	buf := bufio.NewReader(file)
+	for {
+		line, _, err := buf.ReadLine()
+		if err == io.EOF {
+			break
+		}
+		fmt.Println(string(line))
+	}
+	//当函数退出时，要及时关闭
+	defer file.Close()
+}
+
+       
+       #+end_src
+    3. 读文件二
+       #+begin_src 
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+func main() {
+	filename := "/home/bhblinux/1.txt"
+	content, _ := ioutil.ReadFile(filename)
+//该方式不需要手动关闭文件，适用于小文件
+	fmt.Println(string(content))
+
+}
+       
+       #+end_src
+    4. 写文件
+       #+begin_src 
+package main
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	filepath := "/home/bhblinux/2.txt"
+	file, err := os.OpenFile(filepath, os.O_RDWR|os.O_CREATE, 0666)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	str := "hello go\n"
+	buf := bufio.NewWriter(file)
+	for i := 0; i < 5; i++ {
+		buf.WriteString(str)
+	}
+	buf.Flush()
+}
+       #+end_src
+*** BUFIO
+*** flag
+    1. StringVar
+       1. 接受用户的命令行中的输入
+       2. 指定的参数 u -u的意思
+       3. 默认值
+       4. 用户名，默认为空，说明
+    2. Parse
+       注册解析
+    3. JSON
+*** testing 
+   测试框架
+   1. go test
+      #+begin_src go
+package main
+import (
+	"fmt"
+	"testing"
+)
+func TestAdd(t *testing.T) {
+	res := Add(10)
+	if res != 33 {
+		t.Fatalf("%v", res)
+	}
+	fmt.Println("计算正确")
+	t.Logf("执行正确")
+}
+      #+end_src
+
