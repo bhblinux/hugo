@@ -454,8 +454,8 @@ func main() {
 *** testing 
    测试框架
    1. go test
-      #+begin_src go
-package main
+     #+begin_src go
+ package main
 import (
 	"fmt"
 	"testing"
@@ -468,5 +468,7 @@ func TestAdd(t *testing.T) {
 	fmt.Println("计算正确")
 	t.Logf("执行正确")
 }
+
+      
       #+end_src
 
