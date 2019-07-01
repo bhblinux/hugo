@@ -490,3 +490,39 @@ func main(){
 
 }
     #+end_src
+*** 并发
+    1. 测试程序是否存在资源竞争问题，
+       #+begin_src go
+       go build -race *.go 可以测试出程序是否存在资源竞争问题
+
+       #+end_src
+*** channel
+**** 锁（lock)
+     sync 包
+     #+begin_src go
+     lock.Lock()
+     ...代码
+     lock.Unlock()
+     互斥锁
+     lock sync.Mutex 定义
+
+
+     #+end_src
+**** 定义
+     #+begin_src go
+     var 变量 chan 数据类型
+     var intChan chan int(intchan 用于放int数据)
+     channel 是引用数据类型
+     channel 必须初始化才能写入数据，需要make
+     管道是有类型的，
+     #+end_src
+**** 操作
+     #+begin_src go
+     var intChan chan int
+     intChan=make(chan int ,3)
+     //往管道写入数据
+     intChan <- 10
+     num:=211
+     incChan <- num
+
+     #+end_src
