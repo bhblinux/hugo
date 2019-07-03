@@ -1,0 +1,4 @@
+** TODO Learn Emacs
+   DEADLINE: <2019-06-26 周三 23:55> SCHEDULED: <2019-06-26 周三 23:00>
+** TODO Learn Elisp
+** TODO Hacking Emacs
