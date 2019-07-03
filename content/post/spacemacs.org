@@ -1,68 +1,60 @@
-
----
-title: "spacemacs"
-date: 2018-05-29T21:23:09+08:00
-categories:
- - emacs
-tags:
- - emacs
-
-
-
----
-
-
-
-
-* spaceamcs 
-** 安装
-
-** 使用
-#+BEGIN_SRC 
-.spacemacs 配置编辑模式
-打开边栏的目录树快捷方式 spc f t  
-#+END_SRC
-
-
-
-     
-
-
-
-
-
-
-** 操作方式
-#+BEGIN_SRC 
-1. 按下spc f j 打开dir目录
-2. 按下+，创建~/.spacemacs.d目录
-3. 将光标移动到.spacemacs文件上，按R，将该文件移动到.spacemsc.d目录中
-4. 进然.spacemacs目录，将光标移动.spacemacs文件上，按下R，将该文件重名名为init.el
-5. 按qq退出dired
-#+END_SRC
-
-** 文件相关操作
-1. spc f t  显示目录树
-2. spc f f 查找文件
-3. spc f L 使用helm-locate来在当前系统找文件
-4. spc f j 打开文件的目录dired buffer.
-5. spc f r 打开最近文件列表
-6. spc f R 重命名当前文件
-7. spc f y 拷贝当前文件的全路径
-8. spc f e d   打开配置文件
-9. spc f e i 打开。emacs .emacs.d/init.el文件
-10. spc f c 复制文件
-
-
-** buff操作
-
-1. spc b b 切换到已经打开的buff
-2. spc b d 关闭一个buffer
-3. spc b f 在finder中打开当前文件
-4. spc b N 新建一个buffer.
-5. spc b m 删除当前buffer外的所有buffer
-6. spc b R 使用eamcs自动备份的恢复文件
-7. spc b s 跳转scratch buffer
-
-
-
+  e:/:
+  total used in directory 2029099 available 28015436
+  -rw-rw-rw-  1 PC             None            3 04-26 10:37 1.txt
+  -rw-rw-rw-  1 PC             None            0 2018-11-19  #1.txt#
+  -rw-rw-rw-  1 PC             None          523 2018-10-17  .1.txt.un~
+  -rw-rw-rw-  1 Administrators SYSTEM  406272223 2017-05-26  20170526022128.rar
+  drwxrwxrwx  1 PC             None            0 02-01 16:22 android
+  -rw-rw-rw-  1 PC             None            4 2018-08-13  .bash_history
+  drwxrwxrwx  1 PC             None            0 2017-06-13  CheckPoint
+  -rw-rw-rw-  1 PC             None      8868312 2013-11-15  CheckPoint.rar
+  drwxrwxrwx  1 Administrators SYSTEM          0 2017-06-13  config
+  drwxrwxrwx  1 PC             None            0 05-22 09:22 Config.Msi
+  -rw-rw-rw-  1 Administrators None          594 2017-07-04  cpuz.ini
+  -rwxrwxrwx  1 PC             None            0 03-25 09:47 cpuz_x32.exe
+  -rwxrwxrwx  1 PC             None      3418872 2017-05-31  cpuz_x64.exe
+  drwxrwxrwx  1 PC             None            0 2018-04-04  C++实验室
+  drwxrwxrwx  1 PC             None            0 2018-09-18  db2exp
+  drwxrwxrwx  1 PC             None            0 2017-12-10  DMSClient
+  -rw-rw-rw-  1 PC             None      8607466 2018-03-12  DMSClient.rar
+  -rw-rw-rw-  1 PC             None      2880735 2017-06-20  DSET Report for [BX220100E1 SvcTag-7PX39X1-PE R520] on 06-20-2017 at 01.50 PM.zip
+  drwxrwxrwx  1 Administrators None        16384 2018-12-21  E4A
+  -rw-rw-rw-  1 PC             None            5 06-24 14:39 emacs_base.org~
+  -rw-rw-rw-  1 PC             None         2861 06-26 17:17 emacs_base.org
+  -rwxrwxrwx  1 PC             None     41760352 2015-01-07  Firefox_V34.0.5.5443_setup.1417489386.exe
+  -rw-rw-rw-  1 PC             None      2474618 2018-10-18  FlashFXP.rar
+  drwxrwxrwx  1 PC             None            0 2018-08-13  githome
+  drwxrwxrwx  1 PC             None            0 2018-07-19  GNUstep
+  drwxrwxrwx  1 SYSTEM         SYSTEM       4096 03-25 13:07 Go
+  -rw-rw-rw-  1 PC             None      5121303 2018-05-02  hydra-8.1-windows.zip
+  -rw-rw-rw-  1 PC             None      1605120 06-26 12:10 InfoXLive-产品发布记录.xls
+  drwxrwxrwx  1 PC             None            0 2018-04-19  job
+  -rw-rw-rw-  1 PC             None         4775 2018-01-02  ltpa.jceks
+  drwxrwxrwx  1 Administrators None        12288 2018-12-11  masm32
+  drwxrwxrwx  1 Administrators None         4096 2018-09-21  MASMPlus
+  drwxrwxrwx  1 PC             None            0 2017-04-01  Mstsc
+  -rw-rw-rw-  1 Administrators SYSTEM       5179 2018-11-20  my-data1.csv
+  drwxrwxrwx  1 Administrators None            0 2017-04-05  MyDrivers
+  drwxrwxrwx  1 PC             None            0 2017-04-17  myself
+  drwxrwxrwx  1 Administrators None         4096 2018-03-12  phpStudy
+  drwxrwxrwx  1 Administrators None            0 2017-04-27  ProgramData
+  drwxrwxrwx  1 Administrators None         4096 06-03 10:59 Program Files
+  drwxrwxrwx  1 Administrators None        16384 05-24 13:35 Program Files (x86)
+  drwxrwxrwx  1 Administrators None            0 2018-12-07  Programs
+  -rw-rw-rw-  1 PC             None   1567041312 2018-08-28  R520_CAPSA_DMS_20150617_ver001.tib
+  drwxrwxrwx  1 PC             None            0 2018-11-20  $RECYCLE.BIN
+  -rw-rw-rw-  1 PC             None          372 2018-03-29  sethotkey.log
+  -rw-rw-rw-  1 PC             None       101013 2017-12-22  smc571.rar
+  -rw-rw-rw-  1 PC             None           30 2017-11-29  smc_jre6.readme.txt
+  drwxrwxrwx  1 PC             None            0 2018-05-28  sms_jre6
+  -rw-rw-rw-  1 PC             None     24819099 2017-06-25  sms_jre6.rar
+  drwxrwxrwx  1 PC             None            0 2018-04-16  System Volume Information
+  drwxrwxrwx  1 PC             None            0 02-02 09:06 train
+  drwxrwxrwx  1 PC             None            0 05-07 16:00 TS视频下载
+  drwxrwxrwx  1 PC             None         4096 2018-09-03  tts9
+  -rw-rw-rw-  1 PC             None        11451 2017-10-29  userc.C
+  drwxrwxrwx  1 PC             None            0 03-15 12:17 vkg
+  drwxrwxrwx  1 PC             None         4096 06-06 09:12 yonyou
+D -rw-rw-rw-  1 Administrators SYSTEM          0 2018-11-20  验证截图.F94C.tmp
+  -rw-rw-rw-  1 Administrators SYSTEM    4572719 2018-11-20  验证截图.zip
+  -rw-rw-rw-  1 Administrators SYSTEM     158651 2018-11-20  长安汽车（轿车）经销商升级列表20181120(CA2.4.1.0.DDM.P022.build20181120.exe).xlsx
