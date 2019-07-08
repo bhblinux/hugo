@@ -470,7 +470,7 @@ func TestAdd(t *testing.T) {
 
 
       #+end_src
-*** goroutine(携程)
+** goroutine(携程)
     #+begin_src
 package main
 import ("fmt"
@@ -490,13 +490,13 @@ func main(){
 
 }
     #+end_src
-*** 并发
-    1. 测试程序是否存在资源竞争问题，
-       #+begin_src go
-       go build -race *.go 可以测试出程序是否存在资源竞争问题
+** 并发
+   1. 测试程序是否存在资源竞争问题，
+      #+begin_src go
+      go build -race *.go 可以测试出程序是否存在资源竞争问题
 
-       #+end_src
-*** channel
+      #+end_src
+** channel
 **** 锁（lock)
      sync 包
      #+begin_src go
@@ -535,3 +535,62 @@ func main(){
      支持for-range
      1. 在遍历时,如果channel没有关闭,则会出现deadlock错误
      2. 在遍历时,如果channel已经关闭,则会正常遍历数据,遍历完后,就会退出遍历
+**** 错无处理
+     1. defer+recover
+        #+begin_src go
+           defer func(){
+                //捕获异常
+          if err:=recover(); err!=nil{
+	fmt.Println("异常")
+
+
+          }
+
+                        }}
+
+        #+end_src
+** 反射
+   1. 包
+      reflect
+   2. 转换
+      1. interface()转成reflect.Value
+         #+begin_src 
+        rVal:=reflect.ValueOf(b) 
+         #+end_src
+      2. reflect.Value转interface{}
+         #+begin_src 
+        iVal:=rVal.interface{} 
+         #+end_src
+      3. interface{}转原来的变量
+         #+begin_src 
+        val:=iVal.(Stu) 
+         #+end_src
+      4. Kind
+         reflect.Value.Kind 获取变量的类别，返回一个常量
+         type是类型，Kind是类别，
+         int Type是int Kind是int
+         var stu Student stu的Type是包名.Student,Kind是struct
+      5. Elem
+         rVal.Elem()可以先将指针取出来之后在赋值
+         #+begin_src go
+func reflect01(b interface{}) {
+	//通过反射获取value
+	rVal := reflect.ValueOf(b)
+	//查看rVal的Kind
+	fmt.Printf("rVal kind=%v\n", rVal.Kind())
+	rVal.Elem().SetInt(20)
+}
+
+func main() {
+	var num int = 10
+	reflect01(&num)
+	fmt.Println(num)
+
+}
+
+
+         #+end_src
+** 网络编程
+   net
+   
+
