@@ -27,11 +27,6 @@
    6. 切换ｒｅｄｉｓ数据库[select index]
    7. 如何查看当前数据库的ｋｅｙ－ｖａｌ数量[dbsize]
    8. 清空当前数据库的key-val和清空所有数据库的key-val[flushdb flushall]
-
- 
-
-
-
 *** string
     1. 设置key
        多次会覆盖前面的值

@@ -592,5 +592,23 @@ func main() {
          #+end_src
 ** 网络编程
    net
-   
+** json 
+   1. 包
+      #+begin_src 
+      encoding/json
+      
+      #+end_src
+
+   2. 序列化
+      #+begin_src 
+      data,_:=json.Marshal(&p)
+      fmt.Prinltn(string(data))
+      #+end_src
+
+   3. 反序列化
+      #+begin_src go
+     var p personInfo
+     str:="{"name":"laing","age":20,"email":"bhblinux@mail.com"}"
+     err:=json.Unmarshal([]byte(str),&p1)
+      #+end_src
 
