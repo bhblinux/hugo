@@ -286,6 +286,9 @@ func main() {
 ** 数组
    值拷贝类型
 *** 初始化数组
+    var variable_name [size] variable_type
+    var balance [10] float32
+    var balance =[5]float32{1.0,2.0,4.0,5.0}
     1. var arr [3]int=[3]int{1,2,3}
     2. var arr =[]int{1,2,3}
     3. var arr=[...]int{1,2,3}
@@ -303,14 +306,35 @@ func main() {
     #+END_SRC
 ** 切片
    引用类型
+   var identifier []type
+   var slice1[]type=make([]type,len)
    1. var a[] int
    2. var slice [] int =make ([]int ,4,10)//4 接片的大小，10 接片的容量
    3. 定义一个切片，直接就指定具体数组，
       #+BEGIN_SRC
       var strclice [] string=[]string{"a","b","c"}
       #+END_SRC
+   4. len and cap
+      len　获取长度
+      cap　获取切片最长可以达多少
+   5. append
+      向切片里追加一个或多个元素，然后返回一个和slice一样类型的切片
+      #+begin_src 
+      slice1=append(slice1,100)
+      #+end_src
+   6. ｃopy
+      从源slice的src中复制元素到dst，并且返回复制的元素个数
+      #+begin_src 
+      n := copy(slice2, slice1)
+      #+end_src
+
 ** map
    引用类型
+   map是无序的，需要通过key来获取
+   map的长度是不固定的，也就是和slice一样，引用类型
+   内置len函数同样试用于map,返回map拥有的key的数量
+   map的key可以是所有可比较的类型,如布尔，整数，浮点，复杂，字符串
+   不初始化的map,是不能存放键值对的
    1. 定义
        #+BEGIN_SRC
    var map变量名 map[keytype] valuetype
@@ -329,7 +353,69 @@ func main() {
    4. 查找
       findres
       v, f := a["name"] //如果找到 f为返回结果，找到为true，否则为false
+   5. 遍历
+      #+begin_src 
+      package main
+import "fmt"
+func main() {
+	var map1 = make(map[string]string)
+	map1["France"] = "Paris"
+	map1["China"] = "beijing"
+	for contry := range map1 {
+		fmt.Println(contry, map1[contry])
+	}
+}
+      #+end_src
+   6. 删除
+      delete(map,key)删除函数不返回任何值
+   7. ok-idiom
+      可以通过key获取map中对应的value值，
+      当key如果不存在的时候，我们会得到该value值类型的默认值，比如string类型得到空字符串，int类型为０，程序不会报错
+   8. make
+      只能创建slice,map,channel，并返回一个有初始值,
+   9. new
+      分配了内存空间，并返回其地址*t类型
+
+** 指针
+   1. 声明
+      var var_name *var-type
+      var ip *int
+      var fp *float32
+
+      
+** 结构体
+   1. 定义和初始化
+      #+begin_src 
+      type struct_var_type struct{
+      member definition;
+      }
+      variable_name:=struct_var_type{value1,valur2,..}
+      #+end_src
+   2. 初始化
+      1. 按照顺序提供初始化值
+         p:=person{"tom",25}
+      2. 通过field:value的方式初始化
+         ｐ:=person{age:23,name:"tom"}
+      3. new方式,未设置初始化值，会赋予类的默认初始化值
+         p:=new(person)
+         p.age=24
+      4. 结构体指针
+         var struct_pointer *Books
+         struct_pointer=&Book1
+         var p *person = &Person{}
+         //可以简化写成
+         p:=&Person{}
+         p := &Books{}
+	       fmt.Println("aaa", p.Title)
+	       p.Title = "golang"
+         //编译器做了简化
+         //(*p).Title="golang"
+         做参数的时候会
+         //(*p).printBook()
+	       fmt.Println(p)
+	       p.printBook()
 ** OOP
+
 *** 结构体struct
     结构体是值类型,备份的时候为值拷贝
     1. 定义
@@ -370,7 +456,10 @@ func main() {
 *** 工厂模式
      相当与java中的构造函数功能
 *** 封装
-*** 继承
+*** 继乘
+    通过匿名字段实现继承
+    method是可以继承的，如果匿名字段实现了一个method,那么这个匿名字段的struct也能调用该method 
+    如果嵌入的是一个切片，则匿名字段会报错，需要指定字段名 posts[]post
     1. 匿名结构体来实现
        #+BEGIN_SRC
      type Person struct{
@@ -396,15 +485,72 @@ func main(){
 
 }
     #+END_SRC
-
     2. 匿名字段
-
        #+BEGIN_SRC
     type Person struct{
      int
     }
     #+END_SRC
+    方法是可以继承和重写的,
+    存在继承关系时，按照就近原则,进行调用
+    #+begin_src 
+    package main
+
+import "fmt"
+
+type Human struct {
+	name  string
+	age   int
+	phone string
+}
+type Student struct {
+	Human
+	school string
+}
+type Employee struct {
+	Human
+	company string
+}
+func (h *Human) SayHi() {
+	fmt.Printf("hi i am %s you can call me on %s\n", h.name, h.phone)
+}
+func (e *Employee) SayHi() {
+	fmt.Println("employee")
+}
+func main() {
+	mark := Student{Human{"mark", 25, "10086"}, "qinghua"}
+	sam := Employee{Human{"sam", 45, "10010"}, "google"}
+	mark.SayHi()
+	sam.SayHi()
+	fmt.Println(sam.age)
+}
+
+    #+end_src
 *** 接口(Interface)
+    1. 定义接口
+       #+begin_src 
+       type interface_name interface{
+       method_name1 [return_type]
+       method_name2 [return_type]
+       method_name3 [return_type]
+       method_name4 [return_type]
+       }
+       #+end_src
+
+    2. 定义结构体
+       #+begin_src 
+       type struct_name struct{}
+       #+end_src
+
+    3. 实现接口的方法
+       #+begin_src 
+       func (struct_name variable struct_name) method_name1()[return_type]{/*方法实现*/}
+       #+end_src
+
+    interface可以被任意的对象实现
+    一个对象可以实现任意多个interface
+    任意的类型都实现了空接口(interface{}),也就是包含0个methomd的interface
+    案例 
       #+BEGIN_SRC
       package main
 import "fmt"
