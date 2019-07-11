@@ -11,7 +11,7 @@
    Selected config:
    #+END_SRC
 ** 操作
-   
+  Redis安装好后，默认有１６个数据库，初始默认使用０号库 
    https://blog.csdn.net/qq_40852784/article/details/79697914
    1. 启动客户端
       #+BEGIN_SRC 
@@ -21,6 +21,12 @@
       #+BEGIN_SRC 
       keys *
       #+END_SRC
+   3. 添加key-val [set]
+   4. 获取当前ｒedis的所有key [keys *]
+   5. 获取ｋｅｙ对应的值　[get key]
+   6. 切换ｒｅｄｉｓ数据库[select index]
+   7. 如何查看当前数据库的ｋｅｙ－ｖａｌ数量[dbsize]
+   8. 清空当前数据库的key-val和清空所有数据库的key-val[flushdb flushall]
 *** string
     1. 设置key
        多次会覆盖前面的值
