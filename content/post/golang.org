@@ -152,9 +152,26 @@ func main() {
      
 **** select
      select语句类似于switch语句,但是select会随机执行一个可运行的case，如果没有case可运行,他将阻塞,直到有case可运行
-     #+begin_src 
+     - 注意
+       1. 每个case都必须是一个通信
+       2. 所有channel表达式都会被求值
+       3. 所有被发送的表达式都会被求值
+       4. 如果任意某个通信可以进行,他就执行,其他会被忽略
+       5. 如果多个case都可以运行,select会随机公平的选出一个执行,其他不会被执行
+       6. 如果有default字句,则执行该语句
+       7. 如果没有default语句,select将阻塞,直到某个通信可以运行,go不会重新对channel或值进行求值
+
+**** for
+     for init;condition;post{}
+     初始化语句只执行一次,在初始化循环之后,将检查该条件,如果条件计算为true,那么{}中的循环体将被执行,然后是post语句,post语句将再循环的每次成功迭代之后执行,在执行post语句之后,该条件
+     被重新检查,如果正确继续执行,否则停止
+     for;;{}
+     for{}死循环
      
-     #+end_src
+**** goto
+     可以无条件的转移到过程中指定的行
+     
+
 ** 函数
 *** 闭包
     可以理解为class
@@ -764,3 +781,4 @@ func main() {
      err:=json.Unmarshal([]byte(str),&p1)
       #+end_src
 
+      
