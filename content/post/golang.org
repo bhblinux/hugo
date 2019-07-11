@@ -3,6 +3,158 @@
 
 *** 赋值
     赋值语句不能再函数体外赋值，Name:="a" 自动推倒等价与 var Name string Name="a"
+    1. 声明一个变量
+       #+begin_src 
+      var name type
+      name=value
+       #+end_src
+    2. 类型推断Type inference
+       如果一个变量有一个初始值，go将自动能够使用初始值来推断该变量的类型
+       #+begin_src 
+      var name=value 
+       #+end_src
+    3. 省略var，注意:=左侧的变量不应该是已经声明过的(多个变量同事声明时，至少保证一个是新变量),否则会导致编译错误
+       #+begin_src 
+      name:=value
+      var a int=10
+      var b=10
+      c:=10
+       #+end_src
+    4. 多变量声明
+       1. 已逗号分隔,声明与赋值分开，若不赋值，存在默认值
+          #+begin_src 
+         var name1,name2,name3 type
+         name1,name2,name3=v1,v2,v3
+          #+end_src
+       2. 直接赋值
+          #+begin_src 
+         var name1,name2,name3=v1,v2,v3 
+          #+end_src
+       3. 集合类型
+          #+begin_src 
+         var(
+         name1 type1
+         name2 type2
+         )
+          #+end_src
+    5. 常亮声明
+       const identifier [type]=value
+       常量在程序运行时，不会被修改
+       可以是布尔，数字，字符串
+       不增使用的常量，在编译的时候，不会报错
+       显示类型定义：const b string="abc
+       隐士类型定义：const b="abc"
+       #+begin_src 
+      const(
+      x uint16=16
+      y
+      s="abc"
+      z
+      ) 
+      常量组中如果不指定类型和初始值，则与上一行非空常量右值相同
+       #+end_src
+    6. iota
+       特殊的常量，可以被编译器修改的常量
+       在每一个const关键字出现时，被重置为0,然后再下一个const出现之前,没出现一次iota，其所代表的数字会自动增加1
+       #+begin_src 
+       const(
+       a=iota
+       b=iota
+       c=iota
+       )
+       可以简写
+       const(
+       a=iota
+       b
+       c
+       )
+       a=0,b=1,c=2
+       #+end_src
+
+** 分支循环
+   
+*** 条件语句
+    
+**** if语句
+     #+begin_src 
+     if 布尔表达式{}
+     if 布尔表达式{}else{}
+     if 布尔表达式１{}else if 布尔表达式２{}else{}
+     如果其中包含一个可选的语句组件，还有一个变体
+     if statement;condition{}
+     if num:=10;num%2==0{}
+     #+end_src
+
+**** switch 
+     #+begin_src 
+     switch var1{
+         case var1:
+         ...
+         case val2:
+         ...
+         default:
+         ...
+     }
+
+     #+end_src
+     如果需要贯穿后续的case,就添加fallthrough,fallthroug应该是某个case最后一个,如果它出现在中间的某个地方,编译器就会抛出错误
+     #+begin_src go
+func main(){
+	switch x:=5;x{
+	default:
+		fmt.Println(x)
+	case 5:
+		x+=10
+		fmt.Println(x)
+		fallthrough
+	case 6:
+		x+=20
+		fmt.Println(x)
+	}
+}
+     #+end_src
+     case中的表达式是可选的，可以省略,如果改表达式被省略,则被认为switch true,并且每个case表达式都被计算为true,并执行相应的代码块
+     
+     switch语句还可以被用于type-switch来判断某个interface变量中实际存储的变量类型
+     #+begin_src go
+     switch x.(type){
+     case type:
+         statement(s);
+     case type:
+         statement(s);
+     default
+         statement(s);
+     }
+}package main
+
+import "fmt"
+
+func main() {
+   var x interface{}
+
+   switch i := x.(type) {
+      case nil:
+         fmt.Printf(" x 的类型 :%T",i)
+      case int:
+         fmt.Printf("x 是 int 型")
+      case float64:
+         fmt.Printf("x 是 float64 型")
+      case func(int) float64:
+         fmt.Printf("x 是 func(int) 型")
+      case bool, string:
+         fmt.Printf("x 是 bool 或 string 型" )
+      default:
+         fmt.Printf("未知型")
+   }
+}
+     
+     #+end_src
+     
+**** select
+     select语句类似于switch语句,但是select会随机执行一个可运行的case，如果没有case可运行,他将阻塞,直到有case可运行
+     #+begin_src 
+     
+     #+end_src
 ** 函数
 *** 闭包
     可以理解为class
