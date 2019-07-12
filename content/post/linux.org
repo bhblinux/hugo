@@ -215,4 +215,31 @@
      行编辑器
 **** awk
 ** shell编程
+** 端口
+   查看linux进程占用的端口号
+   1. ss
+      用于转储套接字统计信息
+      ss -tnlp|grep ssh
+      ss -tnlp|grep ":22"
+      t tcp
+      n 端口号
+      l 监听的
+      p 进程
+   2. netstat
+      可以显示打开的套接字列表，能够显示网络链接，路由表，接口统计信息，伪装连接及多播成员
+      netstat -tnlp|grep ssh
+      netstat -tnlp|grep ":22"
+   3. lsof
+      可以列出打开的文件
+      lsof -i -P |grep ssh
+      lsof - tcp:22
+   4. fuser
+      可以列出那些打开了文件的进程的进程id
+      fuser -v 22/tcp
+   5. nmap
+      网络检测工具和端口扫描工具
+      nmap -sV -p 22 localhost
+   6. systemctl
+      控制管理其的服务管理器
+
 
