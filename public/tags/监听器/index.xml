@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>监听器 on 我的博客</title>
+    <link>http://example.org/tags/%E7%9B%91%E5%90%AC%E5%99%A8/</link>
+    <description>Recent content in 监听器 on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jun 2018 21:23:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/%E7%9B%91%E5%90%AC%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>监听器</title>
+      <link>http://example.org/post/%E7%9B%91%E5%90%AC%E5%99%A8/</link>
+      <pubDate>Mon, 11 Jun 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/%E7%9B%91%E5%90%AC%E5%99%A8/</guid>
+      <description>监听器 监听器就是一个java程序，功能是监听另一个java对象变化（方法调用、属性变更） 8个监听器,分为了3种 写一个类实现响应的接口 注册监听</description>
+    </item>
+    
+  </channel>
+</rss>

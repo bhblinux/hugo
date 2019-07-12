@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on 我的博客</title>
+    <link>http://example.org/tags/java/</link>
+    <description>Recent content in java on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Aug 2018 12:25:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java3</title>
+      <link>http://example.org/post/java3/</link>
+      <pubDate>Sat, 04 Aug 2018 12:25:54 +0800</pubDate>
+      
+      <guid>http://example.org/post/java3/</guid>
+      <description>链表 final final 修饰类 为最终类不能被继承 修饰方法的时候则该方法不能被重写 修饰变量为常量,不能被修改 需要大写 多态 public static final 全局常亮 instanceof 判断 对象是什么类型 抽象</description>
+    </item>
+    
+    <item>
+      <title>Java2</title>
+      <link>http://example.org/post/java2/</link>
+      <pubDate>Mon, 30 Jul 2018 22:24:16 +0800</pubDate>
+      
+      <guid>http://example.org/post/java2/</guid>
+      <description>java基础 代码块 构造代码块 将代码块写在类中 构造代码块优先构造方法 静态代码块 static{ } 优先构造代码块,只执行一次</description>
+    </item>
+    
+    <item>
+      <title>Java基础</title>
+      <link>http://example.org/post/java/</link>
+      <pubDate>Sat, 28 Jul 2018 13:16:19 +0800</pubDate>
+      
+      <guid>http://example.org/post/java/</guid>
+      <description>Table of Contents 基础 数据类型 面向对象 封装 继承 多态 String类 设计模式 共享设计模式 关系映射 代码块 org-mode 基础 数据类型 :重点: 选择数据类型原则 整数用 int 小数用 double</description>
+    </item>
+    
+    <item>
+      <title>监听器</title>
+      <link>http://example.org/post/%E7%9B%91%E5%90%AC%E5%99%A8/</link>
+      <pubDate>Mon, 11 Jun 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/%E7%9B%91%E5%90%AC%E5%99%A8/</guid>
+      <description>监听器 监听器就是一个java程序，功能是监听另一个java对象变化（方法调用、属性变更） 8个监听器,分为了3种 写一个类实现响应的接口 注册监听</description>
+    </item>
+    
+    <item>
+      <title>IDEA</title>
+      <link>http://example.org/post/intellij_mac/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/intellij_mac/</guid>
+      <description>IDEA 快捷键 1. 自动补全 ctrl+空格 2. 自动生成jaavbean ctrl+enter 3. 自动生成变量 commond+alt+v commond+alt+f 1. main快速输入 psvm 2. for循环 fori 3. syso 快速输入 sout 4. 删除当前行 ctrl+x</description>
+    </item>
+    
+    <item>
+      <title>JSTL</title>
+      <link>http://example.org/post/jstl/</link>
+      <pubDate>Fri, 25 May 2018 23:15:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/jstl/</guid>
+      <description>定义标签 传统标签 写一个类实现tag接口 写一个tld文件,描述写好的类 在jsp页面引用tld文件并使用 简单标签 写一个类实现SimpleTag接</description>
+    </item>
+    
+    <item>
+      <title>DBUTILs</title>
+      <link>http://example.org/post/dbutils/</link>
+      <pubDate>Mon, 14 May 2018 21:21:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/dbutils/</guid>
+      <description>元数据 DatabaseMetaData ParameterMetaData ?generateSimpleParameterMetadata=true ResultSetMetaData DBUtils DbUtils QueryRunner 两行代码搞定增删改查 QueryRunner() &amp;ndash;需要控制事务时,使用这组方法 QueryRunner(DataSource ds) &amp;ndash;不需要控制事务用这组方法 import java.sql.SQLException; import org.apache.commons.dbutils.DbUtils; import org.apache.commons.dbutils.QueryRunner; import</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>http://example.org/post/mysql/</link>
+      <pubDate>Tue, 08 May 2018 22:07:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/mysql/</guid>
+      <description>命令 数据库管理 链接数据库 mysql -u root -p 查看数据库 mysql&amp;gt; show databases; 创建数据库 mysql&amp;gt; create database day0508; mysql&amp;gt; create database day050801 -&amp;gt; default character set utf8; 删除数据库 mysql&amp;gt; drop database day050801; 查看数据库的默认字符集 mysql&amp;gt; show create database day0508; 修改数</description>
+    </item>
+    
+    <item>
+      <title>JSP</title>
+      <link>http://example.org/post/jsp/</link>
+      <pubDate>Tue, 01 May 2018 15:41:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/jsp/</guid>
+      <description>特点 jsp运行必须交给tomcat服务器 ,tomcat的work目录,存放jsp运行时的临时文件 执行过程 tomcat扫描jsp文件在work</description>
+    </item>
+    
+    <item>
+      <title>servlet</title>
+      <link>http://example.org/post/servlet/</link>
+      <pubDate>Mon, 30 Apr 2018 10:27:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/servlet/</guid>
+      <description>生命周期 输入url,会在应用目录的web.xml中查找是否有匹配的url-pattern的内容 如果找到匹配的url-pattern,则使用当</description>
+    </item>
+    
+    <item>
+      <title>tomcat</title>
+      <link>http://example.org/post/tomcat/</link>
+      <pubDate>Fri, 27 Apr 2018 23:04:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/tomcat/</guid>
+      <description>开发动态资源 静态资源和动态资源 Servlet 特点 普通的java类,继承HttpServlet类,覆盖doGet方法 Servlet类只能交给tomcat服</description>
+    </item>
+    
+    <item>
+      <title>XML</title>
+      <link>http://example.org/post/xml/</link>
+      <pubDate>Sun, 22 Apr 2018 22:14:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/xml/</guid>
+      <description>xml解析 解析工具 Dom解析工具 jaxp JDOM工具 DOM4J工具 SAX 解析 SAX解析工具, 节点信息: Node 节点名称 节点类型 nodeIterator 标签节点: Element 标签名 方法 1. getRootElement 2.</description>
+    </item>
+    
+    <item>
+      <title>路径问题</title>
+      <link>http://example.org/post/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 16 Apr 2018 22:12:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</guid>
+      <description>当前路径 类文件路径 classpath路径 package com.yonyou.demo01; import java.io.File; import java.io.InputStream; public class test03 { public static void main(String[] args) { //获取类路径 InputStream resourceAsStream = test03.class.getResourceAsStream(&amp;quot;/&amp;quot;); // &amp;quot;/&amp;quot; 代表了classpath的路径 //获取当前</description>
+    </item>
+    
+    <item>
+      <title>BenUtils</title>
+      <link>http://example.org/post/benutils/</link>
+      <pubDate>Mon, 16 Apr 2018 21:30:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/benutils/</guid>
+      <description>内省 package com.yonyou.demo01; import java.beans.BeanInfo; import java.beans.IntrospectionException; import java.beans.Introspector; import java.beans.PropertyDescriptor; import java.lang.reflect.Method; import org.junit.Test; public class test01 { public static void main(String[] args) { } @Test public void getAllProperty() throws Exception{ //Introspector 内省类 BeanInfo beanInfo = Introspector.getBeanInfo(Person.class); //获取所有属性描述器 PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors(); for (PropertyDescriptor propertyDescriptor : propertyDescriptors) { System.out.println(propertyDescriptor.getReadMethod()); //get方法</description>
+    </item>
+    
+  </channel>
+</rss>

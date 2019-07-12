@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 我的博客</title>
+    <link>http://example.org/tags/git/</link>
+    <description>Recent content in git on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 21:23:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git</title>
+      <link>http://example.org/post/git/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/git/</guid>
+      <description>git 相关配置 工作目录:持有实际文件 Index:缓存区域,保存改动的文件 HEAD:指向你最近一次提交后的结果 安装 git config --global user.name &amp;quot;bhblinux&amp;quot; git config --global user.email &amp;quot;405890835@qq.com&amp;quot; git config --global color.ui true git</description>
+    </item>
+    
+  </channel>
+</rss>

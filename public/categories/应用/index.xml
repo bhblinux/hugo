@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>应用 on 我的博客</title>
+    <link>http://example.org/categories/%E5%BA%94%E7%94%A8/</link>
+    <description>Recent content in 应用 on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 21:23:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>http://example.org/post/py_down_youtube/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/py_down_youtube/</guid>
+      <description>youtube-dl 1. 官方下载 2. pip install youtube-dl 3. pip install --upgrade youtube-dl 4. 下载安装ffmepeg 5. 设置ssr 6. 设置代理 --proxy 127.0.0.1:1086 开始下载youtube视频 查看视频所有类型，只看不下载 youtube-dl -F [URL]</description>
+    </item>
+    
+  </channel>
+</rss>

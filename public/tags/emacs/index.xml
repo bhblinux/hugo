@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on 我的博客</title>
+    <link>http://example.org/tags/emacs/</link>
+    <description>Recent content in emacs on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 May 2018 12:28:14 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Emace_server</title>
+      <link>http://example.org/post/emace_server/</link>
+      <pubDate>Wed, 30 May 2018 12:28:14 +0800</pubDate>
+      
+      <guid>http://example.org/post/emace_server/</guid>
+      <description>eamcs server 相关配置 emacs配置 (setq sever-auth-dir &amp;quot;~/.emacs.d/server/&amp;quot;) (setq server-name &amp;quot;eamacs-server-file&amp;quot;) (server-start) windows配置 设置环境变量 EMACS_SERVER_FILE 与 ALTERNATE_EDITOR环境变量 EMACS_SERVER_</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c on 我的博客</title>
+    <link>http://example.org/tags/c/</link>
+    <description>Recent content in c on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 May 2018 19:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows的库</title>
+      <link>http://example.org/post/windows%E7%9A%84%E5%BA%93/</link>
+      <pubDate>Tue, 08 May 2018 19:58:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/windows%E7%9A%84%E5%BA%93/</guid>
+      <description>静态库 - 扩展名lib文件,是不能被加载的程序, 动态库 - 扩展名dll的文件,可以被应用程序加载</description>
+    </item>
+    
+    <item>
+      <title>按钮</title>
+      <link>http://example.org/post/%E6%8C%89%E9%92%AE/</link>
+      <pubDate>Sun, 06 May 2018 12:01:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E6%8C%89%E9%92%AE/</guid>
+      <description>分类 下压式按钮 PUSHBUTTON 正常下压式按钮 BS_PUSHBUTTON 三态式按钮 BS_3STATE|BS_AUTO3STATE 分组式按钮 BS_GROUPBOX 多选按钮 check box BS_CHECKBOX|BS_AUTOCHECKBOX 点选按钮 Radio Box BS_RADIOBUTTON|BS_AUTORADIOBUTTON 使用 下压式按钮的使用 创建按钮 相应按钮消息 WM_COMMAND BN_CLICKED 消息,当点击</description>
+    </item>
+    
+    <item>
+      <title>头文件</title>
+      <link>http://example.org/post/%E5%A4%B4%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 01 May 2018 19:49:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E5%A4%B4%E6%96%87%E4%BB%B6/</guid>
+      <description>全局变量重复定义，fatal error LNK1169: 找到一个或多个多重定义的符号 1.在GlobeValue.h中定义了一个变量： char gl_UID[256]; 2.在b.cpp和e.cpp</description>
+    </item>
+    
+    <item>
+      <title>win32</title>
+      <link>http://example.org/post/win32/</link>
+      <pubDate>Tue, 01 May 2018 18:47:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/win32/</guid>
+      <description>窗口注册和创建 WinMain入口函数的定义 windowProc函数的定义 注册窗口类 RegisterClass|RegisterClassEx 窗口创建 CreateWindow/CreateWindowEx 窗口的显示和刷新ShowWindow|Upda</description>
+    </item>
+    
+    <item>
+      <title>字符编码</title>
+      <link>http://example.org/post/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Sun, 29 Apr 2018 17:13:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+      <description>编码 ASCII 0-127 7为表示 ASCII 扩展码 0-255 8位表示,代码页:通过代码页来切换对应的字符 双字节字符集 DBCS,使用一个或2个字节表示字符 A中B国 1 2 1 2 A:0X41 中:</description>
+    </item>
+    
+    <item>
+      <title>QT5</title>
+      <link>http://example.org/post/qt/</link>
+      <pubDate>Fri, 27 Apr 2018 22:09:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/qt/</guid>
+      <description>hello hello.pro SOURCES += \ hello.cpp QT+=widgets gui main.cpp /*应用程序抽象类*/ #include&amp;lt;QApplication&amp;gt; /*窗口类*/ #include&amp;lt;QWidget&amp;gt; int main(int argc,char *argv[]){ QApplication app(argc,argv); QWidget w; w.setWindowTitle(&amp;quot;hello world&amp;quot;); w.show(); /*exec 中有一个消息循环*/ return app.exec(); } 手动编译qt文件 main.cpp #include&amp;lt;QApplication&amp;gt; #include&amp;lt;QLabel&amp;gt; int main(int argc,char **argv){ QApplication</description>
+    </item>
+    
+    <item>
+      <title>对话框</title>
+      <link>http://example.org/post/%E5%AF%B9%E8%AF%9D%E6%A1%86/</link>
+      <pubDate>Thu, 26 Apr 2018 20:21:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E5%AF%B9%E8%AF%9D%E6%A1%86/</guid>
+      <description>分类 无模式的对话框 对话框显示后,不影响其他窗口的使用 2. 有模式的对话框 对话框显示后,会将其他窗口禁止输入操作 1. 添加对话框资源 2. 定义对话框窗口处</description>
+    </item>
+    
+    <item>
+      <title>位图</title>
+      <link>http://example.org/post/%E4%BD%8D%E5%9B%BE/</link>
+      <pubDate>Thu, 26 Apr 2018 19:53:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E4%BD%8D%E5%9B%BE/</guid>
+      <description>位图 位图的使用 加载位图 创建放置位图的dc 将位图放入创建的dc中 绘制位图到当前dc中 取出位图 删除创建的位图 删除位图</description>
+    </item>
+    
+    <item>
+      <title>绘图</title>
+      <link>http://example.org/post/%E7%BB%98%E5%9B%BE/</link>
+      <pubDate>Mon, 23 Apr 2018 22:21:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/%E7%BB%98%E5%9B%BE/</guid>
+      <description>绘图 图形绘制 图形绘图的方式,获取到绘图句柄,设备描述表(DC),使用相应的绘图的api, 颜色 RGB三色,每种颜色8位,24位颜色 32位颜色:</description>
+    </item>
+    
+    <item>
+      <title>win32资源</title>
+      <link>http://example.org/post/win32%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Sun, 22 Apr 2018 11:55:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/win32%E8%B5%84%E6%BA%90/</guid>
+      <description>资源文件 图标,光标,字符串,菜单,加速jm ICON 光标资源 #define _WIN32_WINNT 0x0400 //¹öÂÖÏûÏ¢±ØÐë¼ÓÔÚwindows.hÖ®Ç°¼Ó #include &amp;lt;windows.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;quot;resource.h&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>Win32菜单</title>
+      <link>http://example.org/post/win32%E5%9B%BE%E5%BD%A2/</link>
+      <pubDate>Sat, 21 Apr 2018 11:37:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/win32%E5%9B%BE%E5%BD%A2/</guid>
+      <description>菜单 菜单的使用 菜单的创建 菜单创建后,会返回HMENU句柄 - MENU 菜单 CreateMenu - POPUPMENU 弹出式菜单 CreatePopupMenu 菜单项 每个菜单项会有一个id号,可以根据这个id执行不同的</description>
+    </item>
+    
+    <item>
+      <title>Win32消息机制</title>
+      <link>http://example.org/post/win32%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Mon, 16 Apr 2018 22:26:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/win32%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6/</guid>
+      <description>消息机制 过程驱动 程序是安装我们预定好的顺序执行 事件驱动 程序的执行顺序是无序的,某个时间点所执行的代码,是由外界通知 win32的消息机制,就是</description>
+    </item>
+    
+  </channel>
+</rss>

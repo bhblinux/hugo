@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jdbc on 我的博客</title>
+    <link>http://example.org/tags/jdbc/</link>
+    <description>Recent content in jdbc on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 May 2018 19:57:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JDBC</title>
+      <link>http://example.org/post/jdbc/</link>
+      <pubDate>Sat, 12 May 2018 19:57:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/jdbc/</guid>
+      <description>连接 导包 mysql-connector-java-5.1.7-bin.jar 连接高版本mysql数据库，而驱动版本比较低则需要凑单jdbcurl中加入 字符集 jdbc:mysql:///day06?characterEncoding=utf-8 方法一 package com.yonyou; import java.sql.Connection; import java.sql.Driver; import java.sql.SQLException; import java.util.Properties; import org.junit.Test; /* * jdbc数据连</description>
+    </item>
+    
+  </channel>
+</rss>

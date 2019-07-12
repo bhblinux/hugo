@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 我的博客</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Tags on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Aug 2018 12:25:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java</title>
+      <link>http://example.org/tags/java/</link>
+      <pubDate>Sat, 04 Aug 2018 12:25:54 +0800</pubDate>
+      
+      <guid>http://example.org/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>md</title>
+      <link>http://example.org/tags/md/</link>
+      <pubDate>Sun, 29 Jul 2018 12:38:10 +0800</pubDate>
+      
+      <guid>http://example.org/tags/md/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sublime</title>
+      <link>http://example.org/tags/sublime/</link>
+      <pubDate>Tue, 19 Jun 2018 20:27:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/sublime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>过滤器</title>
+      <link>http://example.org/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/</link>
+      <pubDate>Wed, 13 Jun 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>监听器</title>
+      <link>http://example.org/tags/%E7%9B%91%E5%90%AC%E5%99%A8/</link>
+      <pubDate>Mon, 11 Jun 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/%E7%9B%91%E5%90%AC%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>http://example.org/tags/emacs/</link>
+      <pubDate>Wed, 30 May 2018 12:28:14 +0800</pubDate>
+      
+      <guid>http://example.org/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docer</title>
+      <link>http://example.org/tags/docer/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/docer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://example.org/tags/git/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>http://example.org/tags/mac/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube</title>
+      <link>http://example.org/tags/youtube/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/tags/youtube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>http://example.org/tags/mysql/</link>
+      <pubDate>Tue, 29 May 2018 20:19:43 +0800</pubDate>
+      
+      <guid>http://example.org/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ORG-MODE</title>
+      <link>http://example.org/tags/org-mode/</link>
+      <pubDate>Tue, 29 May 2018 13:47:56 +0800</pubDate>
+      
+      <guid>http://example.org/tags/org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jdbc</title>
+      <link>http://example.org/tags/jdbc/</link>
+      <pubDate>Sat, 12 May 2018 19:57:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/jdbc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c</title>
+      <link>http://example.org/tags/c/</link>
+      <pubDate>Tue, 08 May 2018 19:58:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/c/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

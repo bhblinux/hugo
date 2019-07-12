@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ORG-MODE on 我的博客</title>
+    <link>http://example.org/tags/org-mode/</link>
+    <description>Recent content in ORG-MODE on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 13:47:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ORG MODE</title>
+      <link>http://example.org/post/org-mode/</link>
+      <pubDate>Tue, 29 May 2018 13:47:56 +0800</pubDate>
+      
+      <guid>http://example.org/post/org-mode/</guid>
+      <description>列提纲 &#39;*&#39; 为一级标题 &#39;**&#39; 为二级标题 ;*** 为三级标题 TAB键对标题进行展开和关闭 C-C C-T可以将一个条目转一个TODO事件 重置有序列表序号 C-X H 全选 M-回</description>
+    </item>
+    
+  </channel>
+</rss>

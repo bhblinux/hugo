@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on 我的博客</title>
+    <link>http://example.org/categories/emacs/</link>
+    <description>Recent content in emacs on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 May 2018 12:28:14 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Emace_server</title>
+      <link>http://example.org/post/emace_server/</link>
+      <pubDate>Wed, 30 May 2018 12:28:14 +0800</pubDate>
+      
+      <guid>http://example.org/post/emace_server/</guid>
+      <description>eamcs server 相关配置 emacs配置 (setq sever-auth-dir &amp;quot;~/.emacs.d/server/&amp;quot;) (setq server-name &amp;quot;eamacs-server-file&amp;quot;) (server-start) windows配置 设置环境变量 EMACS_SERVER_FILE 与 ALTERNATE_EDITOR环境变量 EMACS_SERVER_</description>
+    </item>
+    
+    <item>
+      <title>ORG MODE</title>
+      <link>http://example.org/post/org-mode/</link>
+      <pubDate>Tue, 29 May 2018 13:47:56 +0800</pubDate>
+      
+      <guid>http://example.org/post/org-mode/</guid>
+      <description>列提纲 &#39;*&#39; 为一级标题 &#39;**&#39; 为二级标题 ;*** 为三级标题 TAB键对标题进行展开和关闭 C-C C-T可以将一个条目转一个TODO事件 重置有序列表序号 C-X H 全选 M-回</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on 我的博客</title>
+    <link>http://example.org/categories/java/</link>
+    <description>Recent content in java on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Jun 2018 21:23:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>filter</title>
+      <link>http://example.org/post/filter/</link>
+      <pubDate>Wed, 13 Jun 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/filter/</guid>
+      <description>过滤器 生命周期 当服务器启动时，web应用加载后，立即创建这个web应用的所有的过滤器，过滤器创建会立即调用init方法 当拦截到请求后执行do</description>
+    </item>
+    
+  </channel>
+</rss>

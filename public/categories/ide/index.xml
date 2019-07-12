@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDE on 我的博客</title>
+    <link>http://example.org/categories/ide/</link>
+    <description>Recent content in IDE on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 21:23:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/ide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IDEA</title>
+      <link>http://example.org/post/intellij_mac/</link>
+      <pubDate>Tue, 29 May 2018 21:23:09 +0800</pubDate>
+      
+      <guid>http://example.org/post/intellij_mac/</guid>
+      <description>IDEA 快捷键 1. 自动补全 ctrl+空格 2. 自动生成jaavbean ctrl+enter 3. 自动生成变量 commond+alt+v commond+alt+f 1. main快速输入 psvm 2. for循环 fori 3. syso 快速输入 sout 4. 删除当前行 ctrl+x</description>
+    </item>
+    
+  </channel>
+</rss>
